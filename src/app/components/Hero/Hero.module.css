@@ -1,0 +1,35 @@
+
+
+.hero {
+    display: flex; 
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url("/background.webp");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    
+}
+
+
+
+.logoBackground h1, .logoBackground p {
+    position: relative; /* Position text relative to the container */
+    z-index: 1; /* Keeps text above the background image */
+    color: white; /* Adjust as needed for contrast */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Optional for better readability */
+    margin: 0.5rem 0;
+}
+
+.logoBackground h1 {
+    font-size: 2.5rem; /* Adjust as needed */
+}
+
+.logoBackground p {
+    font-size: 1.5rem; /* Adjust as needed */
+}

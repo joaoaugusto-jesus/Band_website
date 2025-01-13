@@ -1,50 +1,28 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-
+import Head from 'next/head';
+import Navbar from "./components/Navbar/page";
+import Hero from "./components/Hero";
 export default function Home() {
   return (
+   
     <div className={styles.page}>
+       <Head>
+        <title>Band Website - Home</title>
+        <meta name="description" content="Official website of the band. Check out our latest music, videos, merchandise, and more!" />
+        <meta name="keywords" content="band, music, videos, merchandise, live shows" />
+        <meta name="author" content="The Band Name" />
+        <meta property="og:title" content="Band Website - Home" />
+        <meta property="og:description" content="Official website of the band." />
+        <meta property="og:image" content="/path-to-image.jpg" />
+        <meta property="og:url" content="https://yourbandwebsite.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      <Navbar />
+      
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+      <Hero />
+        
       </main>
       <footer className={styles.footer}>
         <a
