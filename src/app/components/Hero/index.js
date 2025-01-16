@@ -5,15 +5,17 @@ export default function Hero() {
     return (
         <div className={styles.hero}>
             <div className={styles.logoBackground}>
-                   
-            <h1>The Name of a Band</h1>
-                <p>Welcome to our official website</p>
-                <audio controls className={styles.audioPlayer}>
-                    <source src="/path/to/your/music-file.mp3" type="audio/mpeg" />
+              <section className={styles.sectionHeader}> 
+                <h1>The Snazzy Raggamuffins</h1>
+                <p>Rock´n roll Covers and Original songs</p>
+                
+                </section>     
+           <audio controls className={styles.audioPlayer}>
+                    <source src="/assets/musics/perpetual.mp3" type="audio/mp3" />
                     Your browser does not support the audio element.
                 </audio>
                 <video controls className={styles.videoPlayer}>
-                    <source src="/path/to/your/video-file.mp4" type="video/mp4" />
+                    <source src="/assets/vid/snazzy live at fandango.mp4" type="video/mp4" />
                     Your browser does not support the video element.
                 </video>
             </div>

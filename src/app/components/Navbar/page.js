@@ -28,7 +28,7 @@ export default function Navbar() {
                     />
                     
                 </button>
-                <h1 className={styles.title}>The Name of a Band</h1>
+                <h1 className={styles.title}>Welcome to our official website</h1>
                 
                 
                 <ul className={styles.navList}>
