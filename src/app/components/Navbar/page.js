@@ -28,16 +28,10 @@ export default function Navbar() {
                     />
                     
                 </button>
-                <h1 className={styles.title}>Welcome to our official website</h1>
-                
+               
                 
                 <ul className={styles.navList}>
-                    <li className={styles.navItem}>
-                        <Link href="/">Merchandise</Link>
-                    </li>
-                    <li className={styles.navItem}>
-                        <Link href="/about">Live shows</Link>
-                    </li>
+                    
                     {/* dropdown menu */}
                     <li className={styles.navItem}>
                         <button 
@@ -52,7 +46,13 @@ export default function Navbar() {
                             <div className={styles.bar3}></div>
                         </button>
                         {dropdownOpen && (
-                            <ul id="dropdown-menu" className={styles.dropdownMenu}>
+                             <ul id="dropdown-menu" className={styles.dropdownMenu}>
+                                <li className={styles.dropdownItem}>  
+                                        <Link href="/">Merchandise</Link>
+                                </li>
+                                <li className={styles.dropdownItem}>
+                                        <Link href="/about">Live shows</Link>
+                                </li>
                                 <li className={styles.dropdownItem}>
                                     <Link href="/services">Services</Link>
                                 </li>

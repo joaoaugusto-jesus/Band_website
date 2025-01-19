@@ -1,0 +1,44 @@
+
+
+
+.footer {
+    width: 100%;
+    background-color: beige;
+    opacity: 0.3;
+    color: rgb(13, 13, 13);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fix the navbar to the top */
+    bottom: 0; /* Position it at the top */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    flex-direction: row;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.footerList {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+.footerContact {
+    margin-right: 2rem;
+}
+
+.footerIcons {
+    display: flex;
+    align-items: center;
+}
+
+.iconsFooter {
+    width: 40px;
+    height: 40px;
+    margin-left: 1rem;
+}
