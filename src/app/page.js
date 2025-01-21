@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import styles from "./page.module.css";
 import Head from 'next/head';
 import Navbar from "./components/Navbar/page";
@@ -18,13 +18,14 @@ export default function Home() {
         <meta property="og:image" content="/path-to-image.jpg" />
         <meta property="og:url" content="https://yourbandwebsite.com" />
         <meta name="twitter:card" content="summary_large_image" />
+        
       </Head>
       <Navbar />
       
-      <main className={styles.main}>
+      
       <Hero />
         
-      </main>
+      
      <Footer />
     </div>
   );

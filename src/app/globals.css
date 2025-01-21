@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Anton&family=Caesar+Dressing&family=Chau+Philomene+One:ital@0;1&family=Creepster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+Salt&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,9 +20,23 @@ body {
 
 body {
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Caesar Dressing';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+  font-family: 'Bandlettring';
+  src: url('/public/assets/fonts/joni.woff') format('woff');
+       
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bandlettring';
+  src: url('/public/assets/fonts/joni.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
 
 * {

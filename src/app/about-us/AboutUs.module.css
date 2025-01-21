@@ -1,0 +1,52 @@
+
+.layout {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.title {
+    
+    
+    position: absolute; /* Ensure z-index takes effect */
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Higher z-index to appear above LayoutBg */
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-family: 'Bandlettring';
+}
+
+.title h1 {
+    font-size: 3rem;
+    font-family: 'Caesar Dressing';
+}
+.title h2 {
+    font-size: 2rem;
+    font-family: 'Creepster';
+}
+.title p {
+    font-size: 3rem;
+    font-family: 'Caesar Dressing';
+   
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+
+.list
+{
+    list-style-type: none;
+    padding: 0;
+}
+
+.items
+{
+    margin: 0.5rem 0;
+}

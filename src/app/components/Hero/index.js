@@ -1,25 +1,148 @@
+"use client";
+
+import { useState, useRef } from "react";
+import LayoutBg from "../LayoutBg/page";
 import styles from "./Hero.module.css";
-import Image from "next/image";
+import Button from "../Button";
 
 export default function Hero() {
-    return (
-        <div className={styles.hero}>
-            <div className={styles.logoBackground}>
-              <section className={styles.sectionHeader}> 
-                <h1>The Snazzy Raggamuffins</h1>
-                <p>Rock´n roll Covers and Original songs</p>
-                
-                </section>     
-           <audio controls className={styles.audioPlayer}>
-                    <source src="/assets/musics/perpetual.mp3" type="audio/mp3" />
-                    Your browser does not support the audio element.
-                </audio>
-                <video controls className={styles.videoPlayer}>
-                    <source src="/assets/vid/snazzy live at fandango.mp4" type="video/mp4" />
-                    Your browser does not support the video element.
-                </video>
-            </div>
-        </div> 
-      
-    );
+  const [currentTrack, setCurrentTrack] = useState(null);
+  const [currentVideo, setCurrentVideo] = useState(null);
+  const audioRef = useRef(null);
+  const videoRef = useRef(null);
+
+  const tracks = [
+    {
+      name: "Perpetual Blues Machine",
+      src: "/assets/musics/perpetual.mp3",
+    },
+    {
+      name: "Baby Tonight",
+      src: "/assets/musics/baby tonight.mp3",
+    },
+  ];
+
+  const videos = [
+    {
+      name: "Live at Fandangos",
+      src: "/assets/vid/snazzy live at fandango.mp4",
+    },
+    {
+      name: "Lonely Wolf Clip",
+      src: "/assets/vid/lonely wolf videoclip.mp4",
+    },
+  ];
+
+  const playTrack = (track) => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      setCurrentVideo(null);
+    }
+
+    if (audioRef.current && currentTrack?.name === track.name) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+      return;
+    }
+
+    setCurrentTrack(track);
+
+    setTimeout(() => {
+      if (audioRef.current) {
+        audioRef.current.load();
+        audioRef.current.play();
+      }
+    }, 0);
+  };
+
+  const playVideo = (video) => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      setCurrentTrack(null);
+    }
+
+    if (videoRef.current && currentVideo?.name === video.name) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+      return;
+    }
+
+    setCurrentVideo(video);
+
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.load();
+        videoRef.current.play();
+      }
+    }, 0);
+  };
+
+  return (
+    <div className={styles.layout}>
+      <LayoutBg />
+      <section className={styles.sectionHeader}>
+        <h1>The Snazzy Ragamuffins</h1>
+        <p>Rock´n Roll Covers and Original Songs</p>
+      </section>
+      <section className={styles.sectionMedia}>
+        <ul className="list-musics">
+          {tracks.map((track, index) => (
+            <li key={index} className="list-musics-items">
+              <Button
+                className={styles.musicButton}
+                onClick={() => playTrack(track)}
+              >
+                {track.name}
+              </Button>
+            </li>
+          ))}
+        </ul>
+
+        {currentTrack && (
+          <div className={styles.audioContainer}>
+            <h3>Now Playing: {currentTrack?.name}</h3>
+            <audio
+              ref={audioRef}
+              controls
+              autoPlay
+              className={styles.audioPlayer}
+              onEnded={() => setCurrentTrack(null)}
+            >
+              <source src={currentTrack?.src} type="audio/mp3" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        )}
+
+        <ul className="list-videos">
+          {videos.map((video, index) => (
+            <li key={index} className="list-videos-items">
+              <Button
+                className={styles.videoButton}
+                onClick={() => playVideo(video)}
+              >
+                {video.name}
+              </Button>
+            </li>
+          ))}
+        </ul>
+
+        {currentVideo && (
+          <div className={styles.videoContainer}>
+            <h3>Now Playing: {currentVideo?.name}</h3>
+            <video
+              ref={videoRef}
+              controls
+              autoPlay
+              className={styles.videoPlayer}
+              onEnded={() => setCurrentVideo(null)}
+            >
+              <source src={currentVideo?.src} type="video/mp4" />
+              Your browser does not support the video element.
+            </video>
+          </div>
+        )}
+      </section>
+    </div>
+  );
 }

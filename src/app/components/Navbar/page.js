@@ -16,18 +16,17 @@ export default function Navbar() {
     return (
         <header>
             <nav className={styles.navbar}>
-                <button className={styles.logoWrapper} link="./">
-                    <Image 
-                        src="/logo.webp" 
-                        alt="The Name of a Band"   
-                        width={200}
-                        height={200}
-                        className={styles.image}
-                       
-                        
-                    />
+            <Link className={styles.logoWrapper} href="/">
                     
-                </button>
+                        <Image 
+                            src="/logo.webp" 
+                            alt="The Name of a Band"   
+                            width={200}
+                            height={200}
+                            className={styles.image}
+                        />
+                  
+                </Link>
                
                 
                 <ul className={styles.navList}>
@@ -51,7 +50,7 @@ export default function Navbar() {
                                         <Link href="/">Merchandise</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
-                                        <Link href="/about">Live shows</Link>
+                                        <Link href="/about-us">About us</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
                                     <Link href="/services">Services</Link>
