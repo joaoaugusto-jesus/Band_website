@@ -39,32 +39,31 @@
 .sectionMedia {
     position: absolute; /* Ensure z-index takes effect */
     top: 45%;
-    left: 3%;
+    
     width: 100%;
     height: 100%;
     z-index: 1; /* Higher z-index to appear above LayoutBg */
 }
 
-.list-musics-items
-{
-    margin-left: 2rem;
-}
-.list-video {
+.listMusicsItems {
+    position: relative;
+    top: 0;
+    left: 2rem;
     width: 100%;
     height: 100%;
-    
-    position: absolute;
-    
-    z-index: 1; /* Ensure it appears above the layout background */
+    z-index: 2; /* Higher z-index to appear above LayoutBg */
 }
 
-.list-video-title {
-    position: absolute;
-    height: auto; /* Adjust height as needed */
-    z-index: 3; /* Higher z-index to appear above LayoutBg */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    text-align: center;
+.listVideoItems
+{
+    position: relative;
+    top: 0;
+    left: 2rem;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Higher z-index to appear above LayoutBg */
 }
+
 
 .audioContainer h3
 {
@@ -91,8 +90,8 @@
 .videoPlayer {
     width: 36%;
     position: absolute;
-    top: -40;
-    right: 6rem;
+    top: -50;
+    right: 5rem;
     z-index: 1; /* Ensure it appears above the layout background */
     padding: 1rem;
 }

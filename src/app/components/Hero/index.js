@@ -87,7 +87,7 @@ export default function Hero() {
       <section className={styles.sectionMedia}>
         <ul className="list-musics">
           {tracks.map((track, index) => (
-            <li key={index} className="list-musics-items">
+            <li key={index} className={styles.listMusicsItems}>
               <Button
                 className={styles.musicButton}
                 onClick={() => playTrack(track)}
@@ -116,7 +116,7 @@ export default function Hero() {
 
         <ul className="list-videos">
           {videos.map((video, index) => (
-            <li key={index} className="list-videos-items">
+            <li key={index} className={styles.listVideoItems}>
               <Button
                 className={styles.videoButton}
                 onClick={() => playVideo(video)}
