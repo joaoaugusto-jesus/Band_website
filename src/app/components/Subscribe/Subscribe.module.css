@@ -93,3 +93,32 @@
     cursor: pointer;
     z-index: 3;
 }
+
+@media (max-width: 768px) {
+    .subscribe
+    {
+        height: 50vh;
+    }
+    .subscribeContainer
+    {
+        max-width: 300px;
+    }
+    .subscribeTitle
+    {
+        font-size: 20px;
+    }
+    .subscribeText
+    {
+        font-size: 14px;
+    }
+    .subscribeEmail
+    {
+        padding: 5px;
+        font-size: 14px;
+    }
+    .styles.subscribeButton
+    {
+        padding: 5px;
+        font-size: 14px;
+    }
+}

@@ -106,3 +106,29 @@
     right: 6rem;
     z-index: 1; /* Ensure it appears above the layout background */
 }
+
+@media (max-width: 768px) {
+    .sectionHeader h1 {
+        font-size: 1.5rem;
+    }
+    .sectionHeader p {
+        font-size: 1rem;
+    }
+    .audioPlayer {
+        width: 100%;
+        right: 0;
+    }
+    .videoPlayer {
+        width: 100%;
+        right: 0;
+    }
+    .sectionMedia {
+        top: 32%;
+    }
+    .listMusicsItems 
+    {
+        display: flex;
+        flex: 1;    }
+}
+
+
