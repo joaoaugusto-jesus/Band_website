@@ -88,9 +88,9 @@
 }
 
 .videoPlayer {
-    width: 36%;
+    width: 46%;
     position: absolute;
-    top: -50;
+    top: -8%;
     right: 5rem;
     z-index: 1; /* Ensure it appears above the layout background */
     padding: 1rem;
@@ -119,8 +119,9 @@
         right: 0;
     }
     .videoPlayer {
-        width: 100%;
+       width: 56%;
         right: 0;
+        top: -5%;
     }
     .sectionMedia {
         top: 32%;
@@ -132,3 +133,32 @@
 }
 
 
+@media (max-width: 500px) {
+   
+    .videoPlayer {
+       width: 66%;
+        right: 0;
+        top: -5%;
+    }
+    
+}
+
+@media (max-width: 400px) {
+   
+    .videoPlayer {
+       width: 60%;
+        right: 0;
+        top: -1%;
+    }
+    
+}
+
+@media (max-width: 350px) {
+   
+    .videoPlayer {
+       width: 50%;
+        right: 0;
+        top: -1%;
+    }
+    
+}
