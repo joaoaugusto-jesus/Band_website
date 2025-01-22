@@ -88,7 +88,7 @@
     min-width: 160px;
     z-index: 1;
   }
-  dropdown-menu:hover{
+  .dropdown-menu:hover{
     .bar1, .bar2, .bar3 {
     background-color:  #ff9900;
   }
