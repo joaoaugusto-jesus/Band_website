@@ -5,17 +5,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 3;
-    padding: 2rem;
-    margin: 2rem;
+   
+   
 }
 .subscribeContainer
-{
-
+{   
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem;
+    opacity: 0.9;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,6 +22,9 @@
     width: 100%;
     max-width: 400px;
     z-index: 3;
+    text-align: center;
+    font-family: 'Chau', cursive;
+    background-color: #f5f5f5;
     
 }
 
@@ -31,14 +33,14 @@
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
-    z-index: 3;
+    
 }
 
 .subscribeText
 {
     font-size: 16px;
     margin-bottom: 20px;
-    z-index: 3;
+   
 }
 
 .subscribeForm
@@ -48,16 +50,16 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    z-index: 3;
+    
 }
 
-.styles.subscribeEmail{
+.subscribeEmail{
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    z-index: 3;
+    
 }
 
 .styles.subscribeButton
