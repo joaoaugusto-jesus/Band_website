@@ -8,6 +8,8 @@ import Button from "../Button";
 export default function Hero() {
   const [currentTrack, setCurrentTrack] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
   const audioRef = useRef(null);
   const videoRef = useRef(null);
 
@@ -37,15 +39,21 @@ export default function Hero() {
     if (videoRef.current) {
       videoRef.current.pause();
       setCurrentVideo(null);
+      setIsPlaying(false);
     }
 
     if (audioRef.current && currentTrack?.name === track.name) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play();
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
       return;
     }
 
     setCurrentTrack(track);
+    setIsPlaying(true);
 
     setTimeout(() => {
       if (audioRef.current) {
@@ -59,15 +67,21 @@ export default function Hero() {
     if (audioRef.current) {
       audioRef.current.pause();
       setCurrentTrack(null);
+      setIsPlaying(false);
     }
 
     if (videoRef.current && currentVideo?.name === video.name) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play();
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
       return;
     }
 
     setCurrentVideo(video);
+    setIsPlaying(true);
 
     setTimeout(() => {
       if (videoRef.current) {
@@ -89,7 +103,7 @@ export default function Hero() {
           {tracks.map((track, index) => (
             <li key={index} className={styles.listMusicsItems}>
               <Button
-                className={styles.musicButton}
+                className={`${styles.musicButton} ${currentTrack?.name === track.name && isPlaying ? styles.active : ''}`}
                 onClick={() => playTrack(track)}
               >
                 {track.name}
@@ -106,7 +120,10 @@ export default function Hero() {
               controls
               autoPlay
               className={styles.audioPlayer}
-              onEnded={() => setCurrentTrack(null)}
+              onEnded={() => {
+                setCurrentTrack(null);
+                setIsPlaying(false);
+              }}
             >
               <source src={currentTrack?.src} type="audio/mp3" />
               Your browser does not support the audio element.
@@ -118,7 +135,7 @@ export default function Hero() {
           {videos.map((video, index) => (
             <li key={index} className={styles.listVideoItems}>
               <Button
-                className={styles.videoButton}
+                className={`${styles.videoButton} ${currentVideo?.name === video.name && isPlaying ? styles.active : ''}`}
                 onClick={() => playVideo(video)}
               >
                 {video.name}
@@ -135,7 +152,10 @@ export default function Hero() {
               controls
               autoPlay
               className={styles.videoPlayer}
-              onEnded={() => setCurrentVideo(null)}
+              onEnded={() => {
+                setCurrentVideo(null);
+                setIsPlaying(false);
+              }}
             >
               <source src={currentVideo?.src} type="video/mp4" />
               Your browser does not support the video element.
