@@ -56,7 +56,7 @@ export default function Navbar() {
                                     <Link href="/services">Services</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
-                                    <Link href="/contact">Contact</Link>
+                                    <Link href="/contact-us">Contact</Link>
                                 </li>
                             </ul>
                         )}

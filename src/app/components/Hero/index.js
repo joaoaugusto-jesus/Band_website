@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import LayoutBg from "../LayoutBg/page";
 import styles from "./Hero.module.css";
 import Button from "../Button";
+import Subscribe from '../Subscribe';
 
 export default function Hero() {
   const [currentTrack, setCurrentTrack] = useState(null);
@@ -162,7 +163,11 @@ export default function Hero() {
             </video>
           </div>
         )}
+        
+        <Subscribe />
       </section>
+     
+      
     </div>
   );
 }
