@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-     output: 'export',  // to export the app as static HTML
-};
-
-export default nextConfig;
+    // Conditionally add output based on environment
+    ...(process.env.NODE_ENV === 'production' ? { output: 'export' } : {}),
+  };
+  
+  export default nextConfig;

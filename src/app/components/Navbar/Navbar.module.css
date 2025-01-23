@@ -23,8 +23,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px; /* Adjust as needed */
-    height: 80px; /* Adjust as needed */
+    width: 4rem; /* Adjust as needed */
+    height: 4rem; /* Adjust as needed */
     overflow: hidden;
     border-radius: 10px;
     cursor: pointer; /* Optional for rounded edges */
@@ -149,3 +149,56 @@
     gap: 0.5rem;
     margin: 20px 20px 20px 20px;
   }
+
+  
+@media (max-width: 768px) {
+  .subscribe
+  {
+      height: 50vh;
+  }
+  .subscribeContainer
+  {
+      max-width: 300px;
+  }
+  .subscribeTitle
+  {
+      font-size: 20px;
+  }
+  .subscribeText
+  {
+      font-size: 14px;
+  }
+  .subscribeEmail
+  {
+      padding: 5px;
+      font-size: 14px;
+  }
+  .styles.subscribeButton
+  {
+      padding: 5px;
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 768px)
+{
+  .subscribeContainer
+  {
+       padding: 1rem;
+  }
+ 
+
+  .logoWrapper {
+    width: 3rem; /* Adjust as needed */
+    height: 3rem; /* Adjust as needed */
+  }
+}
+
+@media (max-width: 500px)
+{}
+
+@media (max-width: 400px)
+{}
+
+@media (max-width: 350px)
+{}

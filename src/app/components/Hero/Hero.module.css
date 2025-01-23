@@ -88,10 +88,10 @@
 }
 
 .videoPlayer {
-    width: 46%;
+    width: 30%;
     position: absolute;
     top: -8%;
-    right: 5rem;
+    right: 2rem;
     z-index: 1; /* Ensure it appears above the layout background */
     padding: 1rem;
 }
@@ -150,9 +150,19 @@
         right: 0;
         top: -1%;
     }
+    .videoContainer h3
+{   
+    
+    font-size: 1rem;
+ 
+}
+    .audioContainer h3
+{
+    
+    font-size: 1rem;
     
 }
-
+}
 @media (max-width: 350px) {
    
     .videoPlayer {
