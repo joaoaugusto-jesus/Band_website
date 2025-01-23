@@ -1,16 +1,24 @@
 
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 83vh;
+}
+
+.content {
+    flex: 1;
+}
 
 
 .footer {
     width: 100%;
-    background-color: rgba(204, 37, 198, 0);
+    background-color: rgba(204, 37, 198);
     
-    color: rgb(239, 207, 240);
-    padding: 1rem;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed; /* Fix the navbar to the top */
+  
     bottom: 0; /* Position it at the top */
     z-index: 1000; /* Ensure it stays on top of other elements */
     flex-direction: row;
