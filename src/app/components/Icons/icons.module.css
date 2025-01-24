@@ -3,18 +3,20 @@
     position: relative;
     display: flex;
     align-items: center;
-    width: 100%;
     justify-content: center;
+   
     flex-wrap: wrap;
-    min-height: 5rem;
+   
+    
     bottom: 0;
-    height: auto; /* Ensure it grows with content */
+   
     
     
 }
 
 .pageIcons {
-   
+    
+     /* Ensure it grows with content */
      z-index: 5000;
 }
 

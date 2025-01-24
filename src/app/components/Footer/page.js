@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <div className={styles.container}>
+        <div className={styles.containerFooter}>
             <div className={styles.content}>
                 {/* Your main page content goes here */}
             </div>

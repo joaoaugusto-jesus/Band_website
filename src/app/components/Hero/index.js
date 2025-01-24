@@ -5,7 +5,7 @@ import LayoutBg from "../LayoutBg/page";
 import styles from "./Hero.module.css";
 import Button from "../Button";
 import Subscribe from '../Subscribe';
-import PageIcon from '../Icons/page';
+
 
 export default function Hero() {
   const [currentTrack, setCurrentTrack] = useState(null);
@@ -168,7 +168,7 @@ export default function Hero() {
         <Subscribe />
       </section>
      
-      <PageIcon />
+      
     </div>
   );
 }

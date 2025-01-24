@@ -1,9 +1,9 @@
 
-.container {
+.containerFooter {
    
     display: flex;
     flex-direction: column;
-    min-height:100vh; 
+    
     
 }
 
@@ -14,7 +14,7 @@
 
 
 .footer {
-    position: relative;
+    bottom: 0;
     width: 100%;
     height: auto;
     background-color: #9e1c8f;

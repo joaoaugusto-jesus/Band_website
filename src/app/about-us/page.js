@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar/page";
 import Footer from "../components/Footer/page";
 import LayoutBg from "../components/LayoutBg/page";
+import PageIcon from "../components/Icons/page";
 import styles from "./AboutUs.module.css";
 
 export default function AboutUs() {
@@ -26,6 +27,7 @@ export default function AboutUs() {
                     </div>
                 </div>
             </div>
+            <PageIcon />
             <Footer />
         </>
     )

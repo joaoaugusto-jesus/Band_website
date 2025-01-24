@@ -6,6 +6,7 @@ import styles from "./ContactUs.module.css";
 import Navbar from "../components/Navbar/page";
 import Footer from "../components/Footer/page";
 import Button from "../components/Button"; 
+import PageIcon from "../components/Icons/page";
 
 export default function ContactUs() {
     const [formData, setFormData] = useState({
@@ -73,6 +74,7 @@ export default function ContactUs() {
           </div>
           <Button type="submit">Submit Form</Button>
       </form>
+        <PageIcon />
       <Footer />
     </>
   );
