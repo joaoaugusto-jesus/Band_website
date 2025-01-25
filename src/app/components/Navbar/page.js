@@ -2,7 +2,7 @@
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
     
@@ -13,16 +13,30 @@ export default function Navbar() {
         document.getElementById("menu-icon").classList.toggle(styles.change);
     };
 
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+            if (!e.target.closest(`#menu-icon`) && dropdownOpen) {
+                setDropdownOpen(false);
+                document.getElementById("menu-icon").classList.remove(styles.change);
+            }
+        };
+    
+        document.addEventListener("click", handleOutsideClick);
+        return () => {
+            document.removeEventListener("click", handleOutsideClick);
+        };
+    }, [dropdownOpen]);
+    
     return (
         <header>
             <nav className={styles.navbar}>
             <Link className={styles.logoWrapper} href="/">
                     
                         <Image 
-                            src="/logo.webp" 
+                            src="/assets/img/logo.webp" // url("/assets/img/logo.png");
                             alt="The Name of a Band"   
-                            width={200}
-                            height={200}
+                            width={400}
+                            height={400}
                             className={styles.image}
                         />
                   
