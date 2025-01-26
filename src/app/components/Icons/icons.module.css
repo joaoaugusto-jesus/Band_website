@@ -16,12 +16,12 @@
 
 .pageIcons {
     
-     /* Ensure it grows with content */
-     z-index: 5000;
      display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 0;
+     justify-content: space-around;
+     align-items: center;
+     margin-top: 1rem; /* Add spacing above */
+     padding: 1rem;
+     width: 100%;
 }
 
 

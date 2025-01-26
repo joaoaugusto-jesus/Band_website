@@ -1,15 +1,15 @@
 
 .containerFooter {
    
-    display: flex;
-   
-    position: fixed; /* Fix the navbar to the top */
-    bottom: 0; /* Position it at the top */
-    z-index: 1000; /* Ensure it stays on top of other elements */
-    flex-direction: row;
-    width: 100%; /* Make it span the full width */
-    height: auto; /* Adjust height as needed */
-    margin: 0; 
+    display: flex; /* Flex layout */
+    flex-direction: row; /* Align items horizontally */
+    width: 100%; /* Full width */
+    height: auto; /* Dynamic height */
+    margin: 0; /* Remove extra margins */
+    padding: 2rem; /* Add padding for spacing */
+    background-color: #9e1c8f;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+
     
 }
 

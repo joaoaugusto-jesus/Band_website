@@ -17,7 +17,8 @@ export default function Footer() {
                     <li className={styles.footerAboutUs}>
                         <Link href="/about-us">
                             <h3>About us</h3>
-                            <p>Phone: 555-555-555</p>
+                            
+                            
                             <p>Email:</p>
                         </Link>
                     </li>

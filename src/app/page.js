@@ -20,7 +20,7 @@ export default function Home() {
         <meta property="og:image" content="/path-to-image.jpg" />
         <meta property="og:url" content="https://yourbandwebsite.com" />
         <meta name="twitter:card" content="summary_large_image" />
-        
+        <link rel="icon" href="/logo.ico" type="img/png" />
       </Head>
       <Navbar />
       

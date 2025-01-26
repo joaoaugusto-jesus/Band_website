@@ -167,9 +167,9 @@ export default function Hero() {
           </div>
         )}
       </section>
-      <Subscribe />
+     
       <Gallery />
-      
+       <Subscribe />
       <PageIcon />
       <Footer />
     </div>
