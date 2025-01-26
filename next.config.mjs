@@ -2,6 +2,10 @@
 const nextConfig = {
     // Conditionally add output based on environment
     ...(process.env.NODE_ENV === 'production' ? { output: 'export' } : {}),
+
+    images: {
+      domains: ['res.cloudinary.com'],
+    },
   };
   
   export default nextConfig;

@@ -31,9 +31,9 @@ export default function Navbar() {
         <header>
             <nav className={styles.navbar}>
             <Link className={styles.logoWrapper} href="/">
-                    
+            
                         <Image 
-                            src="/assets/img/logo.webp" // url("/assets/img/logo.png");
+                            src="https://res.cloudinary.com/dlcvk0f17/image/upload/v1737933785/logo_dgtipz.webp" // url("/assets/img/logo.png");
                             alt="The Name of a Band"   
                             width={400}
                             height={400}
