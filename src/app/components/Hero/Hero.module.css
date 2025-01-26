@@ -7,7 +7,7 @@
 
 .sectionHeader {
     position: absolute; /* Ensure z-index takes effect */
-    top: 10%;
+    top: 5%;
     left: 0;
     width: 100%;
     height: auto; /* Adjust height as needed */
@@ -85,12 +85,14 @@
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
     text-align:center;
     padding: 1rem;
+    
 }
 
 .videoPlayer {
-    width: 30%;
+    width: 50%;
+    height: auto;
     position: absolute;
-    top: -4%;
+    top: -60%;
     right: 2rem;
     z-index: 1; /* Ensure it appears above the layout background */
     padding: 1rem;
@@ -126,9 +128,9 @@
         right: 0;
     }
     .videoPlayer {
-       width: 56%;
+       width: 50%;
         right: 0;
-        top: -5%;
+        top: -20%;
     }
     
     .listMusicsItems 
@@ -141,9 +143,9 @@
 @media (max-width: 500px) {
    
     .videoPlayer {
-       width: 66%;
+       width: 55%;
         right: 0;
-        top: -5%;
+        top: 0%;
     }
     
 }
@@ -153,7 +155,7 @@
     .videoPlayer {
        width: 60%;
         right: 0;
-        top: -1%;
+        top: 15%;
     }
     .audioPlayer {
     width: 50%;
@@ -177,7 +179,7 @@
     .videoPlayer {
        width: 50%;
         right: 0;
-        top: -1%;
+        top: 20%;
     }
     .audioPlayer {
         width: 50%;
