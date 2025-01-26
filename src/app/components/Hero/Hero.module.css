@@ -7,7 +7,7 @@
 
 .sectionHeader {
     position: absolute; /* Ensure z-index takes effect */
-    top: 15%;
+    top: 10%;
     left: 0;
     width: 100%;
     height: auto; /* Adjust height as needed */
@@ -38,7 +38,7 @@
 
 .sectionMedia {
     position: absolute; /* Ensure z-index takes effect */
-    top: 30%;
+    top: 18%;
     
     width: 100%;
   
@@ -108,11 +108,18 @@
 }
 
 @media (max-width: 768px) {
+    .sectionHeader {
+        top:3%;
+    }
     .sectionHeader h1 {
         font-size: 1.5rem;
     }
     .sectionHeader p {
         font-size: 1rem;
+    }
+
+    .sectionMedia {
+        top: 7%;
     }
     .audioPlayer {
         width: 100%;
@@ -123,9 +130,7 @@
         right: 0;
         top: -5%;
     }
-    .sectionMedia {
-        top: 32%;
-    }
+    
     .listMusicsItems 
     {
         display: flex;

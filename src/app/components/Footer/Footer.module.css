@@ -61,3 +61,24 @@
     margin-right: 2rem;
     font-family: 'Roboto', cursive;
 }
+
+@media screen and (max-width: 768px) {
+    .containerFooter {
+        flex-direction: column;
+    }
+    .footerList {
+        flex-direction: column;
+    }
+    .footerContact p
+    {
+        margin-right: 0;
+    }
+    .footerAboutUs p
+    {
+        margin-right: 0;
+    }
+    .privacyPolicy p
+    {
+        margin-right: 0;
+    }
+}

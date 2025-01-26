@@ -5,5 +5,51 @@
     margin-top: 50px;
     top: 50%;
     left: 50%;
-
+    color: #ccc;
+    justify-items:center;
+    font-size: 1.5rem;
+   
 }
+
+.formName
+{   
+   
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.formNameInput{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.formEmail
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.formEmailInput
+{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.formMessage
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.formMessageInput{
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+

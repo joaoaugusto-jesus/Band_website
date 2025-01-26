@@ -46,7 +46,7 @@ export default function ContactUs() {
     <Navbar />
     <LayoutBg />
       <form onSubmit={handleSubmit} className={styles.form}>
-          <div>
+          <div className={styles.formGroup}>
               <label htmlFor="name" className={styles.formName}>Name</label>
               <input 
               type="text" 
@@ -54,8 +54,7 @@ export default function ContactUs() {
               value={formData.name}
               onChange={handleChange}
               className={styles.formNameInput} required placeholder="Your name" />
-          </div>
-          <div>
+          
               <label htmlFor="email" className={styles.formEmail}>Email</label>
               <input 
                 type="email" 
@@ -63,8 +62,7 @@ export default function ContactUs() {
                 value={formData.email} 
                 onChange={handleChange}
                 className={styles.formEmailInput} required placeholder="email@example.com" />
-          </div>
-          <div>
+         
               <label htmlFor="message" className={styles.formMessage}>Message</label>
               <textarea 
                 name="message"
@@ -72,7 +70,7 @@ export default function ContactUs() {
                 onChange={handleChange}
                 className={styles.formMessageInput} required rows="3" placeholder="Enter Message"></textarea>
           </div>
-          <Button type="submit">Submit Form</Button>
+          <Button className={styles.Button} type="submit">Submit</Button>
       </form>
         <PageIcon />
       <Footer />
