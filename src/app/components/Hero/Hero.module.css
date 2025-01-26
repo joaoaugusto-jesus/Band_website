@@ -38,7 +38,7 @@
 
 .sectionMedia {
     position: absolute; /* Ensure z-index takes effect */
-    top: 45%;
+    top: 30%;
     
     width: 100%;
   
@@ -90,7 +90,7 @@
 .videoPlayer {
     width: 30%;
     position: absolute;
-    top: -8%;
+    top: -4%;
     right: 2rem;
     z-index: 1; /* Ensure it appears above the layout background */
     padding: 1rem;

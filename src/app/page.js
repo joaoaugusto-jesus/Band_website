@@ -27,8 +27,7 @@ export default function Home() {
       
       <Hero />
         
-      <PageIcon />
-     <Footer />
+    
     </div>
   );
 }

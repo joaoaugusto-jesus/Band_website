@@ -5,7 +5,9 @@ import LayoutBg from "../LayoutBg/page";
 import styles from "./Hero.module.css";
 import Button from "../Button";
 import Subscribe from '../Subscribe';
-
+import Gallery from '../Gallery/page';
+import Footer from "../Footer/page"; // Corrected import path
+import PageIcon from "../Icons/page";
 
 export default function Hero() {
   const [currentTrack, setCurrentTrack] = useState(null);
@@ -164,11 +166,12 @@ export default function Hero() {
             </video>
           </div>
         )}
-        
-        <Subscribe />
       </section>
-     
+      <Subscribe />
+      <Gallery />
       
+      <PageIcon />
+      <Footer />
     </div>
   );
 }
