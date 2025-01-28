@@ -8,7 +8,7 @@ import Subscribe from '../Subscribe';
 import Gallery from '../Gallery/page';
 import Footer from "../Footer/page"; 
 import PageIcon from "../Icons/page";
-import { gigs } from "../../Data/gigs"; 
+
 import Agenda from "../Agenda/page";
 import Merchandise from "../Merchandise/page";
 
@@ -177,7 +177,7 @@ export default function Hero() {
           </div>
         )} 
       
-          <Agenda gigs={gigs} />
+          <Agenda />
           <Merchandise />
       </section>
      

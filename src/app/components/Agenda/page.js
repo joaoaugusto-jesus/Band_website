@@ -1,8 +1,25 @@
 import styles from './Agenda.module.css';
-import { gigs } from "../../Data/gigs"; 
+
+const gigsData = [
+    {
+      id: 1,
+      date: "2025-02-14",
+      venue: "The Grand Arena",
+      location: "New York, NY",
+    },
+    {
+      id: 2,
+      date: "2025-02-20",
+      venue: "City Lights Theater",
+      location: "Los Angeles, CA",
+    },
+  ];
+
+export default function Agenda() {
+
+ 
 
 
-export default function Agenda({ gigs }) {
     return (
       <table className={styles.table}>
         <thead className={styles.head}>
@@ -13,7 +30,7 @@ export default function Agenda({ gigs }) {
           </tr>
         </thead>
         <tbody className={styles.body}>
-          {gigs.map((gig) => (
+          {gigsData.map((gig) => (
             <tr key={gig.id} className={styles.row}>
               <th className={styles.date}>{gig.date}</th>
             <th className={styles.venue}>{gig.venue}</th>
@@ -24,4 +41,4 @@ export default function Agenda({ gigs }) {
       </table>
     ); 
   }
-  console.log(gigs)
+  console.log(gigsData)
