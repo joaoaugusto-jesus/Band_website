@@ -98,7 +98,7 @@
     width: 30%;
     height: auto;
     position: absolute;
-    top: -45;
+    top: 2%;
     right: 2rem;
     z-index: 1; /* Ensure it appears above the layout background */
     padding: 1rem;
