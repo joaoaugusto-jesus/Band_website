@@ -14,7 +14,7 @@ export default function Merchandise() {
         shirts && shirts.length > 0 ? 
         (shirts.map((shirt) => (
           <div key={shirt.id} className={styles.card}>
-            <Image src={shirt.src} alt={shirt.name} width={100} height={100} className={styles.photo}/>
+            <Image src={shirt.src} alt={shirt.name} width={50} height={50} className={styles.photo}/>
             <h2 className={styles.name}>{shirt.name}</h2>
             <p className={styles.price}>${shirt.price}</p>
           </div>

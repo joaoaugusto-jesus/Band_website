@@ -45,6 +45,12 @@
     z-index: 1; /* Higher z-index to appear above LayoutBg */
 }
 
+.subtitle{
+    color: rgb(237, 229, 236);
+    font-size: 1.5rem;
+    font-family: 'Chau Philomene One', cursive; 
+    margin-left: 2rem;
+}
 .listMusicsItems {
     position: relative;
     top: 0;
@@ -68,7 +74,7 @@
 .audioContainer h3
 {
     color: rgb(237, 229, 236);
-    font-size: 2rem;
+    font-size: 1rem;
     font-family: 'Chau Philomene One', cursive; 
     background-color: rgba(0, 0, 0, 0.368); 
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
@@ -79,7 +85,7 @@
 .videoContainer h3
 {   
     color: rgb(237, 229, 236);
-    font-size: 2rem;
+    font-size: 1rem;
     font-family: 'Chau Philomene One', cursive; 
     background-color: rgba(0, 0, 0, 0.368); 
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
@@ -89,7 +95,7 @@
 }
 
 .videoPlayer {
-    width: 35%;
+    width: 30%;
     height: auto;
     position: absolute;
     top: -45;
@@ -128,9 +134,9 @@
         right: 0;
     }
     .videoPlayer {
-       width: 50%;
+       width: 40%;
         right: 0;
-        top: -20%;
+        top: 0%;
     }
     
     .listMusicsItems 
@@ -153,9 +159,9 @@
 @media (max-width: 400px) {
    
     .videoPlayer {
-       width: 60%;
+       width: 50%;
         right: 0;
-        top: 15%;
+        top: 0;
     }
     .audioPlayer {
     width: 50%;
@@ -179,7 +185,7 @@
     .videoPlayer {
        width: 50%;
         right: 0;
-        top: 20%;
+        top: 55;
     }
     .audioPlayer {
         width: 50%;

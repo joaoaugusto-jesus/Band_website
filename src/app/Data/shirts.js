@@ -3,7 +3,7 @@ export const shirts = [
       id: 1,
       name: "Band T-Shirt",
       price: 20,
-    src: '/assets/img/snazzy back.png',
+      src: '/assets/img/snazzy back.png',
       alt:"Band snazzy shirt"
     },
     {

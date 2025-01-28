@@ -38,8 +38,12 @@ export default function Hero() {
       src: "/assets/vid/snazzy live at fandango.mp4",
     },
     {
-      name: "Lonely Wolf Clip",
+      name: "Lonely Wolf",
       src: "/assets/vid/lonely wolf videoclip.mp4",
+    },
+    {
+      name: "Surfer Girl",
+      src: "/assets/vid/Surfer Girl Video Clip.mp4",
     },
   ];
 
@@ -108,6 +112,7 @@ export default function Hero() {
       </section>
       <section className={styles.sectionMedia}>
         <ul className="list-musics">
+            <h2 className={styles.subtitle}>Musics</h2>  
           {tracks.map((track, index) => (
             <li key={index} className={styles.listMusicsItems}>
               <Button
@@ -140,6 +145,7 @@ export default function Hero() {
         )}
 
         <ul className="list-videos">
+          <h2 className={styles.subtitle}>Videos</h2>
           {videos.map((video, index) => (
             <li key={index} className={styles.listVideoItems}>
               <Button
