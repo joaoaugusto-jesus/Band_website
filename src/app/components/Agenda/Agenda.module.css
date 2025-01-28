@@ -47,3 +47,46 @@
     font-size: 1.5rem;
     font-weight: 700;
 }
+
+
+@media (max-width: 768px) {
+    .date{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .venue{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .location{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+}
+
+
+@media (max-width: 500px) {
+   
+    .date{
+        font-size: 0.6rem;
+        font-weight: 700;
+    }
+    .venue{
+        font-size: 0.6rem;
+        font-weight: 700;
+    }
+    .location{
+        font-size: 0.6rem;
+        font-weight: 700;
+    }
+    
+}
+
+
+@media (max-width: 350px) {
+   .table{
+    margin: 1rem 0 1rem 0;
+   }
+    
+    
+}
