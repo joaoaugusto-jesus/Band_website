@@ -1,0 +1,49 @@
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4rem 0 2rem 0;
+    color: #ccc;
+    font-family: 'Rock Salt', cursive;
+    
+    
+}
+
+
+.head{
+    background-color: #333;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.body{
+    background-color: #444;
+    color: #ccc;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 4rem;
+    text-align: center;
+}
+.row{
+    
+    margin: 0 2rem 1rem 2rem;
+    padding: 2rem;
+    align-items: center;
+   
+    border-bottom: 1px solid #9e1c8f;
+    justify-items: center;
+
+}
+.date{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.venue{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.location{
+    font-size: 1.5rem;
+    font-weight: 700;
+}

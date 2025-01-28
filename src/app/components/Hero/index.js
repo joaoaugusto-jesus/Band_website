@@ -6,8 +6,12 @@ import styles from "./Hero.module.css";
 import Button from "../Button";
 import Subscribe from '../Subscribe';
 import Gallery from '../Gallery/page';
-import Footer from "../Footer/page"; // Corrected import path
+import Footer from "../Footer/page"; 
 import PageIcon from "../Icons/page";
+import { gigs } from "../../Data/gigs"; 
+import Agenda from "../Agenda/page";
+import Merchandise from "../Merchandise/page";
+
 
 export default function Hero() {
   const [currentTrack, setCurrentTrack] = useState(null);
@@ -165,11 +169,14 @@ export default function Hero() {
               Your browser does not support the video element.
             </video>
           </div>
-        )}
+        )} 
+      
+          <Agenda gigs={gigs} />
+          <Merchandise />
       </section>
      
       <Gallery />
-       <Subscribe />
+      <Subscribe />
       <PageIcon />
       <Footer />
     </div>
