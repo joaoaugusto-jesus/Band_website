@@ -95,8 +95,8 @@
 }
 
 .videoPlayer {
-    width: 30%;
-    height: auto;
+    width: 60%;
+    height: 18rem;
     position: absolute;
     top: 2%;
     right: 2rem;
