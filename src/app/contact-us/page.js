@@ -12,8 +12,11 @@ export default function ContactUs() {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
-        message: ""
+        message: "",
+        phone: ""
     });
+    const [submissionResult, setSubmissionResult] = useState(null);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -36,9 +39,21 @@ export default function ContactUs() {
             }),
         });
         const result = await response.json();
+        setSubmissionResult(result);
+        console.log(result);
         if (result.success) {
-            console.log(result);
+          console.log('Success', result);
+        } else {
+          console.log('Error', data);
+          
         }
+    
+        // Reset form fields
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+      });
     }
 
   return (
@@ -50,10 +65,12 @@ export default function ContactUs() {
               <label htmlFor="name" className={styles.formName}>Name</label>
               <input 
               type="text" 
-              name="name" 
+              name="name"
+              maxLength={40} 
               value={formData.name}
               onChange={handleChange}
-              className={styles.formNameInput} required placeholder="Your name" />
+              className={styles.formNameInput} 
+              required placeholder="Your name" />
           
               <label htmlFor="email" className={styles.formEmail}>Email</label>
               <input 
@@ -61,17 +78,31 @@ export default function ContactUs() {
                 name="email"
                 value={formData.email} 
                 onChange={handleChange}
-                className={styles.formEmailInput} required placeholder="email@example.com" />
-         
-              <label htmlFor="message" className={styles.formMessage}>Message</label>
+                className={styles.formEmailInput}
+                maxLength={40} 
+                required placeholder="email@example.com" />
+              <label htmlFor="phone" className={styles.formEmail}>Phone number</label>
+              <input 
+                type="tel" 
+                name="phone"
+                value={formData.phone} 
+                onChange={handleChange}
+                className={styles.formEmailInput}
+                maxLength={40} 
+                required placeholder="+351 999 999 999" />
+              <label htmlFor="message" className={styles.formPhone}>Phone</label>
               <textarea 
                 name="message"
                 value={formData.message} 
                 onChange={handleChange}
-                className={styles.formMessageInput} required rows="3" placeholder="Enter Message"></textarea>
+                className={styles.formMessageInput} 
+                required rows="3" placeholder="Enter Message"></textarea>
           </div>
-          <Button className={styles.Button} type="submit">Submit</Button>
+          <Button className={styles.Button} type="submit">Submit</Button> 
+          {submissionResult && submissionResult.success && <p className={styles.success}>Sent successfully!</p> }
+          {submissionResult && !submissionResult.success && <p className={styles.error}>Failed to send!</p>}
       </form>
+     
         <PageIcon />
       <Footer />
     </>

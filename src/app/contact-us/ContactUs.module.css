@@ -40,6 +40,11 @@
     border: 1px solid #ccc;
     padding: 10px;
 }
+
+.formPhone{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .formMessage
 {
     margin-top: 20px;
@@ -53,3 +58,9 @@
     padding: 10px;
 }
 
+.success{
+    color: rgb(227, 236, 227);
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

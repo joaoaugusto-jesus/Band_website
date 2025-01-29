@@ -61,7 +61,7 @@ export default function Navbar() {
                         {dropdownOpen && (
                              <ul id="dropdown-menu" className={styles.dropdownMenu}>
                                 <li className={styles.dropdownItem}>  
-                                        <Link href="/">Merchandise</Link>
+                                        <Link href="/media">Media</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
                                         <Link href="/about-us">About us</Link>

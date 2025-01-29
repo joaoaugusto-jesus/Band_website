@@ -1,0 +1,150 @@
+
+
+
+.sectionMedia {
+    position: absolute; /* Ensure z-index takes effect */
+    top: 20%;
+    
+    width: 100%;
+  
+    z-index: 1; /* Higher z-index to appear above LayoutBg */
+}
+
+.subtitle{
+    color: rgb(237, 229, 236);
+    font-size: 1.5rem;
+    font-family: 'Chau Philomene One', cursive; 
+    margin-left: 2rem;
+}
+.listMusicsItems {
+    position: relative;
+    top: 0;
+    left: 2rem;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Higher z-index to appear above LayoutBg */
+}
+
+.listVideoItems
+{
+    position: relative;
+    top: 0;
+    left: 2rem;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Higher z-index to appear above LayoutBg */
+}
+
+
+.audioContainer h3
+{
+    color: rgb(237, 229, 236);
+    font-size: 1rem;
+    font-family: 'Chau Philomene One', cursive; 
+    background-color: rgba(0, 0, 0, 0.368); 
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align:center;
+    padding: 1rem;
+}
+
+.videoContainer h3
+{   
+    color: rgb(237, 229, 236);
+    font-size: 1rem;
+    font-family: 'Chau Philomene One', cursive; 
+    background-color: rgba(0, 0, 0, 0.368); 
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align:center;
+    padding: 1rem;
+    
+}
+
+.videoPlayer {
+    width: auto;
+    height: 18rem;
+    position: absolute;
+    top: 2%;
+    right: 2rem;
+    z-index: 1; /* Ensure it appears above the layout background */
+    padding: 1rem;
+}
+
+.audioPlayer {
+    padding: 1rem;
+    width: 35%;
+    
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    right: 6rem;
+    z-index: 1; /* Ensure it appears above the layout background */
+}
+
+@media (max-width: 768px) {
+   
+     .sectionMedia {
+        top: 15%;
+    }
+    .audioPlayer {
+        width: 50%;
+        right: 0;
+    }
+    .videoPlayer {
+        width: auto;
+        right: 0;
+        top: 2%;
+    }
+    
+    .listMusicsItems 
+    {
+        display: flex;
+        flex: 1;    }
+}
+
+
+@media (max-width: 500px) {
+   
+    .videoPlayer {
+       width: 99%;
+        right: 0;
+        top: 100%;
+    }
+    
+}
+
+@media (max-width: 400px) {
+   
+    .videoPlayer {
+       width: auto;
+        right: 0;
+        top: 100%;
+    }
+    .audioPlayer {
+    width: 50%;
+}
+    .videoContainer h3
+{   
+    
+    font-size: 1rem;
+ 
+}
+    .audioContainer h3
+{
+    
+    font-size: 1rem;
+    
+}
+
+}
+@media (max-width: 350px) {
+   
+    .videoPlayer {
+       width:99%;
+        right: 0;
+        top: 100%;
+    }
+    .audioPlayer {
+        width: 50%;
+    }
+    
+}
