@@ -13,6 +13,16 @@ export default function PageIcon() {
                   alt="Facebook" width={50} height={50} 
                   />
                 </a>
+                <a href="https://www.facebook.com/profile.php?id=61567175613865/">
+                  <Image src="/assets/icons/youtube.png" 
+                  alt="Facebook" width={70} height={70} 
+                  />
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61567175613865/">
+                  <Image src="/assets/icons/spotify.png" 
+                  alt="Facebook" width={100} height={60} 
+                  />
+                </a>
             </div>
         </div>
     );

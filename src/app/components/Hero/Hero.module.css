@@ -18,22 +18,23 @@
     
 }
 
-.sectionHeader h1 {
-    
-    color: rgb(158, 28, 143);
+.headerTitle {
+    text-align: center;
     font-size: 3rem;
-    font-family: 'Rock Salt', cursive; 
-    background-color: rgba(0, 0, 0, 0.368); 
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-   
-}
+    color: #9e1c8f;
+    text-shadow: 2px 2px 5px #000000;
+    font-family: 'Rock Salt', cursive;
+  }
 
-.sectionHeader p {
-    font-size: 2.5rem;
-    font-family: 'Chau Philomene One', cursive; 
-    color: rgba(255, 140, 0, 0.863);
-    padding: 1rem; 
-}
+  .headerSubTitle {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ff8c00dc;
+    text-shadow: 2px 2px 5px #000000;
+    font-family: 'Anton', cursive;
+    letter-spacing: 2;
+  }
+
 
 
 .sectionMedia {
@@ -51,69 +52,7 @@
     font-family: 'Chau Philomene One', cursive; 
     margin-left: 2rem;
 }
-.listMusicsItems {
-    position: relative;
-    top: 0;
-    left: 2rem;
-    width: 100%;
-    height: 100%;
-    z-index: 2; /* Higher z-index to appear above LayoutBg */
-}
 
-.listVideoItems
-{
-    position: relative;
-    top: 0;
-    left: 2rem;
-    width: 100%;
-    height: 100%;
-    z-index: 2; /* Higher z-index to appear above LayoutBg */
-}
-
-
-.audioContainer h3
-{
-    color: rgb(237, 229, 236);
-    font-size: 1rem;
-    font-family: 'Chau Philomene One', cursive; 
-    background-color: rgba(0, 0, 0, 0.368); 
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-    text-align:center;
-    padding: 1rem;
-}
-
-.videoContainer h3
-{   
-    color: rgb(237, 229, 236);
-    font-size: 1rem;
-    font-family: 'Chau Philomene One', cursive; 
-    background-color: rgba(0, 0, 0, 0.368); 
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-    text-align:center;
-    padding: 1rem;
-    
-}
-
-.videoPlayer {
-    width: 60%;
-    height: 18rem;
-    position: absolute;
-    top: 2%;
-    right: 2rem;
-    z-index: 1; /* Ensure it appears above the layout background */
-    padding: 1rem;
-}
-
-.audioPlayer {
-    padding: 1rem;
-    width: 35%;
-    
-    object-fit: contain;
-    position: absolute;
-    top: 0;
-    right: 6rem;
-    z-index: 1; /* Ensure it appears above the layout background */
-}
 
 @media (max-width: 768px) {
     .sectionHeader {

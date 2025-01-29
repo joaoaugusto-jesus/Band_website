@@ -99,6 +99,7 @@ export default function ContactUs() {
                 required rows="3" placeholder="Enter Message"></textarea>
           </div>
           <Button className={styles.Button} type="submit">Submit</Button> 
+          {submissionResult && submissionResult.pending && <p className={styles.success}>Submiting</p> }
           {submissionResult && submissionResult.success && <p className={styles.success}>Sent successfully!</p> }
           {submissionResult && !submissionResult.success && <p className={styles.error}>Failed to send!</p>}
       </form>
