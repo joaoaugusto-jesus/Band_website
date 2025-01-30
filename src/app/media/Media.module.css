@@ -4,7 +4,8 @@
 .sectionMedia {
     position: absolute; /* Ensure z-index takes effect */
     top: 20%;
-    
+    margin: 0;
+    padding: 0;
     width: 100%;
   
     z-index: 1; /* Higher z-index to appear above LayoutBg */
@@ -99,6 +100,16 @@
     {
         display: flex;
         flex: 1;    }
+}
+
+@media (max-width: 768px) {
+   
+    .videoPlayer {
+        width: auto;
+        right: 0;
+        top: 100%;
+    }
+    
 }
 
 
