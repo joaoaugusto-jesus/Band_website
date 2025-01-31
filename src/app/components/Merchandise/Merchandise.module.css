@@ -39,7 +39,7 @@
   width: 90%;
   height: auto;
   border-radius: 20px 20px 0 0;
-  padding: 0.5rem;
+ 
 }
 
 .photo {
@@ -54,12 +54,14 @@
 
 .overlay {
   justify-items: flex-end;
+ 
 }
 .name{
   font-size: 0.9rem;
   margin: 0.5rem;
   font-family: 'Rock Salt', cursive;
   letter-spacing: 2;
+  
 }
 
 .price{
@@ -79,14 +81,13 @@
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
-  font-size: 16px;
-  border-radius: 5px;
-  margin: 0.5rem;
   cursor: pointer;
   justify-content: center;
   justify-items: center;
   display: flex;
   align-items: center;
+  margin-right: 0.5rem;
+  
 }
 
 

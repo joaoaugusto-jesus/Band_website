@@ -7,10 +7,7 @@
     height: auto; /* Dynamic height */
     margin: 0; /* Remove extra margins */
     padding: 1rem; /* Add padding for spacing */
-   
-   
-
-    
+       
 }
 
 
@@ -48,34 +45,24 @@
     margin: 0;
     padding: 0;
 }
-.footerList li h3 {
+.footer h3 {
     font-family: 'Roboto', cursive;
     font-size: 1rem;
     color: #fff;
+    margin-top: 1rem;
     margin-bottom: 1rem;
+   
+    
 }
-.footerContact p
+.footer p
 {
     margin-right: 2rem;
     font-family: 'Roboto', cursive;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    
 }
 
 
-.footerAboutUs p
-{
-        margin-right: 2rem;
-        font-family: 'Roboto', cursive;
-        font-size: 0.8rem;
-}
-
-
-.privacyPolicy p
-{
-    margin-right: 2rem;
-    font-family: 'Roboto', cursive;
-    font-size: 0.8rem;
-}
 
 @media screen and (max-width: 768px) {
     .containerFooter {
