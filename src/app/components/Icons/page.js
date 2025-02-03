@@ -7,14 +7,14 @@ export default function PageIcon() {
             <div className={styles.pageIcons}>
                 <div className={styles.borderIcons}>
                   <a href="https://www.instagram.com/">
-                      <Image src="/assets/icons/instagram.png" alt="Instagram" 
+                      <Image src="assets/icons/instagram.png" alt="Instagram" 
                       width={60} height={60} />
                   </a>
                   </div>
                 
               <div className={styles.borderIcons}>
                   <a href="https://www.facebook.com/profile.php?id=61567175613865/">
-                    <Image src="/assets/icons/facebook.png" 
+                    <Image src="assets/icons/facebook.png" 
                     alt="Facebook" width={40} height={40} 
                     />
                   </a>
@@ -22,14 +22,14 @@ export default function PageIcon() {
                 </div>
                 <div className={styles.borderIcons}>
                   <a href="https://www.facebook.com/profile.php?id=61567175613865/">
-                    <Image src="/assets/icons/youtube.png" 
+                    <Image src="assets/icons/youtube.png" 
                     alt="Facebook" width={60} height={50} 
                     />
                 </a>
                 </div>
                 <div className={styles.borderIcons}>
                   <a href="https://www.facebook.com/profile.php?id=61567175613865/">
-                    <Image src="/assets/icons/spotify.png" 
+                    <Image src="assets/icons/spotify.png" 
                     alt="Facebook" width={70} height={40} 
                     />
                   </a>

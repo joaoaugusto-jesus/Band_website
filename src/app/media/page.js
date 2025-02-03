@@ -19,26 +19,26 @@ export default function Media() {
       const tracks = [
         {
           name: "Perpetual Blues Machine",
-          src: '/assets/musics/perpetual.mp3', 
+          src: 'assets/musics/perpetual.mp3', 
         },
         {
           name: "Baby Tonight",
-          src: "/assets/musics/baby tonight.mp3",
+          src: "assets/musics/baby tonight.mp3",
         },
       ];
     
       const videos = [
         {
           name: "Live at Fandangos",
-          src: "/assets/vid/snazzy live at fandango.mp4",
+          src: "assets/vid/snazzy live at fandango.mp4",
         },
         {
           name: "Lonely Wolf",
-          src: "/assets/vid/lonely wolf videoclip.mp4",
+          src: "assets/vid/lonely wolf videoclip.mp4",
         },
         {
           name: "Surfer Girl",
-          src: "/assets/vid/Surfer Girl Video Clip.mp4",
+          src: "assets/vid/Surfer Girl Video Clip.mp4",
         },
       ];
     
