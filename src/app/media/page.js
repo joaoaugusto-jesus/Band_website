@@ -100,9 +100,9 @@ export default function Media() {
     return (        
         <>
         <Navbar />
-        <div className={styles.layout}>
+        
             <LayoutBg />
-          </div> 
+           
           <section className={styles.sectionMedia}>
         <ul className="list-musics">
             <h2 className={styles.subtitle}>Musics</h2>  
