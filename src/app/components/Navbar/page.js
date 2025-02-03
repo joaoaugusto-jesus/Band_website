@@ -33,7 +33,7 @@ export default function Navbar() {
             <Link className={styles.logoWrapper} href="/">
             
                         <Image 
-                            src="assets/img/logo.webp"
+                            src="assets/img/timebomblogo2.png"
                             alt="The Name of a Band"   
                             width={400}
                             height={400}

@@ -1,0 +1,24 @@
+.logoBackground
+{
+    display: flex;
+    justify-content: center;
+   
+    width: 100%;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image:
+     url("/assets/img/bandinblack.png");
+    background-size:cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  
+}
+
+@media (max-width:800px) {
+
+    .logoBackground{ 
+        background-size: contain;}
+   
+}

@@ -3,6 +3,7 @@ import Footer from "../components/Footer/page";
 import LayoutBg from "../components/LayoutBg/page";
 import PageIcon from "../components/Icons/page";
 import styles from "./AboutUs.module.css";
+import LayoutTb from "../components/LayoutTb/page";
 
 export default function AboutUs() {
 
@@ -11,11 +12,11 @@ export default function AboutUs() {
         <>
             <Navbar />
             <div className={styles.layout}>
-                <LayoutBg />
+                <LayoutTb />
                 <div className={styles.title}>
-                    <h1>The Snazzy Team</h1>
+                    <h1 className="paragraf">Time Bomb </h1>
                     <h2>Musicians</h2>
-                    <p className="paragraf">TIME BOMB</p>
+                  
                     <div className={styles.container}>
                         <ul className={styles.list}>
                             <li className={styles.items}>Vocals</li>
