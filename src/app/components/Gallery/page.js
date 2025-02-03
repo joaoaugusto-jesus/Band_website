@@ -9,7 +9,7 @@ const images = [
   { src: 'assets/img/cortez na disneyland.jpg', alt: 'Band Image 4' },
   { src: 'assets/img/timebomb.jpg', alt: 'Band Image 4' },
   { src: 'assets/img/tiagão e beto.jpg', alt: 'Band Image 4' },
-  { src: 'assets/img/the bassist.jpg', alt: 'Band Image 4' },
+  
   { src: 'assets/img/the band.jpg', alt: 'Band Image 4' },
   { src: 'assets/img/theband at musiclight.jpg', alt: 'Band Image 4' },
   // Add more images as needed

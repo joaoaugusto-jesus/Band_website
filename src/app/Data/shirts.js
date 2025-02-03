@@ -11,14 +11,14 @@ export const shirts = [
       id: 2,
       name: "Tour T-Shirt",
       price: 25,
-      src: 'assets/img/snazzy front.png',
+      src: 'assets/img/snazzy-front.png',
        alt:"Band snazzy shirt front"
     },
     {
         id: 3,
         name: "Tour T-Shirt",
         price: 25,
-        src: 'assets/img/Timebomb shirt.png',
-         alt:"Timebomb shirt front"
+        src: 'assets/img/timebomb-shirt.png',
+         alt:"timebomb shirt front"
       },
   ];
