@@ -4,7 +4,8 @@ const nextConfig = {
     ...(process.env.NODE_ENV === 'production' ? { output: 'export' } : {}),
 
     images: {
-      domains: ['res.cloudinary.com'],
+      domains: ['res.cloudinary.com'], // Allow external images
+      unoptimized: true, // Ensures images work without Next.js optimization in static export
     },
   };
   
