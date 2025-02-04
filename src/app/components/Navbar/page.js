@@ -3,6 +3,8 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { MdLogin } from "react-icons/md";
+
 
 export default function Navbar() {
     
@@ -44,7 +46,9 @@ export default function Navbar() {
                
                 
                 <ul className={styles.navList}>
-                    
+                    <Link href="/login">
+                     <MdLogin className={styles.login}/>
+                     </Link>
                     {/* dropdown menu */}
                     <li className={styles.navItem}>
                         <button 

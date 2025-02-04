@@ -1,0 +1,33 @@
+
+.loginContainer{    
+    position: absolute; /* Ensure z-index takes effect */
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+    z-index: 2000; /* Higher z-index to appear above LayoutBg */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+   
+}
+
+
+.userSignedIn{
+    position: absolute; /* Ensure z-index takes effect */
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+    z-index: 2000; /* Higher z-index to appear above LayoutBg */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+   
+}
+
+.userNotSignedIn{
+    color: beige;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+   
+}

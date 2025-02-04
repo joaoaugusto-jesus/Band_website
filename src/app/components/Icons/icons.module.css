@@ -23,7 +23,7 @@
 
 .borderIcons {
     display: flex;
-    border: 0.1rem dashed #999c98dc;
+  
     border-radius: 50%;
     padding: 0.5rem;
     margin: 0.5rem;
@@ -36,5 +36,10 @@
     height: 70px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.youtubeIcon{
+    
+   margin-top: 0.3rem;
 }
 

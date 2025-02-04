@@ -101,7 +101,7 @@ export default function Media() {
         <>
         <Navbar />
         
-            <LayoutBg />
+        <LayoutBg />
            
           <section className={styles.sectionMedia}>
         <ul className="list-musics">
