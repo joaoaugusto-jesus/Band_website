@@ -1,3 +1,4 @@
+# filepath: /c:/Users/jonif/band_website/netlify.toml
 [build]
   command = "npm run build"
   publish = ".next"
