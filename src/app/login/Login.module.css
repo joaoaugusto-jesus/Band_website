@@ -12,22 +12,30 @@
 }
 
 
-.userSignedIn{
-    position: absolute; /* Ensure z-index takes effect */
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: auto; /* Adjust height as needed */
-    z-index: 2000; /* Higher z-index to appear above LayoutBg */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    text-align: center;
+.loginForm{
    
+    display: inline-block;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    z-index: 2000;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+
 }
 
-.userNotSignedIn{
-    color: beige;
-    font-size: 2rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+.input
+{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
     text-align: center;
-   
 }
+
