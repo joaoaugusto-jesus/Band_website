@@ -8,8 +8,20 @@ generator client {
 }
 
 model User {
-  id       String  @id @default(uuid())
-  email    String  @unique
-  password String
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  posts     Post[]   // This field should relate to the Post model
 }
 
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  userId    String
+  user      User     @relation(fields: [userId], references: [id]) // This creates the relation to the User model
+}

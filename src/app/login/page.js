@@ -24,6 +24,7 @@ export default function Login() {
 
     const data = await res.json();
     alert(data.message || data.error);
+    console.log("Session:", session);
   };
 
   return (
