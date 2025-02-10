@@ -12,6 +12,7 @@ import { useState } from "react";
 export default function Login() {
 
   const { data: session } = useSession();
+  const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -27,6 +28,18 @@ export default function Login() {
     console.log("Session:", session);
   };
 
+  const handleLogin = async () => {
+    const result = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+
+    if (result?.error) {
+      alert(result.error);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -36,15 +49,12 @@ export default function Login() {
       {session ? (
         <>
           <p>Signed in as {session.user.email}</p>
-          <button onClick={() => signOut()}>Sign out</button>
+          <Button onClick={() => signOut()}>Sign out</Button>
         </>
       ) : (
         <div className={styles.loginForm}>
-          <h2>Login</h2>
-          <Button onClick={() => signIn("google")}>Sign in with Google</Button>
-          <h2>Or Sign Up</h2>
-         
-             
+            <h2>Login</h2>
+            <Button onClick={() => signIn("google")}>Sign in with Google</Button>     
               <input className={styles.input}
                 type="email"
                 placeholder="Email"
@@ -57,10 +67,20 @@ export default function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              {isLogin ? (
+                <Button onClick={handleLogin}>Login</Button>
+              ) : (
+                <Button onClick={handleSignup}>Sign up</Button>
+              )}  
+               <Button
+                  className={styles.toggleButton}
+                  onClick={() => setIsLogin(!isLogin)}
+                  >
+                  {isLogin ? "Don't have an account? Sign Up" : "Already have an account? Login"}
+                </Button>
+               
               
-             
               
-              <Button onClick={handleSignup}>Sign Up</Button>
           </div>
       
       )}

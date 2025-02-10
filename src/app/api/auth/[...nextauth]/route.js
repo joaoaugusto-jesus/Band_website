@@ -1,11 +1,4 @@
-import NextAuth from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
-import CredentialsProvider from "next-auth/providers/credentials";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { PrismaClient } from "@prisma/client";
-import bcrypt from "bcryptjs"
 
-const prisma = new PrismaClient();
 
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
@@ -47,11 +40,14 @@ export const authOptions = {
       session.user.id = user.id;
       return session;
     },
+    async redirect({ url, baseUrl }) {
+      return baseUrl; // Redirect to homepage after sign-in
+    },
   },
   secret: process.env.NEXTAUTH_SECRET,
   session: { strategy: "jwt" },
   pages: {
-    signIn: "/login",
+    signIn: "/login", // Redirect to homepage if login is required
   },
 };
 
