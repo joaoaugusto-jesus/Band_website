@@ -43,18 +43,18 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async session({ session, user }) {
-      session.user.id = user.id;
+    async jwt({ token, user }) {
+      // This runs after sign in
+      if (user) {
+        token.id = user.id; // Add user id to the token
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      // Access the token here to add user id to session
+      session.user.id = token.id; // Ensure session has the user id
       return session;
     },
-    async redirect({ url, baseUrl }) {
-      return baseUrl; // Redirect to homepage after sign-in
-    },
-  },
-  secret: process.env.NEXTAUTH_SECRET,
-  session: { strategy: "jwt" },
-  pages: {
-    signIn: "/login", // Redirect to homepage if login is required
   },
 };
 

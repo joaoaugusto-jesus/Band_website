@@ -71,7 +71,7 @@ export default function Navbar() {
                                         <Link href="/about-us">About us</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
-                                    <Link href="/services">Services</Link>
+                                    <Link href="/store">Store</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
                                     <Link href="/contact-us">Contact</Link>
