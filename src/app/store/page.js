@@ -9,6 +9,7 @@ import { shirts } from '../Data/shirts';
 import { albuns } from '../Data/albuns';
 import Image from 'next/image';
 import Button from '../components/Button';
+import { TiTicket } from 'react-icons/ti';
 
 export default function Store() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -34,7 +35,7 @@ export default function Store() {
     const handleQuantityChange = (id, change) => {
         setQuantities((prev) => ({
             ...prev,
-            [id]: Math.max(1, (prev[id] || 1) + change),
+            [id]: Math.max(0, (prev[id] || 0) + change),
         }));
     };
 
@@ -44,7 +45,10 @@ export default function Store() {
             <div className={styles.layout}>
                 <div className={styles.title}>
                     <h1>Store</h1>
-                    <p>Buy our music and merchandise</p>
+                    <p>Buy our </p>
+                    <p>music </p>
+                    <p>merchandise</p>
+                    <p>Tickets</p>
                 </div>  
 
                 {/* Search Bar */}
@@ -85,7 +89,7 @@ export default function Store() {
                                     {/* Quantity Selector */}
                                     <div className={styles.quantitySelector}>
                                         <button onClick={() => handleQuantityChange(shirt.id, -1)}>-</button>
-                                        <span>{quantities[shirt.id] || 1}</span>
+                                        <span>{quantities[shirt.id] || 0}</span>
                                         <button onClick={() => handleQuantityChange(shirt.id, 1)}>+</button>
                                     </div>
 
@@ -116,6 +120,12 @@ export default function Store() {
                                 <div className={styles.overlay}>
                                     <h2 className={styles.name}>{album.name}</h2>
                                     <p className={styles.price}>${album.price}</p>
+
+                                    <div className={styles.quantitySelector}>
+                                        <button onClick={() => handleQuantityChange(album.id, -1)}>-</button>
+                                        <span>{quantities[album.id] || 0}</span>
+                                        <button onClick={() => handleQuantityChange(album.id, 1)}>+</button>
+                                    </div>
                                     <Button 
                                         className={styles.addButton}
                                         onClick={() => addToCart({...album, quantity: 1})}
