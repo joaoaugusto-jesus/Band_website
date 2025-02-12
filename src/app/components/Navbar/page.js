@@ -4,10 +4,13 @@ import styles from "./Navbar.module.css";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { MdLogin } from "react-icons/md";
-
+import { useCartStore } from '../../store/cartStore';
+import { TiShoppingCart } from "react-icons/ti";
 
 export default function Navbar() {
-    
+
+    const { cart } = useCartStore();
+    const itemCount = cart.reduce((acc, item) => acc + item.quantity, 0); // Count items in cart
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggleDropdown = () => {
@@ -43,8 +46,14 @@ export default function Navbar() {
                         />
                   
                 </Link>
-               
-                
+                <div className={styles.navLinks}>                 
+                    <div className={styles.cartContainer}>
+                        <Link href="/cart"> <TiShoppingCart
+                            className={styles.cart}
+                        />
+                        <p className={styles.itemCount}>Items ({itemCount})</p>
+                        </Link>  {/* Show cart count */}
+                    </div>
                 <ul className={styles.navList}>
                     <Link href="/login">
                      <MdLogin className={styles.login}/>
@@ -74,12 +83,17 @@ export default function Navbar() {
                                     <Link href="/store">Store</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
+                                    <Link href="/cart">Cart</Link>
+                                </li>
+                                <li className={styles.dropdownItem}>
                                     <Link href="/contact-us">Contact</Link>
                                 </li>
                             </ul>
                         )}
                     </li>
-                </ul>
+                 </ul> 
+                </div>
+   
             </nav>
         </header>
     );

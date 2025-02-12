@@ -38,6 +38,15 @@
     
     
   }
+
+  .navLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: end;
+  }
+
   .navbar h1 {
     font-size: 1.5rem;
     margin: 0px 0px 0px 205px;
@@ -55,6 +64,7 @@
     justify-content: center;
     align-items: center;
     justify-items: center;
+   
   }
   
   .navItem a {
@@ -74,20 +84,19 @@
   .login{
     
     color:#b1afaf;
-    width: 50px;
-    height: 48px;
+    width: 2.9rem;
+    height: auto;
     margin-right: 0.8rem;
    
     
   }
 
   .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 6px;
+    width: 2.5rem;
+    height: 0.3rem;
     background-color: #b1afaf;
     margin: 4px 0;
     transition: 0.4s;
-    padding: 2px;
     border-radius: 5px;
     
   }
@@ -167,6 +176,32 @@
     margin: 20px 20px 20px 20px;
   }
 
+  .cartContainer {
+   
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    margin-right: 1rem;
+    cursor: pointer;
+
+  }
+
+  .cart{  
+    width: 2.5rem;
+    height: auto;
+    margin-top: 1rem;
+    color:#b1afaf;
+  }
+
+  .itemCount{
+    
+    font-size: 0.7rem;
+    font-family: 'Roboto';
+    color: beige;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2;
+  }
   
 @media (max-width: 768px) {
 

@@ -18,8 +18,9 @@
 .gridShirt{
     display: flex;
     grid-gap: 1rem;
-   
-    margin: 0;
+    align-items: center;
+    justify-content: left;
+    margin: 2rem;
 }
 
 .gridShirt img{
@@ -31,8 +32,9 @@
 .gridAlbum{
     display: flex;
     grid-gap: 1rem;
-   
-    margin: 0;
+    align-items: center;
+    justify-content: left;
+    margin: 2rem;
 }
 
 .gridAlbum img{
