@@ -38,7 +38,7 @@ export default function Navbar() {
             <Link className={styles.logoWrapper} href="/">
             
                         <Image 
-                            src="/assets/img/timebomblogo2.png"
+                            src="/assets/img/cartel-logo-yellow.png"
                             alt="The Name of a Band"   
                             width={400}
                             height={400}

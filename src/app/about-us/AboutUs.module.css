@@ -13,40 +13,57 @@
     left: 0;
     width: 100%;
     z-index: 2; /* Higher z-index to appear above LayoutBg */
-    color: white;
+    color: rgb(246, 0, 0);
     text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    font-family: 'Bandlettring';
+    letter-spacing: 8;
+    font-size: 5rem;
+    font-family: 'Creepster';
+    opacity: 0.9;
 }
 
-.title h1 {
-    font-size: 3rem;
-    font-family: 'Caesar Dressing';
-    color: #c10017;
-}
-.title h2 {
-    font-size: 2rem;
-    font-family: 'Creepster';
-}
-.title p {
-    font-size: 3rem;
-    font-family: 'Caesar Dressing';
-   
-}
 .container {
     display: flex;
     flex-direction: column;
-    align-items:center;
-    justify-content: center;
+    
 }
 
 .list
 {
     list-style-type: none;
     padding: 0;
+    display: flex;
+   
+    justify-content: space-evenly;
+
 }
 
 .items
 {
     margin: 0.5rem 0;
+}
+
+.items span{
+
+    font-size: 3rem;
+}
+
+@media (max-width: 660px) {
+
+    .title{
+        font-size: 3rem;
+    }
+
+    .list{
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .title{
+        font-size: 2rem;
+    }
+
+   
 }

@@ -14,16 +14,15 @@ export default function AboutUs() {
             <div className={styles.layout}>
                 <LayoutTb />
                 <div className={styles.title}>
-                    <h1 className="paragraf">Time Bomb </h1>
+                    
                     <h2>Musicians</h2>
                   
                     <div className={styles.container}>
                         <ul className={styles.list}>
-                            <li className={styles.items}>Vocals</li>
-                            <li className={styles.items}>Guitar</li>
-                            <li className={styles.items}>Bass</li>
-                            <li className={styles.items}>Drums</li>
-                            <li className={styles.items}>Keyboard</li>
+                            <li className={styles.items}><span>Vocals</span></li>
+                            <li className={styles.items}><span>Guitar</span></li>
+                            <li className={styles.items}><span>Bass</span></li>
+                            <li className={styles.items}><span>Drums</span></li>
                         </ul>
                     </div>
                 </div>
