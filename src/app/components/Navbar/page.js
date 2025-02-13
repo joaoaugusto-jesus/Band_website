@@ -51,13 +51,16 @@ export default function Navbar() {
                         <Link href="/cart"> <TiShoppingCart
                             className={styles.cart}
                         />
-                        <p className={styles.itemCount}>Items ({itemCount})</p>
+                         <p className={styles.itemCount}>({itemCount})</p>
                         </Link>  {/* Show cart count */}
+                       
                     </div>
-                <ul className={styles.navList}>
-                    <Link href="/login">
+                    <div className={styles.loginContainer}>
+                        <Link href="/login">
                      <MdLogin className={styles.login}/>
-                     </Link>
+                     </Link></div>
+                <ul className={styles.navList}>
+                    
                     {/* dropdown menu */}
                     <li className={styles.navItem}>
                         <button 

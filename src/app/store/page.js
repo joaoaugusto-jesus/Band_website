@@ -45,10 +45,10 @@ export default function Store() {
             <div className={styles.layout}>
                 <div className={styles.title}>
                     <h1>Store</h1>
-                    <p>Buy our </p>
-                    <p>music </p>
-                    <p>merchandise</p>
-                    <p>Tickets</p>
+                   
+                    <span>music </span>
+                    <span>merchandise</span>
+                    <span>Tickets</span>
                 </div>  
 
                 {/* Search Bar */}
@@ -88,21 +88,36 @@ export default function Store() {
 
                                     {/* Quantity Selector */}
                                     <div className={styles.quantitySelector}>
-                                        <button onClick={() => handleQuantityChange(shirt.id, -1)}>-</button>
-                                        <span>{quantities[shirt.id] || 0}</span>
-                                        <button onClick={() => handleQuantityChange(shirt.id, 1)}>+</button>
+                                        <button 
+                                            onClick={() => handleQuantityChange(shirt.id, -1)}
+                                            className={styles.qtyButton}>-
+                                            </button>
+                                        <span className={styles.quantitiesSelector}>{quantities[shirt.id] || 0}</span>
+                                        <button onClick={() => handleQuantityChange(shirt.id, 1)}
+                                            className={styles.qtyButton}>+</button>
                                     </div>
 
                                     <Button 
                                         className={styles.addButton}
-                                        onClick={() => addToCart({
-                                            ...shirt,
-                                            size: selectedSize[shirt.id] || "M",
-                                            quantity: quantities[shirt.id] || 1
-                                        })}
+                                        onClick={() => {
+                                            if (!selectedSize[shirt.id]) {
+                                                alert("Please select a size before adding to cart.");
+                                                return;
+                                            }
+                                            if (!quantities[shirt.id] || quantities[shirt.id] < 1) {
+                                                alert("Please select at least one item.");
+                                                return;
+                                            }
+                                            addToCart({
+                                                ...shirt,
+                                                size: selectedSize[shirt.id],
+                                                quantity: quantities[shirt.id],
+                                            });
+                                        }}
                                     >
                                         Add to Cart
                                     </Button>
+
                                 </div>
                             </div>
                         ))
@@ -122,16 +137,25 @@ export default function Store() {
                                     <p className={styles.price}>${album.price}</p>
 
                                     <div className={styles.quantitySelector}>
-                                        <button onClick={() => handleQuantityChange(album.id, -1)}>-</button>
-                                        <span>{quantities[album.id] || 0}</span>
-                                        <button onClick={() => handleQuantityChange(album.id, 1)}>+</button>
+                                        <button onClick={() => handleQuantityChange(album.id, -1)}
+                                            className={styles.qtyButton}>-</button>
+                                        <span className={styles.quantitiesSelector}>{quantities[album.id] || 0}</span>
+                                        <button onClick={() => handleQuantityChange(album.id, 1)}
+                                            className={styles.qtyButton}>+</button>
                                     </div>
                                     <Button 
                                         className={styles.addButton}
-                                        onClick={() => addToCart({...album, quantity: 1})}
+                                        onClick={() => {
+                                            if (!quantities[album.id] || quantities[album.id] < 1) {
+                                                alert("Please select at least one item.");
+                                                return;
+                                            }
+                                            addToCart({...album, quantity: quantities[album.id]});
+                                        }}
                                     >
                                         Add to Cart
                                     </Button>
+
                                 </div>
                             </div>
                         ))
