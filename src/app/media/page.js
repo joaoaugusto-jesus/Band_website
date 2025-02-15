@@ -7,6 +7,10 @@ import Button from "../components/Button";
 import styles from "./Media.module.css";
 import PageIcon from "../components/Icons/page";
 import { useState, useRef } from "react";
+
+
+
+
 export default function Media() {
 
       const [currentTrack, setCurrentTrack] = useState(null);
