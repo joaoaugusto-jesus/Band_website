@@ -47,11 +47,12 @@ export default function Navbar() {
                   
                 </Link>
                 <div className={styles.navLinks}>                 
-                    <div className={styles.cartContainer}>
+                    <div className={styles.cartContainer}> 
+                        <p className={styles.itemCount}>({itemCount})</p>
                         <Link href="/cart"> <TiShoppingCart
                             className={styles.cart}
                         />
-                         <p className={styles.itemCount}>({itemCount})</p>
+                        
                         </Link>  {/* Show cart count */}
                        
                     </div>

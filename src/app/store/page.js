@@ -1,21 +1,18 @@
 "use client";
-import { useState } from 'react';
-import { useCartStore } from '../store/cartStore';
+import { useState } from 'react'
 import styles from './Store.module.css';
 import Navbar from "../components/Navbar/page";
 import Footer from "../components/Footer/page";
 import PageIcon from "../components/Icons/page";
 import { shirts } from '../Data/shirts';
 import { albuns } from '../Data/albuns';
-import Image from 'next/image';
 import Button from '../components/Button';
+import Card from '../components/Card/page';
 import { TiTicket } from 'react-icons/ti';
 
 export default function Store() {
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedSize, setSelectedSize] = useState({});
-    const [quantities, setQuantities] = useState({});
-    const { cart, addToCart } = useCartStore();
+  
 
     // Function to filter products based on search
     const filteredShirts = shirts.filter((shirt) =>
@@ -26,18 +23,7 @@ export default function Store() {
         album.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Handle size selection
-    const handleSizeChange = (id, size) => {
-        setSelectedSize((prev) => ({ ...prev, [id]: size }));
-    };
-
-    // Handle quantity change
-    const handleQuantityChange = (id, change) => {
-        setQuantities((prev) => ({
-            ...prev,
-            [id]: Math.max(0, (prev[id] || 0) + change),
-        }));
-    };
+    
 
     return (
         <>
@@ -67,102 +53,36 @@ export default function Store() {
                 <div className={styles.gridShirt}>
                     {filteredShirts.length > 0 ? (
                         filteredShirts.map((shirt) => (
-                            <div key={shirt.id} className={styles.card}>
-                                <Image src={shirt.src} alt={shirt.name} width={100} height={100} className={styles.photo} />
-                                <div className={styles.overlay}>
-                                    <h2 className={styles.name}>{shirt.name}</h2>
-                                    <p className={styles.price}>${shirt.price}</p>
-
-                                    {/* Size Selector */}
-                                    <select 
-                                        className={styles.sizeSelector}
-                                        value={selectedSize[shirt.id] || ""}
-                                        onChange={(e) => handleSizeChange(shirt.id, e.target.value)}
-                                    >
-                                        <option value="">Select Size</option>
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                        <option value="L">L</option>
-                                        <option value="XL">XL</option>
-                                    </select>
-
-                                    {/* Quantity Selector */}
-                                    <div className={styles.quantitySelector}>
-                                        <button 
-                                            onClick={() => handleQuantityChange(shirt.id, -1)}
-                                            className={styles.qtyButton}>-
-                                            </button>
-                                        <span className={styles.quantitiesSelector}>{quantities[shirt.id] || 0}</span>
-                                        <button onClick={() => handleQuantityChange(shirt.id, 1)}
-                                            className={styles.qtyButton}>+</button>
-                                    </div>
-
-                                    <Button 
-                                        className={styles.addButton}
-                                        onClick={() => {
-                                            if (!selectedSize[shirt.id]) {
-                                                alert("Please select a size before adding to cart.");
-                                                return;
-                                            }
-                                            if (!quantities[shirt.id] || quantities[shirt.id] < 1) {
-                                                alert("Please select at least one item.");
-                                                return;
-                                            }
-                                            addToCart({
-                                                ...shirt,
-                                                size: selectedSize[shirt.id],
-                                                quantity: quantities[shirt.id],
-                                            });
-                                        }}
-                                    >
-                                        Add to Cart
-                                    </Button>
-
-                                </div>
-                            </div>
+                            <Card 
+                                key={shirt.id}
+                                src={shirt.src} // Changed from image to src
+                                name={shirt.name}
+                                price={shirt.price} 
+                                id={shirt.id} // Ensure ID is passed for state tracking
+                            />
                         ))
                     ) : (
-                        <h2 className={styles.unavailable}>No shirts available</h2>
+                        <p>No shirts available</p>
                     )}
-                </div>
+                </div> 
 
                 {/* Albums Section */}
                 <div className={styles.gridAlbum}>
-                    {filteredAlbums.length > 0 ? (
-                        filteredAlbums.map((album) => (
-                            <div key={album.id} className={styles.card}>
-                                <Image src={album.src} alt={album.name} width={100} height={100} className={styles.photo} />
-                                <div className={styles.overlay}>
-                                    <h2 className={styles.name}>{album.name}</h2>
-                                    <p className={styles.price}>${album.price}</p>
-
-                                    <div className={styles.quantitySelector}>
-                                        <button onClick={() => handleQuantityChange(album.id, -1)}
-                                            className={styles.qtyButton}>-</button>
-                                        <span className={styles.quantitiesSelector}>{quantities[album.id] || 0}</span>
-                                        <button onClick={() => handleQuantityChange(album.id, 1)}
-                                            className={styles.qtyButton}>+</button>
-                                    </div>
-                                    <Button 
-                                        className={styles.addButton}
-                                        onClick={() => {
-                                            if (!quantities[album.id] || quantities[album.id] < 1) {
-                                                alert("Please select at least one item.");
-                                                return;
-                                            }
-                                            addToCart({...album, quantity: quantities[album.id]});
-                                        }}
-                                    >
-                                        Add to Cart
-                                    </Button>
-
-                                </div>
-                            </div>
+                    {filteredShirts.length > 0 ? (
+                        filteredShirts.map((albuns) => (
+                            <Card 
+                                key={albuns.id}
+                                src={albuns.src} // Changed from image to src
+                                name={albuns.name}
+                                price={albuns.price} 
+                                alt={albuns.alt}
+                               
+                            />
                         ))
                     ) : (
-                        <h2 className={styles.unavailable}>No albums available</h2>
+                        <p>No shirts available</p>
                     )}
-                </div>
+                </div> 
             </div>
             <PageIcon />
             <Footer />

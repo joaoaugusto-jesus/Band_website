@@ -100,77 +100,76 @@ export default function Media() {
     return (        
         <>
         <Navbar />
-        
         <LayoutBg />
            
-          <section className={styles.sectionMedia}>
-        <ul className="list-musics">
-            <h2 className={styles.subtitle}>Musics</h2>  
-          {tracks.map((track, index) => (
-            <li key={index} className={styles.listMusicsItems}>
-              <Button
-                className={`${styles.musicButton} ${currentTrack?.name === track.name && isPlaying ? styles.active : ''}`}
-                onClick={() => playTrack(track)}
-              >
-                {track.name}
-              </Button>
-            </li>
-          ))}
-        </ul>
+          <div className={styles.sectionMedia}>
+              <ul className="list-musics">
+                  <h2 className={styles.subtitle}>Musics</h2>  
+                  {tracks.map((track, index) => (
+                  <li key={index} className={styles.listMusicsItems}>
+                    <Button
+                      className={`${styles.musicButton} ${currentTrack?.name === track.name && isPlaying ? styles.active : ''}`}
+                      onClick={() => playTrack(track)}
+                    >
+                      {track.name}
+                    </Button>
+                  </li>
+                ))}
+              </ul>
 
-        {currentTrack && (
-          <div className={styles.audioContainer}>
-            <h3>Now Playing: {currentTrack?.name}</h3>
-            <audio
-              ref={audioRef}
-              controls
-              autoPlay
-              className={styles.audioPlayer}
-              onEnded={() => {
-                setCurrentTrack(null);
-                setIsPlaying(false);
-              }}
-            >
-              <source src={currentTrack?.src} type="audio/mp3" />
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        )}
+                {currentTrack && (
+                <div className={styles.audioContainer}>
+                  <h3>Now Playing: {currentTrack?.name}</h3>
+                  <audio
+                    ref={audioRef}
+                    controls
+                    autoPlay
+                    className={styles.audioPlayer}
+                    onEnded={() => {
+                      setCurrentTrack(null);
+                      setIsPlaying(false);
+                    }}
+                  >
+                    <source src={currentTrack?.src} type="audio/mp3" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+              )}
 
-        <ul className="list-videos">
-          <h2 className={styles.subtitle}>Videos</h2>
-          {videos.map((video, index) => (
-            <li key={index} className={styles.listVideoItems}>
-              <Button
-                className={`${styles.videoButton} ${currentVideo?.name === video.name && isPlaying ? styles.active : ''}`}
-                onClick={() => playVideo(video)}
-              >
-                {video.name}
-              </Button>
-            </li>
-          ))}
-        </ul>
+              <ul className="list-videos">
+                <h2 className={styles.subtitle}>Videos</h2>
+                {videos.map((video, index) => (
+                  <li key={index} className={styles.listVideoItems}>
+                    <Button
+                      className={`${styles.videoButton} ${currentVideo?.name === video.name && isPlaying ? styles.active : ''}`}
+                      onClick={() => playVideo(video)}
+                    >
+                      {video.name}
+                    </Button>
+                  </li>
+                ))}
+              </ul>
 
-        {currentVideo && (
-          <div className={styles.videoContainer}>
-            <h3>Now Playing: {currentVideo?.name}</h3>
-            <video
-              ref={videoRef}
-              controls
-              autoPlay
-              className={styles.videoPlayer}
-              onEnded={() => {
-                setCurrentVideo(null);
-                setIsPlaying(false);
-              }}
-            >
-              <source src={currentVideo?.src} type="video/mp4" />
-              Your browser does not support the video element.
-            </video>
-          </div>
-        )} 
-      
-      </section> 
+              {currentVideo && (
+                <div className={styles.videoContainer}>
+                  <h3>Now Playing: {currentVideo?.name}</h3>
+                  <video
+                    ref={videoRef}
+                    controls
+                    autoPlay
+                    className={styles.videoPlayer}
+                    onEnded={() => {
+                      setCurrentVideo(null);
+                      setIsPlaying(false);
+                    }}
+                  >
+                    <source src={currentVideo?.src} type="video/mp4" />
+                    Your browser does not support the video element.
+                  </video>
+                </div>
+              )} 
+          
+          </div> 
         <PageIcon />
         <Footer />
         </>
