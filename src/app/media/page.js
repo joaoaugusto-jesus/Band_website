@@ -101,13 +101,15 @@ export default function Media() {
           }
         }, 0);
       };
-    return (        
-       <div className={styles.layout}>
+    return (    
+      <>
         <Navbar />
         <LayoutBg />
+        <div className={styles.layout}>
+        
           
           <div className={styles.sectionMedia}>
-              <ul className="list-musics">
+              <ul className={styles.listMusics}>
                   <h2 className={styles.subtitle}>Musics</h2>  
                   {tracks.map((track, index) => (
                   <li key={index} className={styles.listMusicsItems}>
@@ -115,8 +117,9 @@ export default function Media() {
                       className={`${styles.musicButton} ${currentTrack?.name === track.name && isPlaying ? styles.active : ''}`}
                       onClick={() => playTrack(track)}
                     >
-                      {track.name}
+                     playTrack
                     </Button>
+                    <h1 className={styles.musicDisplay}> {track.name}</h1>
                   </li>
                 ))}
               </ul>
@@ -140,7 +143,7 @@ export default function Media() {
                 </div>
               )}
 
-              <ul className="list-videos">
+              <ul className={styles.listVideos}>
                 <h2 className={styles.subtitle}>Videos</h2>
                 {videos.map((video, index) => (
                   <li key={index} className={styles.listVideoItems}>
@@ -175,8 +178,11 @@ export default function Media() {
           
           </div> 
          
+        
+        </div>
         <PageIcon />
         <Footer />
-        </div>
+      </>    
+       
     );
 }

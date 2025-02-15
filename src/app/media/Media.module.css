@@ -1,19 +1,29 @@
 
 .layout{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
 }
 
 .sectionMedia {
-    position: absolute; /* Ensure z-index takes effect */
-    top: 20%;
-    margin: 0;
+    
+    margin: 2rem;
     padding: 0;
     width: 100%;
   
     z-index: 1; /* Higher z-index to appear above LayoutBg */
 }
+
+.listMusics{
+    position: absolute;
+    top: 20%;
+}
+
+.listVideos{
+    position: absolute;
+    top: 50%;
+}
+
 
 .subtitle{
     color: rgb(237, 229, 236);
@@ -21,46 +31,35 @@
     font-family: 'Chau Philomene One', cursive; 
     margin-left: 2rem;
 }
-.listMusicsItems {
-    position: relative;
-    top: 0;
-    left: 2rem;
-    width: 100%;
-    height: 100%;
-    z-index: 2; /* Higher z-index to appear above LayoutBg */
-}
 
-.listVideoItems
-{
-    position: relative;
-    top: 0;
-    left: 2rem;
-    width: 100%;
-    height: 100%;
-    z-index: 2; /* Higher z-index to appear above LayoutBg */
-}
 
 
 .audioContainer h3
 {
     color: rgb(237, 229, 236);
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-family: 'Chau Philomene One', cursive; 
-    background-color: rgba(0, 0, 0, 0.368); 
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    
     text-align:center;
     padding: 1rem;
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    width: 25rem;
 }
 
 .videoContainer h3
 {   
     color: rgb(237, 229, 236);
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-family: 'Chau Philomene One', cursive; 
-    background-color: rgba(0, 0, 0, 0.368); 
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
     text-align:center;
     padding: 1rem;
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    width: 25rem;
+    
     
 }
 
@@ -68,7 +67,7 @@
     width: auto;
     height: 18rem;
     position: absolute;
-    top: 2%;
+    top: 25%;
     right: 2rem;
     z-index: 1; /* Ensure it appears above the layout background */
     padding: 1rem;
@@ -80,16 +79,14 @@
     
     object-fit: contain;
     position: absolute;
-    top: 0;
+    top: 25%;
     right: 6rem;
     z-index: 1; /* Ensure it appears above the layout background */
 }
 
 @media (max-width: 768px) {
    
-     .sectionMedia {
-        top: 15%;
-    }
+  
     .audioPlayer {
         width: 50%;
         right: 0;
@@ -97,7 +94,7 @@
     .videoPlayer {
         width: auto;
         right: 0;
-        top: 2%;
+        top: 25%;
     }
     
     .listMusicsItems 
