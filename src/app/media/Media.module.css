@@ -21,7 +21,7 @@
 
 .listVideos{
     position: absolute;
-    top: 50%;
+    top: 42%;
 }
 
 
@@ -47,7 +47,10 @@
     left: 55%;
     width: 25rem;
 }
-
+.musicDisplay{
+    color:beige;
+    font-size: 1.4rem;
+}
 .videoContainer h3
 {   
     color: rgb(237, 229, 236);
@@ -97,35 +100,39 @@
         top: 25%;
     }
     
-    .listMusicsItems 
-    {
-        display: flex;
-        flex: 1;    }
+    .musicDisplay{
+        color:beige;
+        font-size: 1rem;
+    }
+    .audioContainer h3{
+        font-size: 1.5rem;
+        left: 35%;
+    }
+    .videoContainer h3{
+        font-size: 1.5rem;
+        left: 35%;
+    }
 }
 
-
+@media (max-width:600px) {
+    .videoPlayer {
+        width: 99%;
+         right: 0;
+         top: 60%;
+     }
+     .videoContainer h3
+     {   
+        top: 56%;
+        left: 25%;
+         font-size: 1.5rem;
+      
+     }
+}
 
 
 @media (max-width: 500px) {
    
-    .videoPlayer {
-       width: 99%;
-        right: 0;
-        top: 100%;
-    }
     
-}
-
-@media (max-width: 400px) {
-   
-    .videoPlayer {
-       width: 99%;
-        right: 0;
-        top: 100%;
-    }
-    .audioPlayer {
-    width: 50%;
-}
     .videoContainer h3
 {   
     
@@ -136,6 +143,37 @@
 {
     
     font-size: 1rem;
+    left:28%
+    
+}
+
+    
+}
+
+@media (max-width: 400px) {
+   
+    .videoPlayer {
+       width: 99%;
+        right: 0;
+        top: 60%;
+    }
+    .audioPlayer {
+    width: 50%;
+    left:40%;
+    top:38%;
+}
+.videoContainer h3
+{   
+    left: 10%;
+    font-size: 1rem;
+ 
+}
+    .audioContainer h3
+{
+    
+    font-size: 1rem;
+    left:10%;
+    top:35%;
     
 }
 
@@ -145,10 +183,25 @@
     .videoPlayer {
        width:99%;
         right: 0;
-        top: 100%;
+        top: 60%;
     }
     .audioPlayer {
         width: 50%;
+    }
+
+    .videoContainer h3
+{   
+    left: 5%;
+    top: 60%;
+    font-size: 1rem;
+ 
+}
+    .audioContainer h3
+    {
+        
+        font-size: 0.5rem;
+        left:10%
+        
     }
     
 }
