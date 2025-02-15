@@ -1,5 +1,9 @@
 
-
+.layout{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .sectionMedia {
     position: absolute; /* Ensure z-index takes effect */

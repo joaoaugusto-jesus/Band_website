@@ -8,8 +8,9 @@
     transition: 0.3s;
     color: aliceblue;
     background-color: #444444aa;
-    
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   

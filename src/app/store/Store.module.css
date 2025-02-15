@@ -50,6 +50,7 @@
     justify-content: center;
     align-items: center;
     justify-items: center;
+    
    
   }
  
@@ -58,7 +59,10 @@
   
 .gridShirt{
     display: flex;
-    grid-gap: 1rem;
+    flex-wrap: wrap;
+    
+    
+    
     align-items: center;
     justify-content: left;
     margin: 2rem;
@@ -74,6 +78,7 @@
 
 .gridAlbum{
     display: flex;
+    flex-wrap: wrap;
     grid-gap: 1rem;
     align-items: center;
     justify-content: left;

@@ -98,10 +98,10 @@ export default function Media() {
         }, 0);
       };
     return (        
-        <>
+       <div className={styles.layout}>
         <Navbar />
         <LayoutBg />
-           
+          
           <div className={styles.sectionMedia}>
               <ul className="list-musics">
                   <h2 className={styles.subtitle}>Musics</h2>  
@@ -170,8 +170,9 @@ export default function Media() {
               )} 
           
           </div> 
+         
         <PageIcon />
         <Footer />
-        </>
+        </div>
     );
 }
