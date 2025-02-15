@@ -6,8 +6,8 @@
 }
 
 .sectionMedia {
-    position: absolute; /* Ensure z-index takes effect */
-    top: 20%;
+    position: positive; /* Ensure z-index takes effect */
+    top: 0;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -106,15 +106,6 @@
         flex: 1;    }
 }
 
-@media (max-width: 768px) {
-   
-    .videoPlayer {
-        width: auto;
-        right: 0;
-        top: 100%;
-    }
-    
-}
 
 
 @media (max-width: 500px) {
