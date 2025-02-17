@@ -1,14 +1,13 @@
 .button
 {
     background: linear-gradient(3deg, rgb(45, 42, 40), rgb(20, 228, 9));
-
     color: white;
     padding: 0.6rem 1rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 2px 2px;
     cursor: pointer;
     box-shadow: 0 0 1px rgb(244, 238, 237);
     border-radius: 0.5rem;
@@ -24,7 +23,7 @@
 .button:active
 {
     
-    box-shadow: 0 1px #9bec87;
+    box-shadow: 0 2px #44d41f;
     transform: translateY(2px);
 }
 
@@ -32,15 +31,17 @@
     .button
     {
         padding: 0.4rem 0.8rem;
-        font-size: 14px;
+        
     }
 }
 
 @media (max-width: 500px) {
+
+   
     .button
     {
-          padding: 0.2rem 0.2rem;
-          font-size: 12px;
+          padding: 0.4rem 0.8rem;
+          font-size: 16px;
           margin: 0.5rem 0.5rem;
     }
  }
