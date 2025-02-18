@@ -18,6 +18,7 @@ export default function Merchandise() {
               src={shirt.src}
               name={shirt.name}
               price={shirt.price}
+              isShirt={true}
                   />
          
         ))

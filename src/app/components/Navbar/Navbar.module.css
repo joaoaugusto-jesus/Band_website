@@ -27,7 +27,7 @@
     height: 5.8rem; /* Adjust as needed */
     overflow: hidden;
     cursor: pointer; /* Optional for rounded edges */
-    
+    margin-left: 2rem;
   }
   
   .logoWrapper img {
@@ -191,6 +191,9 @@
   
 @media (max-width: 768px) {
 
+  .logoWrapper{
+    margin: 0;
+  }
   .subscribe
   {
       height: 50vh;
@@ -246,7 +249,7 @@
 @media (max-width: 400px)
 {
   .image{
-    width: 5rem;
+    width: 8rem;
    
     justify-content: start;
   }
