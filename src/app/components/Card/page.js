@@ -11,7 +11,7 @@ import Image from 'next/image'
 
 
 
-export default function Card({ src, name, price, className, id }) {
+export default function Card({ src, name, price, className, id, isShirt }) {
   
   const [selectedSize, setSelectedSize] = useState({});
   const [quantities, setQuantities] = useState({});
@@ -34,11 +34,11 @@ const handleQuantityChange = (id, change) => {
 
     return (
         <div className={`${styles.card} ${className}`}>
-            <Image src={src} alt={name} width={50} height={50} className={styles.photo} />
+            <Image src={src} alt={name} width={300} height={300} className={styles.photo} />
             <div className={styles.overlay}>
                 <h2 className={styles.name}>{name}</h2>
                  {/* Size Selector */}
-                 <select 
+                 {isShirt && (<select 
                     className={styles.sizeSelector}
                                         value={selectedSize[id] || ""}
                                         onChange={(e) => handleSizeChange(id, e.target.value)}
@@ -48,7 +48,8 @@ const handleQuantityChange = (id, change) => {
                                         <option value="M">M</option>
                                         <option value="L">L</option>
                                         <option value="XL">XL</option>
-                                    </select>
+                                    </select>)}
+                 
 
                                     {/* Quantity Selector */}
                                     <div className={styles.quantitySelector}>

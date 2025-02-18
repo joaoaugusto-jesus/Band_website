@@ -59,6 +59,7 @@ export default function Store() {
                                 name={shirt.name}
                                 price={shirt.price} 
                                 id={shirt.id} // Ensure ID is passed for state tracking
+                                isShirt={true} 
                             />
                         ))
                     ) : (
@@ -68,19 +69,20 @@ export default function Store() {
 
                 {/* Albums Section */}
                 <div className={styles.gridAlbum}>
-                    {filteredShirts.length > 0 ? (
-                        filteredShirts.map((albuns) => (
+                    {filteredAlbums.length > 0 ? (
+                        filteredAlbums.map((albuns) => (
                             <Card 
                                 key={albuns.id}
                                 src={albuns.src} // Changed from image to src
                                 name={albuns.name}
                                 price={albuns.price} 
                                 alt={albuns.alt}
+                                isShirt={false} 
                                
                             />
                         ))
                     ) : (
-                        <p>No shirts available</p>
+                        <p>No album available</p>
                     )}
                 </div> 
             </div>

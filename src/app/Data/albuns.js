@@ -1,24 +1,24 @@
 export const albuns = [
     {  
         id: 1,
-        name: "Snazzy",
+        name: "Cartel Cortez",
         price: 20,
-        src: '/assets/img/snazzy-back.png',
-        alt:"Band snazzy shirt",
+        src: '/assets/img/Cartel album.png',
+        alt:"Cd Smells like teen zombies",
      },
 
      {
         id: 2,
-        name: "Timebomb",
+        name: "Cartel Cortez",
         price: 20,
-        src: '/assets/img/snazzy-back.png',
-        alt:"Band snazzy shirt",
+        src: '/assets/img/Cartel album.png',
+        alt:" Smells like teen zombies",
      },
      {
         id: 3,
-        name: "The Best of",
+        name: "Cartel Cortez",
         price: 20,
-        src: '/assets/img/snazzy-back.png',
-        alt:"Band snazzy shirt",
+        src: '/assets/img/Cartel album.png',
+        alt:"CD Smells like teen zombies",
      }
     ];
