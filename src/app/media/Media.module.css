@@ -1,6 +1,10 @@
 
 .layout{
     
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;    
     display: flex;
     flex-direction: column;
 }
@@ -15,18 +19,18 @@
 }
 
 .listMusics{
-    position: absolute;
-    top: 20%;
+    
+    margin-top: 8rem;
 }
 
 .listVideos{
-    position: absolute;
+    
     top: 45%;
 }
 
 
 .subtitle{
-    color: rgb(237, 229, 236);
+    color: rgb(26, 24, 26);
     font-size: 1.5rem;
     font-family: 'Chau Philomene One', cursive; 
     margin-left: 2rem;
@@ -36,29 +40,29 @@
 
 .audioContainer h3
 {
-    color: rgb(237, 229, 236);
+    color: rgb(26, 24, 26);
     font-size: 1.5rem;
     font-family: 'Chau Philomene One', cursive; 
     
     text-align:center;
     padding: 1rem;
-    position: absolute;
+    
     top: 20%;
     left: 55%;
     width: 25rem;
 }
 .musicDisplay{
-    color:beige;
+    color: rgb(26, 24, 26);
     font-size: 1.4rem;
 }
 .videoContainer h3
 {   
-    color: rgb(237, 229, 236);
+    color: rgb(26, 24, 26);
     font-size: 1.5rem;
     font-family: 'Chau Philomene One', cursive; 
     text-align:center;
     padding: 1rem;
-    position: absolute;
+   
     top: 20%;
     left: 55%;
     width: 25rem;
@@ -69,7 +73,7 @@
 .videoPlayer {
     width: auto;
     height: 18rem;
-    position: absolute;
+   
     top: 25%;
     right: 2rem;
     z-index: 1; /* Ensure it appears above the layout background */
@@ -81,7 +85,7 @@
     width: 35%;
     
     object-fit: contain;
-    position: absolute;
+  
     top: 25%;
     right: 6rem;
     z-index: 1; /* Ensure it appears above the layout background */
@@ -101,7 +105,7 @@
     }
     
     .musicDisplay{
-        color:beige;
+        color: rgb(26, 24, 26);
         font-size: 1rem;
     }
     .audioContainer h3{

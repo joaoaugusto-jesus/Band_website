@@ -104,7 +104,7 @@ export default function Media() {
     return (    
       <>
         <Navbar />
-        <LayoutBg />
+       
         <div className={styles.layout}>
         
           
@@ -117,7 +117,7 @@ export default function Media() {
                       className={`${styles.musicButton} ${currentTrack?.name === track.name && isPlaying ? styles.active : ''}`}
                       onClick={() => playTrack(track)}
                     >
-                     playTrack
+                     
                     </Button>
                     <h1 className={styles.musicDisplay}> {track.name}</h1>
                   </li>

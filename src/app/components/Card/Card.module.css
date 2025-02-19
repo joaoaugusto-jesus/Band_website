@@ -163,20 +163,22 @@
   @media (max-width: 360px) {
   
     .card {
-      margin: 10px;
+      margin: 4px;
       width: 220px;
       height: auto;
       
     }
     .card img {
       width: 50%;
+      
     }
     .name{
-      font-size: 0.7rem;
+      font-size: 12px;
     }
   
     .price{
       margin-top: 0;
+      font-size: 12px;
     
   }
   }
