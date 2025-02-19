@@ -6,12 +6,7 @@ import Button from '../Button'
 import Image from 'next/image'
 
 
-
-
-
-
-
-export default function Card({ src, name, price, className, id, isShirt }) {
+export default function Card({ src, name, price, className, id, isShirt, alt }) {
   
   const [selectedSize, setSelectedSize] = useState({});
   const [quantities, setQuantities] = useState({});
@@ -65,7 +60,7 @@ const handleQuantityChange = (id, change) => {
                                     <Button 
                                         className={styles.addButton}
                                         onClick={() => {
-                                            if (!selectedSize[id]) {
+                                            if (isShirt && !selectedSize[id]) {
                                                 alert("Please select a size before adding to cart.");
                                                 return;
                                             }
@@ -74,9 +69,12 @@ const handleQuantityChange = (id, change) => {
                                                 return;
                                             }
                                             addToCart({
-                                                ...id,
-                                                size: selectedSize[id],
-                                                quantity: quantities[id],
+                                                id,
+                                                size: selectedSize[id],  // Passing selected size
+                                                quantity: quantities[id],  // Passing quantity
+                                                price, 
+                                                src, 
+                                                alt // Make sure to pass price
                                             });
                                         }}
                                     >

@@ -5,6 +5,7 @@ export const shirts = [
       price: 20,
       src: '/assets/img/tshirt-cartel-zombie-white.png',
       alt:"Band snazzy shirt",
+      
     
     },
     {
@@ -12,13 +13,15 @@ export const shirts = [
       name: "Cartel Zombie",
       price: 25,
       src: '/assets/img/tshirt-cartel-surfzombie-black.png',
-      alt:"Cartel Black logo back with zombie beach"
+      alt:"Cartel Black logo back with zombie beach",
+      
     },
     {
         id: 3,
         name: "Cartel",
         price: 25,
         src: '/assets/img/tshirt-cartel-back-black.png',
-        alt:"Cartel Black logo back"
+        alt:"Cartel Black logo back",
+          
       },
   ];

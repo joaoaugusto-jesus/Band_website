@@ -116,47 +116,30 @@
 
 @media (max-width:600px) {
     .videoPlayer {
-        width: 99%;
-         right: 0;
-         top: 65%;
+        width: 80%;
+         right: 10%;
+         top: 70%;
      }
      .videoContainer h3
      {   
-        top: 65%;
-        left: 10%;
-         font-size: 1.5rem;
+        top: 68%;
+        left: -30;
+         font-size: 1rem;
       
      }
 }
 
-
-@media (max-width: 500px) {
-   
-    
-    .videoContainer h3
-{   
-    
-    font-size: 1rem;
- 
-}
-    .audioContainer h3
-{
-    
-    font-size: 1rem;
-    left:28%
-    
-}
-.audioContainer h3{
-    display: none;
-}
-    
-}
-
-
-
-@media (max-width: 375px){
-    .videoContainer h3{
-        top: 65%;
-        left: -15%;
-    }
+@media (max-width:400px) {
+    .videoPlayer {
+        width: 80%;
+         right: 10%;
+         top: 70%;
+     }
+     .videoContainer h3
+     {   
+        top: 70%;
+        left: -30;
+         font-size: 0.8rem;
+      
+     }
 }
