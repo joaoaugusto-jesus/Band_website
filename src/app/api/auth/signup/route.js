@@ -1,13 +1,27 @@
+import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs";
+import { z } from "zod";
 
+const prisma = new PrismaClient();
+
+const signupSchema = z.object({
+  email: z.string().email("Invalid email format"),
+  password: z.string().min(8, "Password must be at least 8 characters long"),
+});
 
 export async function POST(req) {
   try {
     const { email, password } = await req.json();
 
-    if (!email || !password) {
-      return new Response(JSON.stringify({ error: "Missing email or password" }), { status: 400 });
+    // Validate input
+    const validation = signupSchema.safeParse({ email, password });
+    if (!validation.success) {
+      return new Response(JSON.stringify({ error: validation.error.issues[0].message }), {
+        status: 400,
+      });
     }
 
+    // Check if user already exists
     const existingUser = await prisma.user.findUnique({
       where: { email },
     });
@@ -16,7 +30,10 @@ export async function POST(req) {
       return new Response(JSON.stringify({ error: "User already exists" }), { status: 400 });
     }
 
+    // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create the user
     const newUser = await prisma.user.create({
       data: { email, password: hashedPassword },
     });
@@ -25,6 +42,7 @@ export async function POST(req) {
       status: 201,
     });
   } catch (error) {
+    console.error("Signup error:", error); // Log the error for debugging
     return new Response(JSON.stringify({ error: "Something went wrong" }), { status: 500 });
   }
 }

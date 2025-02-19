@@ -3,15 +3,22 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { MdLogin } from "react-icons/md";
+import { MdLogin, MdLogout } from "react-icons/md";
 import { useCartStore } from '../../store/cartStore';
 import { TiShoppingCart } from "react-icons/ti";
+import { useSession, signOut } from "next-auth/react";
+
+
 
 export default function Navbar() {
 
     const { cart } = useCartStore();
     const itemCount = cart.reduce((acc, item) => acc + item.quantity, 0); // Count items in cart
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const { data: session } = useSession();
+
+
+
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
@@ -57,9 +64,20 @@ export default function Navbar() {
                        
                     </div>
                     <div className={styles.loginContainer}>
-                        <Link href="/login">
-                     <MdLogin className={styles.login}/>
-                     </Link></div>
+                      
+                        {session ? (
+          <>
+            <span className={styles.username}> {session.user.email}</span>
+            <button onClick={() => signOut()} className={styles.signOutButton}>
+             <MdLogout className={styles.login}/>
+            </button>
+          </>
+        ) : (
+            <Link href='/login'>
+          <MdLogin className={styles.login}/></Link>
+        )}
+                     
+                     </div>
                 <ul className={styles.navList}>
                     
                     {/* dropdown menu */}

@@ -6,6 +6,7 @@ import Footer from '../components/Footer/page';
 import PageIcon from '../components/Icons/page';
 import Button from '../components/Button';
 import Image from 'next/image';
+import { CiCircleRemove } from "react-icons/ci";
 
 export default function Cart() {
     const { cart, removeFromCart, clearCart, totalCartPrice } = useCartStore();
@@ -19,8 +20,8 @@ export default function Cart() {
                    
                     {cart.length === 0 ? (
                         <div className={styles.emptyCart}><h1>Cart is Empty</h1> </div>
-                    ) : (
-                        cart.map((item) => (
+                            ) : (
+                           cart.map((item) => (
                             <div key={`${item.id}-${item.size}`} className={styles.cartItem}>
                                 <Image alt={item.alt}
                                         src={item.src}
@@ -29,12 +30,14 @@ export default function Cart() {
                                         className={styles.imgCart}>
                                 </Image>
                                 <div className={styles.cardItems}>
-                                <p>{item.name} - {item.size} x {item.quantity}</p>
+                                <p>{item.name}  {item.size}</p>
+                                <div onClick={() => removeFromCart(item.id, item.size)} className={styles.cardItemsRemove}>
+                                <p>Items: x{item.quantity}</p><CiCircleRemove className={styles.iconRemove}/></div>
                                 <p>Price per unit: ${item.price|| "0.00"}</p>
                                 <p>Total Price: ${item.totalPrice|| "0.00"}</p>
-                                <Button onClick={() => removeFromCart(item.id, item.size)}>Remove</Button>
+                                
                             </div>
-                            </div>
+                        </div>
                         ))
                     )}
 

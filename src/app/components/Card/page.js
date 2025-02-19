@@ -77,7 +77,8 @@ const handleQuantityChange = (id, change) => {
                                                 quantity: quantities[id],  // Passing quantity
                                                 price, 
                                                 src, 
-                                                alt // Make sure to pass price
+                                                alt,
+                                                name 
                                             });
                                         }}
                                     >

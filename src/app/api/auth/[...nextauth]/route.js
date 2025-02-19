@@ -8,54 +8,49 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 export const authOptions = {
-  adapter:PrismaAdapter(prisma),
   providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "email", placeholder: "email@example.com" },
+        email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        if (!credentials.email || !credentials.password) {
-          throw new Error("Missing credentials");
-        }
+        const { email, password } = credentials;
 
+        // Find the user in the database
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email },
+          where: { email },
         });
 
         if (!user) {
           throw new Error("User not found");
         }
 
-        const isValidPassword = await bcrypt.compare(credentials.password, user.password);
-        if (!isValidPassword) {
+        // Verify the password
+        const isValid = await bcrypt.compare(password, user.password);
+        if (!isValid) {
           throw new Error("Invalid password");
         }
 
-        return user;
+        // Return the user object (without the password)
+        return { id: user.id, email: user.email };
       },
     }),
   ],
   callbacks: {
     async jwt({ token, user }) {
-      // This runs after sign in
       if (user) {
-        token.id = user.id; // Add user id to the token
+        token.id = user.id;
       }
       return token;
     },
     async session({ session, token }) {
-      // Access the token here to add user id to session
-      session.user.id = token.id; // Ensure session has the user id
+      session.user.id = token.id;
       return session;
     },
   },
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);

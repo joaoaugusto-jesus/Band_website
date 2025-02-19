@@ -3,8 +3,7 @@ import styles from "./page.module.css";
 import Head from 'next/head';
 import Navbar from "./components/Navbar/page";
 import Hero from "./components/Hero";
-import Footer from "./components/Footer/page";
-import PageIcon from "./components/Icons/page";
+
 
 export default function Home() {
   return (

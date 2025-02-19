@@ -27,8 +27,18 @@
 
 .cardItems{
     margin: 2rem;
+    padding: 1rem;
     
 }
+.cardItemsRemove{
+    display: flex;
+}
+.iconRemove{
+    color: rgb(187, 15, 15);
+    margin-left: 0.2rem;
+    font-size: 1.2rem;
+}
+
 .totalItems{
     width: 30%;
     margin: 2rem;
