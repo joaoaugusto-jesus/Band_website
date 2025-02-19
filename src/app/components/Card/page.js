@@ -4,7 +4,7 @@ import { useCartStore } from '../../store/cartStore';
 import styles from './Card.module.css'
 import Button from '../Button'
 import Image from 'next/image'
-
+import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 
 export default function Card({ src, name, price, className, id, isShirt, alt }) {
   
@@ -32,6 +32,7 @@ const handleQuantityChange = (id, change) => {
             <Image src={src} alt={name} width={300} height={300} className={styles.photo} />
             <div className={styles.overlay}>
                 <h2 className={styles.name}>{name}</h2>
+                <p className={styles.price}>${price}</p>
                  {/* Size Selector */}
                  {isShirt && (<select 
                     className={styles.sizeSelector}
@@ -50,13 +51,15 @@ const handleQuantityChange = (id, change) => {
                                     <div className={styles.quantitySelector}>
                                         <button 
                                             onClick={() => handleQuantityChange(id, -1)}
-                                            className={styles.qtyButton}>-
+                                            className={styles.qtyButton}>
+                                               <FaMinusCircle />
+ 
                                             </button>
                                         <span className={styles.quantitiesSelector}>{quantities[id] || 0}</span>
                                         <button onClick={() => handleQuantityChange(id, 1)}
-                                            className={styles.qtyButton}>+</button>
+                                            className={styles.qtyButton}><FaPlusCircle /></button>
                                     </div>                    
-                                        <p className={styles.price}>${price}</p>
+                                        
                                     <Button 
                                         className={styles.addButton}
                                         onClick={() => {

@@ -21,7 +21,7 @@
   .card img {
     width: 90%;
     height: auto;
-    border-radius: 20px 20px 0 0;
+   
     margin: 8px 0;
    
   }
@@ -41,14 +41,38 @@
     width: 98%;
     height: auto;
     justify-items: flex-end;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background-color: #a8a5a529;
     border-radius: 0 14px 0px 20px;
     opacity: 0.9;
     padding-bottom: 5px;
-  
-  
-   
   }
+
+  .sizeSelector {
+    
+    
+    
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+    cursor: pointer;
+  }
+  .sizeSelector:hover{
+    background-color: #1e331756;
+  }
+  
+    
+    
+
   .name{
     font-size: 0.8rem;
     text-shadow: 2px 2px 5px #000000;
@@ -59,44 +83,43 @@
   
   .price{
     font-size: 1.5rem;
-    margin: 0.5rem;
     font-family: 'Creepster', cursive;
     letter-spacing: 3px;
     color: chartreuse;
   }
+  .quantitySelector {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center content */
+    gap: 4px; /* Add some spacing between elements */
+}
 
   .quantitiesSelector{
+   
+    gap: 10px; /* Add some spacing between elements */
     font-family: 'Roboto', cursive;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     text-shadow: 2px 2px 5px #1e3317;
-    margin: 0.5rem;
+   
   }
+
   
   .qtyButton{
    
-    border-radius: 5px;
-    padding: 0.15rem 0.5rem;
-    margin: 0.5rem;
-  }
-  
-  .Button {
-    background-color: #ff8c00;
+   
     border: none;
-    color: white;
-    padding: 10px 10px;
+    box-shadow: none;
+    background-color: #a8a5a500;;
+    padding: 0.5rem;
+    color: #1e3317;
+    font-size: 1.5rem;
     text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    display: inline-block;
-    cursor: pointer;
     justify-content: center;
-    justify-items: center;
-    display: flex;
     align-items: center;
-    margin-right: 0.5rem;
-    
+    justify-items: center;
   }
   
+ 
   
   @media (max-width: 768px) {
     .card {
