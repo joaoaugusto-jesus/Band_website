@@ -18,6 +18,11 @@
     box-shadow: 0 8px 16px 0 rgba(46, 161, 28, 0.2);
   }
   
+  .imageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .card img {
     width: 90%;
     height: auto;
@@ -44,7 +49,7 @@
   
     width: 98%;
     height: auto;
-    justify-items: flex-end;
+    justify-items: center;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -53,7 +58,14 @@
     opacity: 0.9;
     padding: 5px;
   }
+  .priceQtyBox{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      justify-items: center;
 
+  }
   .sizeSelector {
     
     
@@ -62,13 +74,14 @@
     border: 1px solid black;
     padding: 0 1em 0 0;
     margin: 0;
-    width: 100%;
+    width: 60%;
     font-family: 'Roboto';
-    font-size: 1rem;
+    font-size: 0.9rem;
     cursor: inherit;
     line-height: inherit;
     outline: none;
     cursor: pointer;
+    padding: 0.2rem;
   }
   .sizeSelector:hover{
     background-color: #1e331756;
@@ -81,8 +94,8 @@
     font-size: 0.8rem;
     text-shadow: 2px 2px 5px #000000;
     font-family: 'Rock Salt', cursive;
-    letter-spacing: 2;
-    margin-right: 6px;
+    letter-spacing: 4;
+    
   }
   
   .price{
@@ -97,6 +110,7 @@
     align-items: center; /* Align items vertically */
     justify-content: center; /* Center content */
     gap: 4px; /* Add some spacing between elements */
+    padding: 6px;
 }
 
   .quantitiesSelector{
@@ -135,7 +149,7 @@
       
     }
     .card img {
-      width: 75%;
+      width: 90%;
     }
     .name{
       font-size: 0.7rem;

@@ -36,14 +36,7 @@
 
 
 
-.sectionMedia {
-    position: absolute; /* Ensure z-index takes effect */
-    top: 12%;
-    
-    width: 100%;
-  
-    z-index: 1; /* Higher z-index to appear above LayoutBg */
-}
+
 
 .subtitle{
     color: rgb(237, 229, 236);
@@ -61,36 +54,19 @@
         font-size: 1.5rem;
     }
     .sectionHeader p {
-        font-size: 1rem;
+        font-size: 3rem;
     }
 
-    .sectionMedia {
-        top: 7%;
-    }
-    .audioPlayer {
-        width: 50%;
-        right: 0;
-    }
-    .videoPlayer {
-       width: 40%;
-        right: 0;
-        top: 0%;
-    }
-    
-    .listMusicsItems 
-    {
-        display: flex;
-        flex: 1;    }
+   
 }
 
 
 @media (max-width: 500px) {
    
-    .videoPlayer {
-       width: 55%;
-        right: 0;
-        top: 0%;
+    .sectionHeader p {
+        font-size: 2rem;
     }
+ 
     
 }
 
@@ -101,37 +77,11 @@
    .setionHeader p{
     font-size: 0.5rem;
    }
-    .videoPlayer {
-       width: 50%;
-        right: 0;
-        top: 0;
-    }
-    .audioPlayer {
-    width: 50%;
-}
-    .videoContainer h3
-{   
-    
-    font-size: 1rem;
- 
-}
-    .audioContainer h3
-{
-    
-    font-size: 1rem;
-    
-}
+   
 
 }
 @media (max-width: 350px) {
    
-    .videoPlayer {
-       width: 50%;
-        right: 0;
-        top: 55;
-    }
-    .audioPlayer {
-        width: 50%;
-    }
+   
     
 }

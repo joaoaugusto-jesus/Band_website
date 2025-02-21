@@ -29,13 +29,27 @@ const handleQuantityChange = (id, change) => {
 
     return (
         <div className={`${styles.card} ${className}`}>
-            <div classname={styles.imageContainer}>
+            <div className={styles.imageContainer}>
                 <Image priority  src={src} alt={name} width={300} height={300} className={styles.photo}  />
             </div>
             
             <div className={styles.overlay}>
                 <h2 className={styles.name}>{name}</h2>
-                <p className={styles.price}>${price}</p>
+                <div className={styles.priceQtyBox}>
+                <p className={styles.price}>${price}</p> 
+                {/* Quantity Selector */}
+                                    <div className={styles.quantitySelector}>
+                                        <button 
+                                            onClick={() => handleQuantityChange(id, -1)}
+                                            className={styles.qtyButton}>
+                                               <FaMinusCircle />
+ 
+                                            </button>
+                                        <span className={styles.quantitiesSelector}>{quantities[id] || 0}</span>
+                                        <button onClick={() => handleQuantityChange(id, 1)}
+                                            className={styles.qtyButton}><FaPlusCircle /></button>
+                                    </div>  
+                                    </div>
                  {/* Size Selector */}
                  {isShirt && (<select 
                     className={styles.sizeSelector}
@@ -50,18 +64,7 @@ const handleQuantityChange = (id, change) => {
                                     </select>)}
                  
 
-                                    {/* Quantity Selector */}
-                                    <div className={styles.quantitySelector}>
-                                        <button 
-                                            onClick={() => handleQuantityChange(id, -1)}
-                                            className={styles.qtyButton}>
-                                               <FaMinusCircle />
- 
-                                            </button>
-                                        <span className={styles.quantitiesSelector}>{quantities[id] || 0}</span>
-                                        <button onClick={() => handleQuantityChange(id, 1)}
-                                            className={styles.qtyButton}><FaPlusCircle /></button>
-                                    </div>                    
+                                                     
                                         
                                     <Button 
                                         className={styles.addButton}

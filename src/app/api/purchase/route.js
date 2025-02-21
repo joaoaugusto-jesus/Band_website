@@ -28,13 +28,13 @@ export async function POST(req) {
                 totalPrice,
                 items: {
                     create: items.map((item) => ({
-                        productId: item.id,
                         name: item.name,       // Add this field
                         type: item.type,       // Add this field
                         quantity: item.quantity,
                         price: item.price,
                     })),
                 },
+               
             },
         });
 
