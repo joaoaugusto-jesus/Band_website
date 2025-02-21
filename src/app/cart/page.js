@@ -7,9 +7,44 @@ import PageIcon from '../components/Icons/page';
 import Button from '../components/Button';
 import Image from 'next/image';
 import { CiCircleRemove } from "react-icons/ci";
+import { useSession } from 'next-auth/react'; // Import useSession
 
 export default function Cart() {
     const { cart, removeFromCart, clearCart, totalCartPrice } = useCartStore();
+    const { data: session } = useSession(); // Get the user session
+
+    const handlePurchase = async () => {
+        if (!session) {
+            alert("Please log in to complete your purchase.");
+            return;
+        }
+
+        try {
+            const res = await fetch('/api/purchase', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    userId: session.user.id, // Pass the user ID
+                    items: cart, // Pass the cart items
+                    
+                    totalPrice: totalCartPrice(), // Pass the total price
+                }),
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                alert("Purchase successful!");
+                clearCart(); // Clear the cart after purchase
+            } else {
+                alert(data.error || "Purchase failed");
+            }
+        } catch (error) {
+            console.error("Purchase error:", error);
+            alert("Purchase failed");
+        }
+    };
+
 
     return (
         <>
@@ -46,6 +81,7 @@ export default function Cart() {
                 {cart.length > 0 && (
                         <div className={styles.totalItems}>
                             <h3>Total: ${totalCartPrice()?.toFixed(2)}</h3>
+                            <Button onClick={handlePurchase}>Buy Now</Button>
                             <Button onClick={clearCart}>Clear Cart</Button>
                         </div>
                     )}

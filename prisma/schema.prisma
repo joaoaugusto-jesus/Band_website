@@ -25,3 +25,21 @@ model Post {
   userId    String
   user      User     @relation(fields: [userId], references: [id]) // This creates the relation to the User model
 }
+
+model Order {
+    id          Int          @id @default(autoincrement())
+    userId      String
+    totalPrice  Float
+    items       OrderItem[]
+    createdAt   DateTime     @default(now())
+}
+
+model OrderItem {
+    id          Int          @id @default(autoincrement())
+    quantity    Int
+    name        String?       // Add this field optional
+    type        String ?      // Add this field (e.g., "product", "service", etc.)
+    price       Float
+    orderId     Int
+    order       Order        @relation(fields: [orderId], references: [id])
+}

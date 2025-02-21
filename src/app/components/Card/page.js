@@ -29,7 +29,10 @@ const handleQuantityChange = (id, change) => {
 
     return (
         <div className={`${styles.card} ${className}`}>
-            <Image src={src} alt={name} width={300} height={300} className={styles.photo} />
+            <div classname={styles.imageContainer}>
+                <Image priority  src={src} alt={name} width={300} height={300} className={styles.photo}  />
+            </div>
+            
             <div className={styles.overlay}>
                 <h2 className={styles.name}>{name}</h2>
                 <p className={styles.price}>${price}</p>

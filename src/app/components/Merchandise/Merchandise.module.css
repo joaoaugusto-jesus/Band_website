@@ -1,6 +1,6 @@
 .container {
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 4px;
 }
 .grid {
  
@@ -12,10 +12,17 @@
 }
 .title {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #ff8c00dc;
   text-shadow: 2px 2px 5px #000000;
   font-family: 'Anton', cursive;
   letter-spacing: 6;
   
+  
+}
+
+@media (max-width: 350px) {
+  .title{
+    font-size: 1rem;
+  }
 }

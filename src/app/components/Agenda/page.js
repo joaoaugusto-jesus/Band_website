@@ -21,6 +21,12 @@ export default function Agenda() {
 
 
     return (
+
+      <>
+      
+      <div className={styles.liveActs}>
+        Live Acts
+      </div>
       <table className={styles.table}>
         <thead className={styles.head}>
           <tr className={styles.row}>
@@ -39,6 +45,7 @@ export default function Agenda() {
           ))}
         </tbody>
       </table>
+      </>
     ); 
   }
   console.log(gigsData)

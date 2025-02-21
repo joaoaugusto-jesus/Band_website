@@ -42,6 +42,7 @@ export default function Navbar() {
     return (
         <header>
             <nav className={styles.navbar}>
+            <div className={styles.leftSection}>
             <Link className={styles.logoWrapper} href="/">
             
                         <Image 
@@ -52,25 +53,31 @@ export default function Navbar() {
                             className={styles.image}
                         />
                   
-                </Link>
+                </Link> 
+                {session && (
+                    <div className={styles.userName}>
+                    <span className={styles.userNameText}> {session.user?.email}</span> 
+                </div>
+               ) }
+                </div>
                 <div className={styles.navLinks}>                 
                     <div className={styles.cartContainer}> 
-                        <p className={styles.itemCount}>({itemCount})</p>
+                        
                         <Link href="/cart"> <TiShoppingCart
                             className={styles.cart}
                         />
                         
                         </Link>  {/* Show cart count */}
-                       
+                       <p className={styles.itemCount}>({itemCount})</p>
                     </div>
                     <div className={styles.loginContainer}>
                       
                         {session ? (
           <>
-            <span className={styles.username}> {session.user.email}</span>
-            <button onClick={() => signOut()} className={styles.signOutButton}>
-             <MdLogout className={styles.login}/>
-            </button>
+           
+           
+             <MdLogout onClick={() => signOut()} className={styles.login}/>
+         
           </>
         ) : (
             <Link href='/login'>
@@ -82,7 +89,7 @@ export default function Navbar() {
                     
                     {/* dropdown menu */}
                     <li className={styles.navItem}>
-                        <button 
+                        <div 
                             id="menu-icon"
                             onClick={toggleDropdown} 
                             className={styles.dropdownToggle}
@@ -92,11 +99,14 @@ export default function Navbar() {
                             <div className={styles.bar1}></div>
                             <div className={styles.bar2}></div>
                             <div className={styles.bar3}></div>
-                        </button>
+                        </div>
                         {dropdownOpen && (
                              <ul id="dropdown-menu" className={styles.dropdownMenu}>
                                 <li className={styles.dropdownItem}>  
                                         <Link href="/media">Media</Link>
+                                </li>
+                                <li className={styles.dropdownItem}>
+                                        <Link href="/login">Login</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
                                         <Link href="/about-us">About us</Link>

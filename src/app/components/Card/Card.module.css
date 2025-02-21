@@ -15,7 +15,7 @@
 
   
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 rgba(46, 161, 28, 0.2);
   }
   
   .card img {
@@ -35,6 +35,10 @@
   .photo:hover {
     transform: scale(1.05);
   }
+
+  .photo:active {
+    transform: scale(1.75);
+  }
   
   .overlay {
   
@@ -45,9 +49,9 @@
     justify-content: center;
     text-align: center;
     background-color: #a8a5a529;
-    border-radius: 0 14px 0px 20px;
+    border-radius: 0 0 14px 14px;
     opacity: 0.9;
-    padding-bottom: 5px;
+    padding: 5px;
   }
 
   .sizeSelector {
@@ -86,6 +90,7 @@
     font-family: 'Creepster', cursive;
     letter-spacing: 3px;
     color: chartreuse;
+    padding: 4px;
   }
   .quantitySelector {
     display: flex;
@@ -193,7 +198,7 @@
       
     }
     .card img {
-      width: 50%;
+      width: 45%;
       
     }
     .name{
@@ -202,7 +207,7 @@
   
     .price{
       margin-top: 0;
-      font-size: 12px;
+      font-size: 18px;
     
   }
   }

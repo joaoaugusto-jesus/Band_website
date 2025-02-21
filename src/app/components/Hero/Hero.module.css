@@ -1,18 +1,16 @@
 .layout {
-    position: relative;
+   margin-top: 8rem;
     width: 100%;
     height: auto;
     z-index: 0; /* Lower z-index for background */
 }
 
 .sectionHeader {
-    position: absolute; /* Ensure z-index takes effect */
-    top: 5%;
-    left: 0;
+   
     width: 100%;
     height: auto; /* Adjust height as needed */
     z-index: 2; /* Higher z-index to appear above LayoutBg */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    
     text-align: center;
    
     
@@ -20,10 +18,11 @@
 
 .headerTitle {
     text-align: center;
-    font-size: 3rem;
-    color: #9e1c8f;
+    font-size: 5rem;
+    color:#fbda3a;
     text-shadow: 2px 2px 5px #000000;
-    font-family: 'Rock Salt', cursive;
+    font-family: "Capture it";
+    letter-spacing: 2;
   }
 
   .headerSubTitle {
@@ -96,7 +95,12 @@
 }
 
 @media (max-width: 400px) {
-   
+    .sectionHeader h1{
+        font-size: 1rem;
+      }
+   .setionHeader p{
+    font-size: 0.5rem;
+   }
     .videoPlayer {
        width: 50%;
         right: 0;

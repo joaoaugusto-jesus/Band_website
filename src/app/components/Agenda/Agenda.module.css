@@ -1,11 +1,23 @@
+
+.liveActs{
+   
+    text-align: center;
+    font-size: 2rem;
+    color: rgba(255, 140, 0, 0.863);
+    text-shadow: rgb(0, 0, 0) 2px 2px 5px;
+    font-family: Anton, cursive;
+    letter-spacing: 6px;
+    margin-top: 2rem;
+    background-color: #44444427;
+}
+
 .table{
     width: 100%;
     border-collapse: collapse;
-    margin: 4rem 0 2rem 0;
+    margin:0 0 2rem;
     color: #ccc;
     font-family: 'Rock Salt', cursive;
-    
-    
+      
 }
 
 

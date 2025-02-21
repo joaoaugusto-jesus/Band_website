@@ -15,13 +15,15 @@ export default function Hero() {
   
   return (
     <div className={styles.layout}>
-      <LayoutBg />
+      
       <section className={styles.sectionHeader}>
-        <h1 className={styles.headerTitle}>The Snazzy Ragamuffins</h1>
-        <p className={styles.headerSubTitle}>Rock´n Roll Covers and Original Songs</p>
-        <Agenda />
-        <Merchandise />
+        <p className={styles.headerTitle}>[Cartel Cortez]</p>
+       
+       
+        
      </section>
+     <Merchandise />
+      <Agenda />
       <Gallery />
       <Subscribe />
       <PageIcon />

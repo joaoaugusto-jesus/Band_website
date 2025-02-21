@@ -13,7 +13,7 @@ export default function PageIcon() {
                   </div>
                 
               <div className={styles.borderIcons}>
-                  <a href="https://www.facebook.com/profile.php?id=61567175613865/">
+                  <a href="https://www.facebook.com/profile.php?id=61573211184575">
                     <Image src="/assets/icons/facebook.png" 
                     alt="Facebook" width={40} height={40} 
                     />
@@ -21,7 +21,7 @@ export default function PageIcon() {
                 
                 </div>
                 <div className={styles.borderIcons}>
-                  <a href="https://www.facebook.com/profile.php?id=61567175613865/">
+                  <a href="">
                     <Image className={styles.youtubeIcon} src="/assets/icons/youtube.png" 
                     alt="Facebook" width={55} height={50} 
                     />

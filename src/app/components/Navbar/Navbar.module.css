@@ -18,6 +18,12 @@
 
 }
 
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between logo and user email */
+  
+}
   .logoWrapper {
     /* Center and resize the logo */
     display: flex;
@@ -67,7 +73,12 @@
    
   }
 
-  .username{
+  .userName{
+    color: #b1afaf;
+    
+    
+  }
+  .userNameText{
     color: #b1afaf;
   }
   
@@ -78,9 +89,9 @@
     height: auto;
     margin-right: 0.8rem;
    
-    
   }
 
+ 
   .bar1, .bar2, .bar3 {
     width: 2.5rem;
     height: 0.3rem;
@@ -118,7 +129,7 @@
     justify-content: space-around;
     transition: background-color 0.3s ease;
     padding: 0;
-    margin-bottom: 0.3rem;
+    
   }
   
 
@@ -177,14 +188,17 @@
   }
 
   .cart{  
-    width: 3rem;
-    height: auto;
-    margin-top: 0.4rem;
+    width: 3.4rem;
+    height: 4rem;
+    margin-top: 0.2rem;
     color:#b1afaf;
     
   }
 
   .itemCount{
+    position: absolute;
+    right: 13%;
+    bottom: 10%;
     font-size: 0.7rem;
     font-family: 'Roboto';
     color: beige;
@@ -193,41 +207,26 @@
     
   }
   
-@media (max-width: 768px) {
-
-  .logoWrapper{
-    margin: 0;
-  }
-  .subscribe
-  {
-      height: 50vh;
-  }
-  .subscribeContainer
-  {
-      max-width: 300px;
-  }
-  .subscribeTitle
-  {
-      font-size: 20px;
-  }
-  .subscribeText
-  {
-      font-size: 14px;
-  }
-  .subscribeEmail
-  {
-      padding: 5px;
-      font-size: 14px;
-  }
-  .styles.subscribeButton
-  {
-      padding: 5px;
-      font-size: 14px;
+@media (max-width: 900px) {
+  .itemCount{
+    
+    right: 15%;
+   
+  
+    
   }
 }
 
 @media (max-width: 768px)
 {
+
+  .itemCount{
+    
+    right: 22%;
+   
+  
+    
+  }
   .subscribeContainer
   {
        padding: 1rem;
@@ -242,11 +241,23 @@
 
 @media (max-width: 500px)
 {
-  
+  .userName{
+    position: absolute;
+    bottom: 2%;
+
+  }
  
+  .itemCount{
+    
+    right: 22%;
+   
+  
+    
+  }
  
   .login{
     margin-right: 0.4rem;
+    display: none;
   }
 }
 
@@ -258,27 +269,25 @@
     justify-content: start;
   }
   .cart{
-      width: 2rem;
+      width: 3rem;
   }
  
-  .login{
-    width: 2rem;
-  }
+  
   .bar1, .bar2, .bar3{
-    width: 1.8rem;
+    width: 2rem;
     height: 0.2rem;
   }
 
   .change .bar1 {
     transform: rotate(-45deg) translate(-16px, 0px);
     width: 30px;
-    margin-left: 6px;
+    margin-left: 10px;
 
   }
   .change .bar3 {
-    transform: rotate(45deg) translate(-14px, 0px);
+    transform: rotate(45deg) translate(-15px, 0px);
     width: 30px;
-    margin-left: 6px;
+    margin-left: 10px;
 
   }
 }
