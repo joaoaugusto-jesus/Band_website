@@ -59,51 +59,53 @@ export default function ContactUs() {
   return (
     <>
     <Navbar />
-    <LayoutBg />
-      <form onSubmit={handleSubmit} className={styles.form}>
-          <div className={styles.formGroup}>
-              <label htmlFor="name" className={styles.formName}>Name</label>
-              <input 
-              type="text" 
-              name="name"
-              maxLength={40} 
-              value={formData.name}
-              onChange={handleChange}
-              className={styles.formNameInput} 
-              required placeholder="Your name" />
-          
-              <label htmlFor="email" className={styles.formEmail}>Email</label>
-              <input 
-                type="email" 
-                name="email"
-                value={formData.email} 
-                onChange={handleChange}
-                className={styles.formEmailInput}
-                maxLength={40} 
-                required placeholder="email@example.com" />
-              <label htmlFor="phone" className={styles.formEmail}>Phone number</label>
-              <input 
-                type="tel" 
-                name="phone"
-                value={formData.phone} 
-                onChange={handleChange}
-                className={styles.formEmailInput}
-                maxLength={40} 
-                required placeholder="+351 999 999 999" />
-              <label htmlFor="message" className={styles.formPhone}>Phone</label>
-              <textarea 
-                name="message"
-                value={formData.message} 
-                onChange={handleChange}
-                className={styles.formMessageInput} 
-                required rows="3" placeholder="Enter Message"></textarea>
-          </div>
-          <Button className={styles.Button} type="submit">Submit</Button> 
-          {submissionResult && submissionResult.pending && <p className={styles.success}>Submiting</p> }
-          {submissionResult && submissionResult.success && <p className={styles.success}>Sent successfully!</p> }
-          {submissionResult && !submissionResult.success && <p className={styles.error}>Failed to send!</p>}
-      </form>
-     
+   <div className={styles.layout}>
+      <div className={styles.contactUsContainer}>
+              <form onSubmit={handleSubmit} className={styles.contactUsform}>
+                 
+                      <label htmlFor="name" className={styles.formlabel}>Name</label>
+                      <input 
+                      type="text" 
+                      name="name"
+                      maxLength={40} 
+                      value={formData.name}
+                      onChange={handleChange}
+                      className={styles.formNameInput} 
+                      required placeholder="Your name" />
+                  
+                      <label htmlFor="email" className={styles.formlabel}>Email</label>
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={formData.email} 
+                        onChange={handleChange}
+                        className={styles.formEmailInput}
+                        maxLength={40} 
+                        required placeholder="email@example.com" />
+                      <label htmlFor="phone" className={styles.formlabel}>Phone number</label>
+                      <input 
+                        type="tel" 
+                        name="phone"
+                        value={formData.phone} 
+                        onChange={handleChange}
+                        className={styles.formEmailInput}
+                        maxLength={40} 
+                        required placeholder="+351 999 999 999" />
+                      <label htmlFor="message" className={styles.formlabel}>Leave a message</label>
+                      <textarea 
+                        name="message"
+                        value={formData.message} 
+                        onChange={handleChange}
+                        className={styles.formMessageInput} 
+                        required rows="3" placeholder="Enter Message"></textarea>
+                
+                  <Button className={styles.Button} type="submit">Submit</Button> 
+                  {submissionResult && submissionResult.pending && <p className={styles.success}>Submiting</p> }
+                  {submissionResult && submissionResult.success && <p className={styles.success}>Sent successfully!</p> }
+                  {submissionResult && !submissionResult.success && <p className={styles.error}>Failed to send!</p>}
+              </form>
+        </div>
+     </div>
         <PageIcon />
       <Footer />
     </>

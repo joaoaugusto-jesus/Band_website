@@ -4,7 +4,6 @@ import Navbar from "../components/Navbar/page";
 import Footer from "../components/Footer/page";
 import styles from "./Login.module.css";
 import PageIcon from "../components/Icons/page";
-import LayoutBg from "../components/LayoutBg/page";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Button from "../components/Button";
 import { useState } from "react";
@@ -67,8 +66,8 @@ export default function Login() {
   return (
     <>
       <Navbar />
-      <LayoutBg />
-
+      
+      <div className={styles.layout}>
       <div className={styles.loginContainer}>
         {session ? (
           <>
@@ -77,9 +76,10 @@ export default function Login() {
           </>
         ) : (
           <div className={styles.loginForm}>
-            <h2>{isLogin ? "Login" : "Sign Up"}</h2>
-            {error && <p className={styles.error}>{error}</p>}
-            <Button onClick={() => signIn("google")}>Sign in with Google</Button>
+          
+           
+            <Button onClick={() => signIn("google")}>Sign in with Google</Button> 
+             <h2>{isLogin ? "Login" : "Sign Up"}</h2>
             <input
               className={styles.input}
               type="email"
@@ -94,6 +94,7 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            {error && <p className={styles.error}>{error}</p>}
             {isLogin ? (
               <Button onClick={handleLogin} disabled={loading}>
                 {loading ? "Logging in..." : "Login"}
@@ -102,17 +103,19 @@ export default function Login() {
               <Button onClick={handleSignup} disabled={loading}>
                 {loading ? "Signing up..." : "Sign Up"}
               </Button>
-            )}
+            )} 
+             
             <Button
               className={styles.toggleButton}
               onClick={() => setIsLogin(!isLogin)}
             >
-              {isLogin ? "Don't have an account? Sign Up" : "Already have an account? Login"}
+              {isLogin ? "Sign Up" : "Login"}
             </Button>
+          
           </div>
         )}
       </div>
-
+   </div>
       <PageIcon />
       <Footer />
     </>

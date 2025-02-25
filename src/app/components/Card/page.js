@@ -26,6 +26,10 @@ const handleQuantityChange = (id, change) => {
     }));
 };
 
+const calculateTotalPrice = (id) => {
+    const quantity = quantities[id] || 0;
+    return (quantity * price).toFixed(2); // Ensure the price is formatted to 2 decimal places
+  };
 
     return (
         <div className={`${styles.card} ${className}`}>
@@ -36,8 +40,8 @@ const handleQuantityChange = (id, change) => {
             <div className={styles.overlay}>
                 <h2 className={styles.name}>{name}</h2>
                 <div className={styles.priceQtyBox}>
-                <p className={styles.price}>${price}</p> 
-                {/* Quantity Selector */}
+                <p className={styles.price}>${calculateTotalPrice(id)}</p> 
+                {/* Quantity Selector */} </div>
                                     <div className={styles.quantitySelector}>
                                         <button 
                                             onClick={() => handleQuantityChange(id, -1)}
@@ -49,7 +53,7 @@ const handleQuantityChange = (id, change) => {
                                         <button onClick={() => handleQuantityChange(id, 1)}
                                             className={styles.qtyButton}><FaPlusCircle /></button>
                                     </div>  
-                                    </div>
+                                   
                  {/* Size Selector */}
                  {isShirt && (<select 
                     className={styles.sizeSelector}

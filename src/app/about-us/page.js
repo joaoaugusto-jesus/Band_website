@@ -1,34 +1,70 @@
+"use client";
+
+import { musicians } from "../Data/musicians";
 import Navbar from "../components/Navbar/page";
 import Footer from "../components/Footer/page";
 import LayoutBg from "../components/LayoutBg/page";
 import PageIcon from "../components/Icons/page";
 import styles from "./AboutUs.module.css";
 import LayoutTb from "../components/LayoutTb/page";
+import { useState } from "react";
+import Modal from "../components/Modal/page"; // Import the Modal component
 
 export default function AboutUs() {
 
+   
+      const [isModalOpen, setIsModalOpen] = useState(false);
+      const [selectedMusician, setSelectedMusician] = useState(null);
 
-    return  (
+    // Handle opening the modal
+    const handleOpenModal = (musician) => {
+        setSelectedMusician(musician);
+        setIsModalOpen(true);
+      };
+    
+      // Handle closing the modal
+      const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setSelectedMusician(null);
+      };
+        
+
+
+      return (
         <>
-            <Navbar />
-            <div className={styles.layout}>
-                <LayoutTb />
-                <div className={styles.title}>
-                    
-                    <h2>Musicians</h2>
-                  
-                    <div className={styles.container}>
-                        <ul className={styles.list}>
-                            <li className={styles.items}><span>Vocals</span></li>
-                            <li className={styles.items}><span>Guitar</span></li>
-                            <li className={styles.items}><span>Bass</span></li>
-                            <li className={styles.items}><span>Drums</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <PageIcon />
-            <Footer />
-        </>
-    )
-}
+          <Navbar />
+          <div className={styles.layout}>
+           
+            <div className={styles.title}>
+              <h2>Musicians</h2>
+
+             </div> 
+             
+              <div className={styles.container}>
+                <ul className={styles.list}>
+                  {musicians.map((musician) => (
+                    <li
+                      key={musician.id}
+                      className={styles.items}
+                      onClick={() => handleOpenModal(musician)}
+                    >
+                      <span>{musician.name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            
+         
+        
+    
+          {/* Render the Modal */}
+          <Modal
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            musician={selectedMusician}
+          /> </div>
+           <PageIcon />
+          <Footer />
+          </> 
+      );
+    }

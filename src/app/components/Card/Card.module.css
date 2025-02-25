@@ -1,16 +1,17 @@
 .card {
     margin: 20px;
-    width: 12.5rem;
+    width: 15rem;
     height: auto;
-    border: 1px solid #444444;
+    border: 1px solid #44444445;
     border-radius: 0 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     color: aliceblue;
-    background-color: #444444aa;
+    background-color: #44444408;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 0.5rem;
   }
 
   
@@ -47,13 +48,13 @@
   
   .overlay {
   
-    width: 98%;
+    width: 92%;
     height: auto;
     justify-items: center;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #a8a5a529;
+    background-color: #a8a5a5;
     border-radius: 0 0 14px 14px;
     opacity: 0.9;
     padding: 5px;
@@ -74,7 +75,7 @@
     border: 1px solid black;
     padding: 0 1em 0 0;
     margin: 0;
-    width: 60%;
+    width: 50%;
     font-family: 'Roboto';
     font-size: 0.9rem;
     cursor: inherit;
@@ -82,6 +83,7 @@
     outline: none;
     cursor: pointer;
     padding: 0.2rem;
+   
   }
   .sizeSelector:hover{
     background-color: #1e331756;
@@ -97,20 +99,24 @@
     letter-spacing: 4;
     
   }
-  
+ 
   .price{
     font-size: 1.5rem;
     font-family: 'Creepster', cursive;
     letter-spacing: 3px;
+    text-shadow: 2px 2px 5px #000000;
     color: chartreuse;
-    padding: 4px;
+    padding: 0.5rem;
+    
   }
   .quantitySelector {
     display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: center; /* Center content */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
     gap: 4px; /* Add some spacing between elements */
-    padding: 6px;
+    font-family: 'Roboto', cursive;
 }
 
   .quantitiesSelector{
@@ -119,7 +125,7 @@
     font-family: 'Roboto', cursive;
     font-size: 1.5rem;
     margin-bottom: 0.3rem;
-    text-shadow: 2px 2px 5px #1e3317;
+    text-shadow: 2px 2px 5px #000000;
    
   }
 
