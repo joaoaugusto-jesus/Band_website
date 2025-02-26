@@ -79,7 +79,7 @@ export default function Login() {
           
            
             <Button onClick={() => signIn("google")}>Sign in with Google</Button> 
-             <h2>{isLogin ? "Login" : "Sign Up"}</h2>
+             <h2 className={styles.logged}>{isLogin ? "Login" : "Sign Up"}</h2>
             <input
               className={styles.input}
               type="email"

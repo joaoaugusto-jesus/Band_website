@@ -35,12 +35,12 @@ export default function AboutUs() {
           <Navbar />
           <div className={styles.layout}>
            
+             
+              <div className={styles.container}>
             <div className={styles.title}>
               <h2>Musicians</h2>
 
              </div> 
-             
-              <div className={styles.container}>
                 <ul className={styles.list}>
                   {musicians.map((musician) => (
                     <li
@@ -48,7 +48,7 @@ export default function AboutUs() {
                       className={styles.items}
                       onClick={() => handleOpenModal(musician)}
                     >
-                      <span>{musician.name}</span>
+                      <span className={styles.names}>{musician.name}</span>
                     </li>
                   ))}
                 </ul>

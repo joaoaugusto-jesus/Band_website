@@ -9,7 +9,9 @@ import Button from "../components/Button";
 import PageIcon from "../components/Icons/page";
 
 export default function ContactUs() {
-    const [formData, setFormData] = useState({
+    
+  
+  const [formData, setFormData] = useState({
         name: "",
         email: "",
         message: "",
@@ -88,7 +90,7 @@ export default function ContactUs() {
                         name="phone"
                         value={formData.phone} 
                         onChange={handleChange}
-                        className={styles.formEmailInput}
+                        className={styles.formPhoneInput}
                         maxLength={40} 
                         required placeholder="+351 999 999 999" />
                       <label htmlFor="message" className={styles.formlabel}>Leave a message</label>

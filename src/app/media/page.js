@@ -112,14 +112,16 @@ export default function Media() {
               <ul className={styles.listMusics}>
                   <h2 className={styles.subtitle}>Musics</h2>  
                   {tracks.map((track, index) => (
-                  <li key={index} className={styles.listMusicsItems}>
+                  <li key={index} className={styles.listMusicsItems}> 
+                  <h1 className={styles.musicDisplay}> {track.name}</h1>
                     <Button
                       className={`${styles.musicButton} ${currentTrack?.name === track.name && isPlaying ? styles.active : ''}`}
                       onClick={() => playTrack(track)}
+                      style={{ width: 60 } }
                     >
-                     
+                     Play
                     </Button>
-                    <h1 className={styles.musicDisplay}> {track.name}</h1>
+                   
                   </li>
                 ))}
               </ul>

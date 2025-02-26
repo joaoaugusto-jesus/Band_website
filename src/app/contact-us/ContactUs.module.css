@@ -1,7 +1,9 @@
 .layout{
     margin: 0;
+    border: 0;
+    padding: 0;
     width: 100%;
-    height: 100vh;
+    height: auto;
 }
 
 
@@ -9,30 +11,39 @@
 
 .contactUsContainer{    
     
-    position: absolute; /* Ensure z-index takes effect */
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the container properly */
-    padding: 20px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin: 0 auto;
-    width: 600px;
+    margin: 8rem;
+    padding: 2rem;
     height: auto;
     text-align: center;
 }
 
+.contactUsform{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+}
 
 .formNameInput,
 .formEmailInput,
+.formPhoneInput,
 .formMessageInput {
     width: 100%; /* Ensure inputs take the full width of the container */
     height: 40px;
     border-radius: 5px;
     border: 1px solid #ccc;
     padding: 10px;
-    display: block; /* Ensures inputs appear on a new line */
     margin-bottom: 1rem;
     
     
@@ -43,6 +54,9 @@
     font-size: 1.3rem;
     margin-top: 20px;
     margin-bottom: 14px;
+    width: 100%;
+    display: block;
+   
 }
 .formMessageInput{
     height: 200px; /* Adjust height of the message input */
@@ -52,4 +66,34 @@
     font-size: 1.5rem;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px){
+    .contactUsContainer{
+        margin: 8rem 2rem 2rem 2rem;
+    }
+    .contactUsform{
+        margin: 2rem 0 2rem 0;
+    }
+    .formNameInput,
+    .formEmailInput,
+    .formMessageInput {
+        width: 100%; /* Ensure inputs take the full width of the container */
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 1rem;
+        
+    }
+    .formMessageInput{
+        height: 200px; /* Adjust height of the message input */
+    }
+    .success{
+        color: rgb(227, 236, 227);
+        font-size: 1.5rem;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }

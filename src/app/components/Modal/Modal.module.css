@@ -18,8 +18,31 @@
     max-width: 500px;
     width: 90%;
     position: relative;
+    
   }
   
+  .musicianName{
+    font-family: 'Creepster';
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 3;
+    color: rgb(46, 45, 45);
+    opacity: 0.9;
+    text-shadow: 2px 2px 5px #323432;
+  }
+  .musicianDescription{
+    font-family: 'Creepster';
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 3;
+    color: rgb(134, 3, 3);
+    opacity: 0.9;
+    text-shadow: 2px 2px 5px #323432;
+    text-align: center;
+  }
+
   .closeButton {
     position: absolute;
     top: 10px;
