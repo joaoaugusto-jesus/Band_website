@@ -9,7 +9,7 @@ import Footer from "../Footer/page";
 import PageIcon from "../Icons/page";
 import Agenda from "../Agenda/page";
 import Merchandise from "../Merchandise/page";
-
+import Image from "next/image";
 
 const videos = [
   {
@@ -25,7 +25,13 @@ export default function Hero() {
     <div className={styles.layout}>
       
       <section className={styles.sectionHeader}>
-        <p className={styles.headerTitle}>[Cartel Cortez]</p>
+        <div className={styles.headerTitle}>
+          <Image
+            src="/assets/img/Cartel Banner White.png"
+            alt="Cartel Cortez"
+            width={700}
+            height={200} />  
+        </div>
        
        <video 
           className={styles.videoTeaser}  
