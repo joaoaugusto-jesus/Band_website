@@ -28,9 +28,12 @@ export default function Hero() {
         <div className={styles.headerTitle}>
           <Image
             src="/assets/img/Cartel Banner White.png"
+            sizes="(max-width: 700px) 100vw, 700px"
+            style={{ width: "100%", height: "auto" }}
             alt="Cartel Cortez"
             width={700}
-            height={200} />  
+            height={200}
+            priority/>  
         </div>
        
        <video 

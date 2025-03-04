@@ -28,12 +28,9 @@
     /* Center and resize the logo */
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 7rem; /* Adjust as needed */
-    height: 5.8rem; /* Adjust as needed */
     overflow: hidden;
     cursor: pointer; /* Optional for rounded edges */
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
   
   .logoWrapper img {
@@ -99,6 +96,7 @@
     margin: 4px 0;
     transition: 0.4s;
     border-radius: 5px;
+    margin-left: 1rem;
     
   }
 
@@ -136,17 +134,19 @@
   .change .bar1 {
     transform: rotate(-45deg) translate(-14px, 4px);
     width: 40px;
-   
+    margin-left: 1rem;
 
   }
   
   .change .bar2 {
     opacity: 0;
+  
   }
   
   .change .bar3 {
     transform: rotate(45deg) translate(-14px, -4px);
     width: 40px;
+    margin-left: 1rem;
   }
   .dropdownMenu 
   {
@@ -259,37 +259,38 @@
     margin-right: 0.4rem;
     display: none;
   }
+
+  .cart{
+    width: 3rem;
+  }
+  .bar1, .bar2, .bar3 {
+    width: 2rem;
+    margin-left: 0.5rem;
+  }
 }
 
 @media (max-width: 400px)
 {
-  .image{
-    width: 8rem;
-   
-    justify-content: start;
-  }
-  .cart{
-      width: 3rem;
+ 
+  .userName{
+    position: absolute;
+    bottom: 2%;
+    right: 0;
   }
  
   
-  .bar1, .bar2, .bar3{
-    width: 2rem;
-    height: 0.2rem;
+  .itemCount{
+    
+    right: 22%;
+   
+  
+    
   }
 
-  .change .bar1 {
-    transform: rotate(-45deg) translate(-16px, 0px);
-    width: 30px;
-    margin-left: 10px;
-
+  .cart{
+    width: 2.5rem;  
   }
-  .change .bar3 {
-    transform: rotate(45deg) translate(-15px, 0px);
-    width: 30px;
-    margin-left: 10px;
 
-  }
 }
 
 @media (max-width: 350px)

@@ -47,10 +47,11 @@ export default function Navbar() {
             
                         <Image 
                             src="/assets/img/cartel-band-photo-bg-black.png"
-                            alt="The Name of a Band"   
-                            width={400}
-                            height={400}
+                            alt="The Name of a Band" 
+                            width={80}
+                            height={80}
                             className={styles.image}
+                            style={{borderRadius: "14%", border: "1px solid #b1afaf", "box-shadow": "0 0 6px 0 #b1afaf", cursor: "pointer"}}
                         />
                   
                 </Link> 
