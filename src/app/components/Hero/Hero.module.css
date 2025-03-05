@@ -50,7 +50,8 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    width: 100%; /* Make the container responsive */
+    width: 80%;
+    height: auto; /* Make the container responsive */
     max-width: 800px; /* Set a maximum width for the video */
     margin: 0 auto; /* Center the container itself */
     position: relative; /* For any absolute positioning inside */

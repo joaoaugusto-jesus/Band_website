@@ -19,8 +19,7 @@
     margin:0 0 2rem;
     color: #f5f5f5;
     font-family: 'Roboto', cursive;
-    letter-spacing: 2;
-      
+    letter-spacing: 2;   
 }
 
 
@@ -42,16 +41,16 @@
 }
 .row{
     
-    margin: 0 2rem 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 2rem;
     align-items: center;
-   
     border-bottom: 1px solid #f5f5f5;;
     justify-items: center;
 
 }
 .date{
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 .venue{
@@ -87,20 +86,20 @@
         font-weight: 700;
     }
     .venue{
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         font-weight: 700;
     }
     .location{
         font-size: 0.6rem;
         font-weight: 700;
     }
-    
+  
 }
 
 
 @media (max-width: 350px) {
    .table{
-    margin: 1rem 0 1rem 0;
+    margin: 1rem 0 2rem 0;
    }
     
     

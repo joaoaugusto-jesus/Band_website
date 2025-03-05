@@ -49,9 +49,9 @@ export default function Navbar() {
                             src="/assets/img/cartel-band-photo-bg-black.png"
                             alt="The Name of a Band" 
                             width={80}
-                            height={80}
+                            height={60}
                             className={styles.image}
-                            style={{borderRadius: "14%", border: "1px solid #b1afaf", "box-shadow": "0 0 6px 0 #b1afaf", cursor: "pointer"}}
+                            style={{borderRadius: "14%", "box-shadow": "0 1px 2px 0 #b1afaf"}}
                         />
                   
                 </Link> 
@@ -69,7 +69,7 @@ export default function Navbar() {
                         />
                         
                         </Link>  {/* Show cart count */}
-                       <p className={styles.itemCount}>({itemCount})</p>
+                       <p className={styles.itemCount}>{itemCount > 0 && `(${itemCount})`}</p>
                     </div>
                     <div className={styles.loginContainer}>
                       

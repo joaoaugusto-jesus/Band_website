@@ -29,7 +29,7 @@ export default function Hero() {
           <Image
             src="/assets/img/Cartel Banner White.png"
             sizes="(max-width: 700px) 100vw, 700px"
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "80%", height: "auto" }}
             alt="Cartel Cortez"
             width={700}
             height={200}
