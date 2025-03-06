@@ -1,4 +1,3 @@
-
 import styles from "./page.module.css";
 import Head from 'next/head';
 import Navbar from "./components/Navbar/page";

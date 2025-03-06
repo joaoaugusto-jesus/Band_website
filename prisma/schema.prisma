@@ -8,12 +8,17 @@ generator client {
 }
 
 model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
+  id        String    @id @default(cuid())
+  email     String    @unique
   password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt @map(name: "updated_at")
-  posts     Post[]   // This field should relate to the Post model
+  name      String?
+  role      String    @default("user") // Add a default value
+  venues    Venue[]
+  gigs      Gig[]
+  bookings  Booking[]
+  posts     Post[] // Add this field to define the opposite relation
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @default(now()) @updatedAt
 }
 
 model Post {
@@ -21,25 +26,53 @@ model Post {
   title     String
   content   String
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  updatedAt DateTime @updatedAt
   userId    String
-  user      User     @relation(fields: [userId], references: [id]) // This creates the relation to the User model
+  user      User     @relation(fields: [userId], references: [id]) // Relation to User
 }
 
 model Order {
-    id          Int          @id @default(autoincrement())
-    userId      String
-    totalPrice  Float
-    items       OrderItem[]
-    createdAt   DateTime     @default(now())
+  id         Int         @id @default(autoincrement())
+  userId     String
+  totalPrice Float
+  items      OrderItem[]
+  createdAt  DateTime    @default(now())
 }
 
 model OrderItem {
-    id          Int          @id @default(autoincrement())
-    quantity    Int
-    name        String?       // Add this field optional
-    type        String ?      // Add this field (e.g., "product", "service", etc.)
-    price       Float
-    orderId     Int
-    order       Order        @relation(fields: [orderId], references: [id])
+  id       Int     @id @default(autoincrement())
+  quantity Int
+  name     String? // Optional field
+  type     String? // Optional field (e.g., "product", "service", etc.)
+  price    Float
+  orderId  Int
+  order    Order   @relation(fields: [orderId], references: [id])
+}
+
+model Venue {
+  id       Int    @id @default(autoincrement())
+  name     String
+  address  String
+  capacity Int
+  ownerId  String // Matches User.id type
+  owner    User   @relation(fields: [ownerId], references: [id])
+  gigs     Gig[]
+}
+
+model Gig {
+  id       Int       @id @default(autoincrement())
+  name     String
+  date     DateTime
+  artistId String // Matches User.id type
+  artist   User      @relation(fields: [artistId], references: [id])
+  venueId  Int
+  venue    Venue     @relation(fields: [venueId], references: [id])
+}
+
+model Booking {
+  id     Int    @id @default(autoincrement())
+  userId String
+  date      DateTime
+  user   User   @relation(fields: [userId], references: [id])
+  status String // e.g., "pending", "confirmed", "cancelled"
 }

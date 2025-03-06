@@ -46,9 +46,11 @@ export const authOptions = {
       return token;
     },
     async session({ session, token }) {
-      session.user.id = token.id;
+      if (session.user) {
+        session.user.id = token.id;
+      }
       return session;
-    },
+    }
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
