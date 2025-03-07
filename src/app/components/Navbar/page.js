@@ -103,23 +103,28 @@ export default function Navbar() {
                         </div>
                         {dropdownOpen && (
                              <ul id="dropdown-menu" className={styles.dropdownMenu}>
-                                <li className={styles.dropdownItem}>  
-                                        <Link href="/media">Media</Link>
-                                </li>
+                               
                                 <li className={styles.dropdownItem}>
                                         <Link href="/login">Login</Link>
-                                </li>
-                                <li className={styles.dropdownItem}>
-                                        <Link href="/about-us">About us</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
                                     <Link href="/store">Store</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
+                                        <Link href="/about-us">About us</Link>
+                                </li>
+                                
+                                <li className={styles.dropdownItem}>
                                     <Link href="/cart">Cart</Link>
+                                </li> 
+                                <li className={styles.dropdownItem}>  
+                                        <Link href="/media">Media</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
                                     <Link href="/contact-us">Contact</Link>
+                                </li>
+                                <li className={styles.dropdownItem}>
+                                    <Link href="/booking">Booking</Link>
                                 </li>
                             </ul>
                         )}
