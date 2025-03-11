@@ -132,14 +132,14 @@ const GigBookingComponent = () => {
                         {loading ? <p>Loading...</p> : (
                             <ul>
                                 {bookings.map((booking) => (
-                                    <li key={booking.id}>
+                                    <li key={booking.id} className={styles.bookingRquested}>
                                         <p className={styles.dateRequest}><strong>Date:</strong> {new Date(booking.date).toLocaleDateString()}</p>
                                         <p className={styles.statusRequest}><strong>Status:</strong> {booking.status}</p>
                                         <div className={styles.buttonContainer}
-                                         style={{ marginTop: "1rem", width:"30%", padding:"0.5rem" }}
+                                         style={{ width:"30%", padding:"0.5rem" }}
                                         onClick={() => handleDeleteBooking(booking.id)}
                                         disabled={loading}
-                                        ><CiCircleRemove className={styles.iconRemove}/> Cancel Booking
+                                        ><CiCircleRemove className={styles.iconRemove} alt="Cancel Booking" /> 
                                         </div>
                                     </li>
                                     
