@@ -7,19 +7,76 @@
     height: 100vh;
 }
 
-.header
-{   
-    margin-top: 8rem;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
+
+
+.formContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 8rem;
+    padding: 2rem;
+    height: auto;
+   text-align: center;
 }
 
+.header
+{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+
+
+}
+
+.request
+{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.dateInput
+{
+    margin: 1rem;
+    width: 30%;
+    height: 2rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
 .content
 {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 45%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.dateRequest{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+.statusRequest{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+.iconRemove{
+    color: rgb(187, 15, 15);
+    margin-left: 0.2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;  
 }

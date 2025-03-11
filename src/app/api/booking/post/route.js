@@ -14,6 +14,16 @@ export async function POST(request) {
             return new Response(JSON.stringify({ error: "Missing required fields" }), {
                 status: 400,
             });
+        } else {
+            if (!userId) {
+                return new Response(JSON.stringify({ error: "Missing userId" }), {
+                    status: 400,
+                });
+            } else if (!date) {
+                return new Response(JSON.stringify({ error: "Missing date" }), {
+                    status: 400,
+                });
+            }
         }
 
         // Create the booking

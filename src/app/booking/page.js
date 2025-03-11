@@ -5,6 +5,9 @@ import { useSession } from 'next-auth/react'; // Import useSession
 import Navbar from "../components/Navbar/page";
 import PageIcon from "../components/Icons/page";
 import Footer from "../components/Footer/page";
+import Button from "../components/Button";
+import { CiCircleRemove } from "react-icons/ci";
+
 const GigBookingComponent = () => {
     const [selectedDate, setSelectedDate] = useState("");
     const [message, setMessage] = useState("");
@@ -67,29 +70,61 @@ const GigBookingComponent = () => {
         }
     };
 
+    const handleDeleteBooking = async (bookingId) => {
+        try {
+            setLoading(true);
+            const response = await fetch(`/api/booking/${bookingId}`, {
+                method: "DELETE",
+            });
+    
+            if (!response.ok) {
+                throw new Error("Failed to delete booking");
+            }
+    
+            // Remove the deleted booking from the state
+            setBookings((prev) => prev.filter((booking) => booking.id !== bookingId));
+            setMessage("Booking deleted successfully.");
+        } catch (error) {
+            setMessage("Failed to delete booking. Please try again.");
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <>
         <Navbar />
-        <div className={styles.layout}>
+        <div className={styles.layout}>  
+            
+            <form className={styles.formContainer}>
+               
             <div className={styles.header}>
-            <h1>Request a Band for Your Venue</h1>
-            {message && <p>{message}</p>}
+                <h1>Request a Band for Your Venue</h1>
+                {message && <p>{message}</p>}
 
-                <div>
+                <div className={styles.request}>
                     <label>
                         Select Date:
                         <input
+                            className={styles.dateInput}
                             type="date"
                             value={selectedDate}
                             onChange={(e) => setSelectedDate(e.target.value)}
                             disabled={loading}
                         />
                     </label>
-                    <button onClick={handleBookingRequest} disabled={loading}>
-                        {loading ? "Submitting..." : "Submit Request"}
-                    </button>
+                        <div className={styles.buttonContainer}>
+                            <Button 
+                                onClick={handleBookingRequest} 
+                                disabled={loading}
+                                style={{ marginTop: "1rem", width:"30%", padding:"0.5rem" }}
+                                >
+                                {loading ? "Submitting..." : "Submit Request"}
+                            </Button> 
+                        </div>
                    </div>
                 </div>
+             
             <div className={styles.content}>
 
                     <div className={styles.bookings}>
@@ -98,14 +133,22 @@ const GigBookingComponent = () => {
                             <ul>
                                 {bookings.map((booking) => (
                                     <li key={booking.id}>
-                                        <p><strong>Date:</strong> {new Date(booking.date).toLocaleDateString()}</p>
-                                        <p><strong>Status:</strong> {booking.status}</p>
+                                        <p className={styles.dateRequest}><strong>Date:</strong> {new Date(booking.date).toLocaleDateString()}</p>
+                                        <p className={styles.statusRequest}><strong>Status:</strong> {booking.status}</p>
+                                        <div className={styles.buttonContainer}
+                                         style={{ marginTop: "1rem", width:"30%", padding:"0.5rem" }}
+                                        onClick={() => handleDeleteBooking(booking.id)}
+                                        disabled={loading}
+                                        ><CiCircleRemove className={styles.iconRemove}/> Cancel Booking
+                                        </div>
                                     </li>
+                                    
                                 ))}
                             </ul>
                         )}
                     </div>
-            </div>
+                </div>
+            </form>
         </div>
         <PageIcon />
         <Footer />
