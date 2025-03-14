@@ -27,11 +27,11 @@ export default function Hero() {
       <section className={styles.sectionHeader}>
         <div className={styles.headerTitle}>
           <Image
-            src="/assets/img/Cartel Banner White.png"
-            sizes="(max-width: 700px) 100vw, 700px"
-            style={{ width: "80%", height: "auto" }}
+            src="/assets/img/cartel-band-photo-bg-black.png"
+            sizes="(max-width: 300px) 100vw, 300px"
+            style={{ width: "70%", height: "auto", backgroundColor:"#090909", boxShadow: "2px 2px 5px #000000"}}
             alt="Cartel Cortez"
-            width={700}
+            width={300}
             height={200}
             priority/>  
         </div>
@@ -46,7 +46,7 @@ export default function Hero() {
       </video>
         
      </section>
-     <Merchandise />
+      <Merchandise />
       <Agenda />
       <Gallery />
       <Subscribe />

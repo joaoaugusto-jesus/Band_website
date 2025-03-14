@@ -9,52 +9,42 @@
    
     width: 100%;
     height: auto; /* Adjust height as needed */
-    z-index: 2; /* Higher z-index to appear above LayoutBg */
-    
-    text-align: center;
+    display: flex;
    
+    text-align: center;
+    
     
 }
 
 .headerTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    height: auto;
     text-align: center;
     font-size: 5rem;
     color:#fbda3a;
-    text-shadow: 2px 2px 5px #000000;
+    
+    border-radius: 4%;
+    
     font-family: "Capture it";
     letter-spacing: 2;
   }
 
-  .headerSubTitle {
-    text-align: center;
-    font-size: 1.5rem;
-    color: #ff8c00dc;
-    text-shadow: 2px 2px 5px #000000;
-    font-family: 'Anton', cursive;
-    letter-spacing: 2;
-  }
-
-
-
-
-
-.subtitle{
-    color: rgb(237, 229, 236);
-    font-size: 1.5rem;
-    font-family: 'Chau Philomene One', cursive; 
-    margin-left: 2rem;
-}
+  
 
 
 .videoTeaser {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    width: 80%;
+   
+    width: 40%;
     height: auto; /* Make the container responsive */
     max-width: 800px; /* Set a maximum width for the video */
     margin: 0 auto; /* Center the container itself */
-    position: relative; /* For any absolute positioning inside */
+    padding: 2.7rem; /* Add some padding to the video */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
   }
   
   .videoTeaser video {

@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import { MdLogin, MdLogout } from "react-icons/md";
 import { useCartStore } from '../../store/cartStore';
 import { TiShoppingCart } from "react-icons/ti";
+import { FaBars } from "react-icons/fa";
+import { IoIosClose } from "react-icons/io";
 import { useSession, signOut } from "next-auth/react";
 
 
@@ -46,12 +48,12 @@ export default function Navbar() {
             <Link className={styles.logoWrapper} href="/">
             
                         <Image 
-                            src="/assets/img/cartel-band-photo-bg-black.png"
+                            src="/assets/img/Cartel Banner White.png"
                             alt="The Name of a Band" 
-                            width={80}
+                            width={100}
                             height={60}
                             className={styles.image}
-                            style={{borderRadius: "14%", "box-shadow": "0 1px 2px 0 #b1afaf"}}
+                            style={{borderRadius: "14%"}}
                         />
                   
                 </Link> 
@@ -62,7 +64,23 @@ export default function Navbar() {
                ) }
                 </div>
                 <div className={styles.navLinks}>                 
-                    <div className={styles.cartContainer}> 
+                    
+                    <div className={styles.loginContainer}>
+                      
+                        {session ? (
+          <>
+           
+           
+                        <MdLogout onClick={() => signOut()} className={styles.login}/>
+         
+                            </>
+                            ) : (
+                                <Link href='/login'>
+                            <MdLogin className={styles.login}/></Link>
+                            )}
+                     
+                    </div>
+                     <div className={styles.cartContainer}> 
                         
                         <Link href="/cart"> <TiShoppingCart
                             className={styles.cart}
@@ -71,37 +89,25 @@ export default function Navbar() {
                         </Link>  {/* Show cart count */}
                        <p className={styles.itemCount}>{itemCount > 0 && `(${itemCount})`}</p>
                     </div>
-                    <div className={styles.loginContainer}>
-                      
-                        {session ? (
-          <>
-           
-           
-             <MdLogout onClick={() => signOut()} className={styles.login}/>
-         
-          </>
-        ) : (
-            <Link href='/login'>
-          <MdLogin className={styles.login}/></Link>
-        )}
-                     
-                     </div>
                 <ul className={styles.navList}>
                     
                     {/* dropdown menu */}
                     <li className={styles.navItem}>
-                        <div 
-                            id="menu-icon"
-                            onClick={toggleDropdown} 
-                            className={styles.dropdownToggle}
-                            aria-expanded={dropdownOpen}
-                            aria-controls="dropdown-menu"
-                        >
-                            <div className={styles.bar1}></div>
-                            <div className={styles.bar2}></div>
-                            <div className={styles.bar3}></div>
-                        </div>
+                    <div 
+                                id="menu-icon"
+                                onClick={toggleDropdown} 
+                                className={styles.dropdownToggle}
+                                aria-expanded={dropdownOpen}
+                                aria-controls="dropdown-menu"
+                            >
+                                {dropdownOpen ? (
+                                    <IoIosClose className={styles.closeBtn} />
+                                ) : (
+                                    <FaBars className={styles.burguerBtn} />
+                                )}
+                            </div>
                         {dropdownOpen && (
+                           
                              <ul id="dropdown-menu" className={styles.dropdownMenu}>
                                
                                 <li className={styles.dropdownItem}>

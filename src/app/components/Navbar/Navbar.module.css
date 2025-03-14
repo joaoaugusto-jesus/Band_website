@@ -14,7 +14,7 @@
   top: 0; /* Position it at the top */
   z-index: 1000; /* Ensure it stays on top of other elements */
   flex-direction: row; /* Ensure items are aligned horizontally */
-
+  padding: 0.5rem;
 }
 
 .leftSection {
@@ -45,29 +45,18 @@
     justify-content: center;
     align-items: center;
     justify-items: center;
-    text-align: end;
+    text-align: center;
+    margin-right: 1rem;
   }
 
 
   .navList {
-    list-style: none;
-    display: flex;
-    margin: 0 1rem 0 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-   
-  }
-  
+    list-style: none; 
+  } 
 
-  .loginContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-   
-  }
+  .navLinks { 
+    gap: 0.2rem; /* Space between links */
+  }  
 
   .userName{
     color: #b1afaf;
@@ -81,72 +70,27 @@
   .login{
     
     color:#b1afaf;
-    width: 2.5rem;
+    width: 2.25rem;
     height: auto;
-    margin-right: 0.8rem;
+    cursor: pointer;
    
   }
 
- 
-  .bar1, .bar2, .bar3 {
-    width: 2rem;
-    height: 0.3rem;
-    background-color: #b1afaf;
-    margin: 4px 0;
-    transition: 0.4s;
-    border-radius: 5px;
-    
-  }
-
-  
-  
-  .dropdown-menu
-  {
-    display: none;
-    position: absolute;
-    
-    min-width: 160px;
-    z-index: 1;
-  }
-  .dropdown-menu:hover
-  {
-    .bar1, .bar2, .bar3 {
-    background-color:  #ff9900;
-  }
-  }
-
-  .dropdownToggle
-  {
-    position: relative;
-    background-color: transparent; /* Make background transparent */
-    border: none; /* Remove border */
+  .burguerBtn, .closeBtn {
+    color: #b1afaf;
+    width: auto;
+    height: 2.15rem;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    transition: background-color 0.3s ease;
-    padding: 0;
     
-  }
-  
+}
 
-  .change .bar1 {
-    transform: rotate(-45deg) translate(-14px, 4px);
-    width: 40px;
-    margin-left: 1rem;
+.closeBtn {
+    display: block; /* Ensure the close icon is visible when toggled */
+   
+    margin: 0;
+    padding: 0;
+}
 
-  }
-  
-  .change .bar2 {
-    opacity: 0;
-  
-  }
-  
-  .change .bar3 {
-    transform: rotate(45deg) translate(-14px, -4px);
-    width: 40px;
-    margin-left: 1rem;
-  }
   .dropdownMenu 
   {
     position: absolute;
@@ -177,32 +121,36 @@
     margin: 20px 20px 20px 20px;
   }
 
-  .cartContainer {
-   
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    cursor: pointer;
-
+.cartContainer{
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items:center;
+  text-align: center;
+  justify-items: center; 
   }
 
   .cart{  
-    width: 3.4rem;
-    height: 2.5rem;
-    margin-top: 0.2rem;
+    width: 2.4rem;
+    height: auto;
     color:#b1afaf;
     
   }
 
   .itemCount{
     position: absolute;
-    right: 14%;
-    bottom: 10%;
+    top:20%;
+    left: 52%; /* Center horizontally */
+    transform: translateX(-50%);
+    padding: 1px;
     font-size: 0.7rem;
     font-family: 'Roboto';
-    color: beige;
+    color: #090909;
     font-weight: 700; 
-    margin-top: 0.2rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
   }
   
 
@@ -224,8 +172,8 @@
  
 
   .logoWrapper {
-    width: 8rem; /* Adjust as needed */
-    height: 6rem; /* Adjust as needed */
+    width: 5rem; /* Adjust as needed */
+    height: 4rem; /* Adjust as needed */
   }
 }
 
@@ -242,17 +190,12 @@
   }
  
   .login{
-    margin-right: 0.4rem;
+    
     display: none;
   }
 
-  .cart{
-    width: 3rem;
-  }
-  .bar1, .bar2, .bar3 {
-    width: 2rem;
-    margin-left: 0.5rem;
-  }
+
+ 
 }
 
 @media (max-width: 400px)
