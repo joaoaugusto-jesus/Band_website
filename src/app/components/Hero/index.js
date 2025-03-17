@@ -25,26 +25,28 @@ export default function Hero() {
     <div className={styles.layout}>
       
       <section className={styles.sectionHeader}>
-        <div className={styles.headerTitle}>
-          <Image
-            src="/assets/img/cartel-band-photo-bg-black.png"
-            sizes="(max-width: 300px) 100vw, 300px"
-            style={{ width: "70%", height: "auto", backgroundColor:"#090909", boxShadow: "2px 2px 5px #000000"}}
-            alt="Cartel Cortez"
-            width={300}
-            height={200}
-            priority/>  
+      
+        
+ 
+     </section>
+     <section className={styles.sectionContent}>
+
+      <div className={styles.headerTitle}>
+          <h1 className={styles.title}>Album name</h1>
+          <a href="/store"><h2 className={styles.subtitle}>Buy now</h2></a>
         </div>
        
-       <video 
-          className={styles.videoTeaser}  
-          controls
-          autoPlay
-          muted >                              
-         <source src={videos[0].src} type="video/mp4" />
-         Your browser does not support the video element.
-      </video>
-        
+       <div className={styles.videoContainer}>
+         
+          <video 
+              className={styles.videoTeaser}  
+              controls
+              autoPlay
+              muted >                              
+            <source src={videos[0].src} type="video/mp4" />
+            Your browser does not support the video element.
+          </video>
+        </div>
      </section>
       <Merchandise />
       <Agenda />

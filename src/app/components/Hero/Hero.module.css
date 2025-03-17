@@ -8,18 +8,23 @@
 .sectionHeader {
    
     width: 100%;
-    height: auto; /* Adjust height as needed */
+    height: 30vh; /* Adjust height as needed */
     display: flex;
-   
+    flex-wrap: wrap;
     text-align: center;
-    
-    
+    background-image: url("/assets/img/cartel-band-photo-bg-black.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
 }
 
+
+
 .headerTitle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
+   
     text-align: center;
     width: 50%;
     height: auto;
@@ -33,26 +38,56 @@
     letter-spacing: 2;
   }
 
-  
+  .sectionContent{  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  .title{
+    font-size: 6rem;
+    text-shadow: 0 0 20px #bcbbb8;
+  }
 
+  .subtitle{
+   
+    font-size: 3rem;
+    background-color: black;
+    opacity: 0.9;
+    border-radius: 4px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    box-shadow: 0 0 10px #fbda3a;
+  }
+
+  .videoContainer{  
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    
+  }
+
+.teaserTitle{
+    font-family: 'Creepster', cursive;
+    font-size: 3rem;
+    color: #f5f5f5;;
+    letter-spacing: 6;
+    text-shadow: 2px 2px 5px #000000;
+  }
 
 .videoTeaser {
    
-    width: 40%;
+    width: 80%;
     height: auto; /* Make the container responsive */
     max-width: 800px; /* Set a maximum width for the video */
     margin: 0 auto; /* Center the container itself */
-    padding: 2.7rem; /* Add some padding to the video */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+    padding: 0.7rem; /* Add some padding to the video */
+    
   }
   
-  .videoTeaser video {
-    width: 100%; /* Make the video responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
-  }
+ 
 
   @media (max-width: 1200px) {
     .videoTeaser {

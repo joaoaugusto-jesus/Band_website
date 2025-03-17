@@ -13,9 +13,13 @@ export default function Modal({ isOpen, onClose, musician }) {
         <button className={styles.closeButton} onClick={onClose}>
           &times;
         </button>
-        <h2 className={styles.musicianName}>{musician.name}</h2>
-        <Image src={musician.image} width={300} height={300} alt={musician.alt} className={styles.musicianImage} />
-        <p className={styles.musicianDescription}>{musician.description}</p>
+        <div className={styles.musicianContainer}>
+          <Image src={musician.image} width={400} height={400} alt={musician.alt} className={styles.musicianImage} />
+          <div className={styles.musicianInfo}>
+            <h2 className={styles.musicianName}>{musician.name}</h2>
+           <p className={styles.musicianDescription}>{musician.description}</p></div>
+          
+        </div> 
       </div>
     </div>
   );
