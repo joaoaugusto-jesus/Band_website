@@ -1,4 +1,11 @@
     export const videos = [
+       
+      {
+          title: "Zombie",
+          description: "Teaser Zombie",
+          name: "Teaser Zombie",
+          src: "assets/vid/Cartel Cortez Teaser.mp4",
+        },
         {
           title: "Video live at Fandangos",
           description: "Live at Fandangos",

@@ -21,7 +21,7 @@
     margin: 8rem;
     padding: 2rem;
     height: auto;
-   text-align: center;
+    text-align: center;
 }
 
 .header
@@ -91,4 +91,36 @@
     align-items: center;
     justify-content: center;
     justify-items: center;
+}
+
+@media (max-width: 600px)
+{
+    .formContainer
+    {
+        margin: 8rem 2rem;
+    }
+    .dateInput
+    {
+        width: 100%;
+    }
+    .content
+    {
+        height: 100%;
+    }
+    .bookingRquested
+    {
+        flex-direction: column;
+    }
+    .dateRequest
+    {
+        margin: 0;
+    }
+    .statusRequest
+    {
+        margin: 0;
+    }
+    .iconRemove
+    {
+        margin: 0;
+    }
 }

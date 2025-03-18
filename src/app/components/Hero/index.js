@@ -10,14 +10,8 @@ import PageIcon from "../Icons/page";
 import Agenda from "../Agenda/page";
 import Merchandise from "../Merchandise/page";
 import Image from "next/image";
+import { videos } from "../../Data/music-videos";
 
-const videos = [
-  {
-    name: "teaser",
-    src: "assets/vid/Cartel Cortez Teaser.mp4",
-  },
- 
-];
 
 export default function Hero() {
   

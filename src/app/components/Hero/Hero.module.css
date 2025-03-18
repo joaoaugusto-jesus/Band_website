@@ -24,16 +24,13 @@
 
 .headerTitle {
     
-   
     text-align: center;
     width: 50%;
     height: auto;
     text-align: center;
     font-size: 5rem;
     color:#fbda3a;
-    
     border-radius: 4%;
-    
     font-family: "Capture it";
     letter-spacing: 2;
   }
@@ -45,6 +42,7 @@
     text-align: center;
     align-items: center;
   }
+
   .title{
     font-size: 6rem;
     text-shadow: 0 0 20px #bcbbb8;
@@ -109,7 +107,7 @@
         font-size: 1.5rem;
     }
     .sectionHeader p {
-        font-size: 3rem;
+        font-size: 2rem;
     }
     .videoTeaser {
         max-width: 500px; /* Adjust for smaller tablets */
@@ -124,22 +122,37 @@
       padding: 0 10px; /* Add some padding to avoid edge-to-edge video */
     }
   
-    .videoTeaser video {
-      border-radius: 0; /* Optional: Remove rounded corners on small screens */
-    }
+
   }
 
 
 @media (max-width: 500px) {
-   
-    .sectionHeader p {
-        font-size: 2rem;
-    }
  
+   .sectionContent{
+    flex-direction: column;
+  }
+   .headerTitle{
+    width: 100%;
+    font-size: 3rem;
+   }
+ .subtitle{
+    width: 100%;
+    font-size: 1.5rem;
+   }
+   .videoContainer{
+    width: 100%;
+    padding: 1rem;
+   }
+   .videoTeaser {
+    max-width: 100%; /* Full width for mobile devices */
+    padding: 0 10px; /* Add some padding to avoid edge-to-edge video */
+  }
+  
     
 }
 
 @media (max-width: 400px) {
+ 
     .sectionHeader h1{
         font-size: 1rem;
       }
