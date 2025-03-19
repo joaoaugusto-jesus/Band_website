@@ -76,7 +76,7 @@
    
   }
 
-  .burguerBtn, .closeBtn {
+  .burguerBtn {
     color: #b1afaf;
     width: auto;
     height: 2.15rem;
@@ -86,9 +86,16 @@
 
 .closeBtn {
     display: block; /* Ensure the close icon is visible when toggled */
-   
-    margin: 0;
+    width: 2rem;
+    height: auto;
+    border: 3.5px solid #b1afaf;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px rgba(175, 175, 175, 0.5);
+    cursor: pointer;
+    margin-bottom: 0.25rem;
     padding: 0;
+    color: #b1afaf;
+    cursor: pointer;
 }
 
   .dropdownMenu 

@@ -118,7 +118,9 @@ export default function Media() {
               <source src={selectedVideo.url} type="video/mp4" />
               Your browser does not support the video element.
             </video>
+            <div className={styles.buttonContainer}>
             <Button onClick={() => setSelectedVideo(null)}>Stop</Button>
+            </div>
           </div>
         )}
       </div>
