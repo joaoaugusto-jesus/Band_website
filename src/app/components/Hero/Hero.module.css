@@ -1,5 +1,5 @@
 .layout {
-   margin-top: 8rem;
+    margin-top: 8rem;
     width: 100%;
     height: auto;
     z-index: 0; /* Lower z-index for background */
@@ -25,14 +25,17 @@
 .headerTitle {
     
     text-align: center;
-    width: 50%;
+    width: 40%;
     height: auto;
     text-align: center;
-    font-size: 5rem;
-    color:#fbda3a;
+    font-size: 3rem;
+    color: var(--title-color);
+    background-color: black;
     border-radius: 4%;
-    font-family: "Capture it";
+    font-family: "Smokum";
     letter-spacing: 2;
+    padding: 2rem;
+    margin: 3rem;
   }
 
   .sectionContent{  
@@ -46,6 +49,7 @@
   .title{
     font-size: 6rem;
     text-shadow: 0 0 20px #bcbbb8;
+    letter-spacing: 6px;
   }
 
   .subtitle{
@@ -54,7 +58,7 @@
     background-color: black;
     opacity: 0.9;
     border-radius: 4px;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     padding: 0.5rem;
     box-shadow: 0 0 10px #fbda3a;

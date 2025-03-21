@@ -26,7 +26,7 @@ export default function Hero() {
      <section className={styles.sectionContent}>
 
       <div className={styles.headerTitle}>
-          <h1 className={styles.title}>Album name</h1>
+          <h1 className={styles.title}>Sports Partner</h1>
           <a href="/store"><h2 className={styles.subtitle}>Buy now</h2></a>
         </div>
        
