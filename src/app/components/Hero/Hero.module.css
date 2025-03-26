@@ -18,57 +18,108 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: overlay;
+    
 }
 
+
+.sectionContent{  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  padding: 2rem;
+  
+}
+
+@keyframes mymove {
+  from {left: -50%; opacity: 0;}
+  to {left: 10%; opacity: 1;}
+}
 
 
 .headerTitle {
     
+   position: relative; /* Required for `left` to work */
+   left: 0%;
     text-align: center;
     width: 40%;
     height: auto;
-    text-align: center;
     font-size: 3rem;
-    color: var(--title-color);
-    background-color: black;
-    border-radius: 4%;
-    font-family: "Smokum";
+    border: 1px solid #3e3e3e49;
+    box-shadow: 0 0 4px #3e3e3e;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.174);
+    opacity: 0.9;
+    font-family: "Pirata One", cursive;
     letter-spacing: 2;
-    padding: 2rem;
-    margin: 3rem;
+    text-shadow: 0 0 4px #3e3e3e;
+    color: #f5f5f5;
+    margin-left: 0;
+    animation: mymove linear 1s;
+    animation-fill-mode: forwards;
+    animation-timeline: view(1s);
+    animation-range: entry 0% cover 50%;
   }
 
-  .sectionContent{  
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.2;
+    }
+    30% {
+      opacity: 0.3;
+    }
+    40% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
   }
+  
 
   .title{
-    font-size: 6rem;
-    text-shadow: 0 0 20px #bcbbb8;
+    animation: fadeIn linear 4s;
+    animation-timeline: view(4s);
+    font-size: 4rem;
+    text-shadow: 0 0 4px #3e3e3e;
     letter-spacing: 6px;
+    padding-top: 2rem;
   }
 
+  .description{
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px #3e3e3e;
+    letter-spacing: 2px;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    width: 100%;
+  }
   .subtitle{
    
-    font-size: 3rem;
+    font-size: 2rem;
     background-color: black;
     opacity: 0.9;
     border-radius: 4px;
-    width: 100%;
-    margin: 0 auto;
+    width: 80%;
+    margin: 2rem auto;
     padding: 0.5rem;
-    box-shadow: 0 0 10px #fbda3a;
+    
+  }
+  .subtitle:hover{
+    background-color: #f5f5f5;
+    color: #44d41f;
   }
 
   .videoContainer{  
     width: 50%;
     height: auto;
-    margin: 0 auto;
-    
+    margin: 0 auto;   
   }
 
 .teaserTitle{
@@ -81,12 +132,11 @@
 
 .videoTeaser {
    
-    width: 80%;
+    width: 70%;
     height: auto; /* Make the container responsive */
     max-width: 800px; /* Set a maximum width for the video */
     margin: 0 auto; /* Center the container itself */
-    padding: 0.7rem; /* Add some padding to the video */
-    
+    margin-left: 2rem;
   }
   
  
@@ -134,10 +184,12 @@
  
    .sectionContent{
     flex-direction: column;
+   
+
   }
    .headerTitle{
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
    }
  .subtitle{
     width: 100%;
@@ -149,7 +201,7 @@
    }
    .videoTeaser {
     max-width: 100%; /* Full width for mobile devices */
-    padding: 0 10px; /* Add some padding to avoid edge-to-edge video */
+    padding: 0; /* Add some padding to avoid edge-to-edge video */
   }
   
     
