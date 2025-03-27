@@ -11,26 +11,35 @@ import Agenda from "../Agenda/page";
 import Merchandise from "../Merchandise/page";
 import Image from "next/image";
 import { videos } from "../../Data/music-videos";
-
+import { motion } from "framer-motion";
 
 export default function Hero() {
   
   return (
     <div className={styles.layout}>
-      
+      <motion.div
+       initial={{ opacity: 0, y: 50 }}
+       animate={{ opacity: 1, y: 0 }}
+       transition={{ duration: 0.8 }}
+        >
       <section className={styles.sectionHeader}>
       
         
  
      </section>
+     </motion.div>
      <section className={styles.sectionContent}>
-
-      <div className={styles.headerTitle}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className={styles.headerTitle}>
+     
           <h1 className={styles.title}>Your Sports Partner</h1>
           <p className={styles.description}>The last rock album made by humans</p>
           <a href="/store"><h2 className={styles.subtitle}>Buy now and get free Cartel shipping</h2></a>
-        </div>
-       
+        
+        </motion.div>
        <div className={styles.videoContainer}>
          
           <video 

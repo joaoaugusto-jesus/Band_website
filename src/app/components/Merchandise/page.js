@@ -1,6 +1,7 @@
 import { shirts } from '../../Data/shirts';
 import Image from 'next/image';
 import styles from './Merchandise.module.css';
+import { motion } from 'framer-motion';
 
 import Card from '../Card/page';
 export default function Merchandise() {
@@ -8,7 +9,21 @@ export default function Merchandise() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Merchandise</h1>
+         <motion.h1
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ 
+          once: true,
+          margin: "0px 0px -100px 0px" // Negative bottom margin triggers earlier
+        }}
+        transition={{ 
+          duration: 0.8,
+          delay: 0.2 // Optional slight delay
+        }}
+        className={styles.title}
+      >
+        Merchandise
+      </motion.h1>
       <div className={styles.grid}>
         {
         shirts && shirts.length > 0 ? 
