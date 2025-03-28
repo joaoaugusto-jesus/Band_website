@@ -1,26 +1,26 @@
 import { shirts } from '../../Data/shirts';
-import Image from 'next/image';
 import styles from './Merchandise.module.css';
 import { motion } from 'framer-motion';
-
 import Card from '../Card/page';
+
+
 export default function Merchandise() {
 
 
   return (
     <div className={styles.container}>
          <motion.h1
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ 
           once: true,
-          margin: "0px 0px -100px 0px" // Negative bottom margin triggers earlier
+          margin: "0px 0px -100px 0px" 
         }}
-        transition={{ 
+          transition={{ 
           duration: 0.8,
           delay: 0.2 // Optional slight delay
         }}
-        className={styles.title}
+          className={styles.title}
       >
         Merchandise
       </motion.h1>
