@@ -8,7 +8,7 @@ import Gallery from '../Gallery/page';
 import Footer from "../Footer/page"; 
 import PageIcon from "../Icons/page";
 import Agenda from "../Agenda/page";
-import Merchandise from "../Merchandise/page";
+import Merchandise from "../Merchandise";
 import Image from "next/image";
 import { videos } from "../../Data/music-videos";
 import { motion } from "framer-motion";

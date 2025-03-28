@@ -1,3 +1,4 @@
+'use client';
 import { shirts } from '../../Data/shirts';
 import styles from './Merchandise.module.css';
 import { motion } from 'framer-motion';
