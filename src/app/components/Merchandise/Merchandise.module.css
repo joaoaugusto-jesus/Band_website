@@ -1,3 +1,8 @@
+html, body {
+  height: auto;
+  overflow-x: hidden;
+}
+
 .container {
   justify-content: center;
   margin-top: 4px;
@@ -10,15 +15,6 @@
   
  
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .title {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-
-
 
 
 .title {
@@ -36,8 +32,17 @@
   
 }
 
+
+
+@media (max-width: 500px) {
+  .title{
+    font-size: 2rem;
+  }
+  
+}
 @media (max-width: 350px) {
   .title{
-    font-size: 1rem;
+    font-size: 2rem;
   }
+ 
 }
