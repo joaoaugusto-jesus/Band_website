@@ -1,54 +1,39 @@
-import NextAuth from 'next-auth';
+// route.js
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { PrismaClient } from "@prisma/client";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { prisma } from "../prismaClient";
 import bcrypt from "bcryptjs";
 
-const prisma = new PrismaClient();
-
 export const authOptions = {
+  adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
       name: "Credentials",
-      credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
-      },
+      credentials: { email: { label: "Email", type: "email" }, password: { label: "Password", type: "password" } },
       async authorize(credentials) {
-        const { email, password } = credentials;
-
-        // Find the user in the database
-        const user = await prisma.user.findUnique({
-          where: { email },
-        });
-
-        if (!user) {
-          throw new Error("User not found");
-        }
-
-        // Verify the password
-        const isValid = await bcrypt.compare(password, user.password);
-        if (!isValid) {
-          throw new Error("Invalid password");
-        }
-
-        // Return the user object (without the password)
-        return { id: user.id, email: user.email };
-      },
+        if (!credentials?.email || !credentials?.password) return null;
+        const email = credentials.email.toLowerCase().trim();
+        const user = await prisma.user.findUnique({ where: { email } });
+        if (!user) return null; // evita enumeração de usuário
+        const isValid = await bcrypt.compare(credentials.password, user.password || "");
+        if (!isValid) return null;
+        return { id: user.id, email: user.email, name: user.name };
+      }
     }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    })
   ],
   callbacks: {
     async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-      }
+      if (user) token.id = user.id;
       return token;
     },
     async session({ session, token }) {
-      if (session.user) {
-        session.user.id = token.id;
-      }
+      if (session.user) session.user.id = token.id;
       return session;
     }
   },

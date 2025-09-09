@@ -128,12 +128,12 @@
     gap: 0.5rem;
     margin: 20px 20px 20px 20px;
 
-    :hover{
+    
+  }
+ .dropdownItem :hover{
       color: #fbda3a;
       box-shadow: 0 4px #000000;  
     }
-  }
-
 .cartContainer{
   position: relative;
   display: flex;
