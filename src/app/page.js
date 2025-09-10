@@ -1,36 +1,73 @@
-import styles from "./page.module.css";
-import Head from 'next/head';
+"use client";
+
+import { useState } from "react";
+import Head from "next/head";
+import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar/page";
 import Hero from "./components/Hero";
+import Footer from "./components/Footer/page";
+import styles from "./page.module.css";
+import Image from "next/image";
 
+export default function HomePage() {
+  const [showLanding, setShowLanding] = useState(true);
 
-export default function Home() {
   return (
-   
     <div className={styles.page}>
        <Head>
-        <title>Band Website - Home</title>
-        <meta name="description" content="Official website of the band. Check out our latest music, videos, merchandise, and more!" />
+        <title>Band Website - Landing</title>
+        <meta name="description" content="Official landing page of the band. Enter the site to check out music, videos, merchandise, and live shows." />
         <meta name="keywords" content="band, music, videos, merchandise, live shows" />
         <meta name="author" content="The Band Name" />
-        <meta property="og:title" content="Band Website - Home" />
-        <meta property="og:description" content="Official website of the band." />
-        <meta property="og:image" content="/path-to-image.jpg" />
+        <meta property="og:title" content="Band Website - Landing" />
+        <meta property="og:description" content="Official landing page of the band." />
+        <meta property="og:image" content="/assets/img/cartel-cortez-landingpage.png" />
         <meta property="og:url" content="https://yourbandwebsite.com" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="icon" href="/logo.ico" type="img/png" />
+        <link rel="icon" href="/logo.ico" type="image/png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        
       </Head>
-      <Navbar />
-      
-      
-      <Hero />
-        
-    
+
+      <AnimatePresence>
+        {showLanding ? (
+          <motion.main
+            key="landing"
+            className={styles.landing}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Image src="/assets/img/cartel-cortez-landingpage.png"
+              alt="Band Logo"
+              width={400}
+              height={700}
+              className={styles.landingImage}></Image>
+              
+            
+            <button
+              className={styles.enterButton}
+              onClick={() => setShowLanding(false)}
+            >
+              Enter Site
+            </button>
+          </motion.main>
+        ) : (
+          <motion.div
+            key="main"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Navbar />
+            <Hero />
+          
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
