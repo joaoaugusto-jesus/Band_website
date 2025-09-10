@@ -1,5 +1,5 @@
 import styles from './Agenda.module.css';
-import { gigs } from ' @/app/Data/gigs';
+import { gigs } from '../../Data/gigs';
 
 
 export default function Agenda() {

@@ -28,11 +28,21 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin: 0 auto;
     width: 300px;
-    height: 300px;
+    height: 330px;
     z-index: 2000;
     margin-top: 20px;
     margin-bottom: 14px;
    
+}
+
+.formContainer{
+    margin: 8px;
+    padding: 1px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
+    width: auto;
+    height: 200px;
 }
 
 .logged{
@@ -55,10 +65,25 @@
     text-align: center;
 }
 
+.error{
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
 .toggleButton {
     background: none;
     border: none;
     color: blue;
     cursor: pointer;
-    text-decoration: underline;
+    
+   
   }
+    .toggleButton:hover {
+        text-decoration: underline;
+        background: none;
+    }
+    .toggleButton:active{
+         box-shadow: none;
+           
+    }

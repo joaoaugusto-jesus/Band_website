@@ -2,62 +2,86 @@
 
 import Navbar from "../components/Navbar/page";
 import Footer from "../components/Footer/page";
-import styles from "./Login.module.css";
 import PageIcon from "../components/Icons/page";
-import { useSession, signIn, signOut } from "next-auth/react";
 import Button from "../components/Button";
+import styles from "./Login.module.css";
+import { useSession, signIn, signOut } from "next-auth/react";
 import { useState } from "react";
 
 export default function Login() {
   const { data: session } = useSession();
-  const [isLogin, setIsLogin] = useState(true);
+  const [authMode, setAuthMode] = useState("login"); // 'login' | 'signup'
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSignup = async () => {
+  // Limpa inputs e erros
+  const resetForm = () => {
+    setEmail("");
+    setPassword("");
+    setError("");
+  };
+
+  // Alterna entre login e signup e limpa campos
+  const toggleAuthMode = () => {
+    setAuthMode(authMode === "login" ? "signup" : "login");
+    resetForm();
+  };
+
+  // Função centralizada para login/signup
+  const handleSubmit = async () => {
+    if (!email || !password) {
+      setError("Email and password are required");
+      return;
+    }
+
     setLoading(true);
     setError("");
-  
+
     try {
-      const res = await fetch("/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-  
-      const data = await res.json();
-  
-      if (res.ok) {
-        alert("Signup successful! Please log in.");
-        setIsLogin(true); // Switch to login form after successful signup
+      if (authMode === "login") {
+        // Login com credentials
+        const result = await signIn("credentials", {
+          email,
+          password,
+          redirect: false,
+        });
+
+        if (result?.error) {
+          setError(result.error);
+        }
+        // Não chamar resetForm aqui — evita 401
       } else {
-        setError(data.error || "Signup failed");
+        // Signup
+        const res = await fetch("/api/auth/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          alert("Signup successful! Please log in.");
+          setAuthMode("login");
+          resetForm(); // Limpa campos após signup
+        } else {
+          setError(data.error || "Signup failed");
+        }
       }
     } catch (err) {
-      setError("An error occurred during signup");
+      setError("An unexpected error occurred");
     } finally {
       setLoading(false);
     }
   };
 
-  const handleLogin = async () => {
+  // Login com Google
+  const handleGoogleLogin = async () => {
     setLoading(true);
-    setError("");
-  
     try {
-      const result = await signIn("credentials", {
-        email,
-        password,
-        redirect: false,
-      });
-  
-      if (result?.error) {
-        setError(result.error);
-      }
-    } catch (err) {
-      setError("An error occurred during login");
+      await signIn("google");
+      // resetForm aqui é seguro porque Google redireciona imediatamente
     } finally {
       setLoading(false);
     }
@@ -66,56 +90,64 @@ export default function Login() {
   return (
     <>
       <Navbar />
-      
+
       <div className={styles.layout}>
-      <div className={styles.loginContainer}>
-        {session ? (
-          <>
-            <p>Signed in as {session.user.email}</p>
-            <Button onClick={() => signOut()}>Sign out</Button>
-          </>
-        ) : (
-          <div className={styles.loginForm}>
-          
-           
-            <Button onClick={() => signIn("google")}>Sign in with Google</Button> 
-             <h2 className={styles.logged}>{isLogin ? "Login" : "Sign Up"}</h2>
-            <input
-              className={styles.input}
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className={styles.input}
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            {error && <p className={styles.error}>{error}</p>}
-            {isLogin ? (
-              <Button onClick={handleLogin} disabled={loading}>
-                {loading ? "Logging in..." : "Login"}
+        <div className={styles.loginContainer}>
+          {session ? (
+            <>
+              <p>Signed in as {session.user.email}</p>
+              <Button onClick={() => signOut()}>Sign out</Button>
+            </>
+          ) : (
+            <div className={styles.loginForm}>
+              {/* Social login */}
+              <Button onClick={handleGoogleLogin} disabled={loading}>
+                {loading ? "Redirecting..." : "Sign in with Google"}
               </Button>
-            ) : (
-              <Button onClick={handleSignup} disabled={loading}>
-                {loading ? "Signing up..." : "Sign Up"}
+              <div className={styles.formContainer}>
+                <h2 className={styles.logged}>
+                {authMode === "login" ? "Login" : "Sign Up"}
+              </h2>
+
+              <input
+                className={styles.input}
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={loading}
+              />
+              <input
+                className={styles.input}
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                disabled={loading}
+              />
+            
+              {error && <p className={styles.error}>{error}</p>}
+              
+              <Button onClick={handleSubmit} disabled={loading}>
+                {loading
+                  ? authMode === "login"
+                    ? "Logging in..."
+                    : "Signing up..."
+                  : authMode === "login"
+                  ? "Login"
+                  : "Sign Up"}
               </Button>
-            )} 
-             
-            <Button
-              className={styles.toggleButton}
-              onClick={() => setIsLogin(!isLogin)}
-            >
-              {isLogin ? "Sign Up" : "Login"}
-            </Button>
-          
-          </div>
-        )}
+              </div>
+              <Button className={styles.toggleButton} onClick={toggleAuthMode}>
+                {authMode === "login"
+                  ? "Don't have an account? Sign Up"
+                  : "Already have an account? Login"}
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
-   </div>
+
       <PageIcon />
       <Footer />
     </>

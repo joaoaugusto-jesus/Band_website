@@ -2,7 +2,7 @@
 {
     background: linear-gradient(3deg, rgb(45, 42, 40), rgb(20, 228, 9));
     color: white;
-    padding: 0.6rem 1rem;
+    padding: 0.3rem 1rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -11,13 +11,14 @@
     cursor: pointer;
     box-shadow: 0 0 1px rgb(244, 238, 237);
     border-radius: 0.5rem;
-    transition: background 0.3s ease;
+    transition: background 0.9s ease;
     font-family: 'Alatsi', sans-serif;
 }
 
 .button:hover
 {
     background: #152c168d;
+   
 }
 
 .button:active
