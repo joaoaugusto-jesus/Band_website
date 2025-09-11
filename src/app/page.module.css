@@ -6,10 +6,9 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
- 
- 
   font-family: var(--font-geist-sans);
-   width: 100%;
+  
+  width: 100%;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -21,35 +20,38 @@
   justify-content: center;
   height: 100vh;
   background-color: #000; /* fundo preto */
-  color: #fff;
   text-align: center;
+  overflow: hidden;
+  position: relative;
 }
-.image {
-  width: 250px;
-  max-width: 80%;
+
+.landingImage {
+  max-width: 100%;
   height: auto;
-  margin-bottom: 2rem;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* glow vermelho */
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: transform 0.8s ease;
+  padding: 1rem;
 }
-
-
+.landingImage:hover {
+  transform: scale(1.15);
+}
 .enterButton {
   display: inline-block;
   padding: 1rem 2rem;
-  background: linear-gradient(90deg, #ce1c1c, #4e0707);
+  background: linear-gradient(90deg, #901414, #4e0707);
   color: #fff;
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
   border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(255, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 1px rgba(240, 238, 238, 0.6);
 }
 
 .enterButton:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.7);
+  transform: scale(1.15);
+  
 }
 
 

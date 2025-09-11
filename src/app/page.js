@@ -5,13 +5,18 @@ import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar/page";
 import Hero from "./components/Hero";
-import Footer from "./components/Footer/page";
 import styles from "./page.module.css";
 import Image from "next/image";
 
 export default function HomePage() {
   const [showLanding, setShowLanding] = useState(true);
+  const [closing, setClosing] = useState(false);
 
+  const handleEnter = () => {
+    setClosing(true);
+    setTimeout(() => setShowLanding(false), 1000); // espera animação acabar
+  };
+  
   return (
     <div className={styles.page}>
        <Head>
@@ -37,13 +42,13 @@ export default function HomePage() {
             key="landing"
             className={styles.landing}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: 5 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.5 }}
           >
-            <Image src="/assets/img/cartel-cortez-landingpage.png"
+            <Image src="/assets/img/cartel-cortez-skeleton-hands (1).png"
               alt="Band Logo"
-              width={400}
+              width={600}
               height={700}
               className={styles.landingImage}></Image>
               
@@ -52,7 +57,7 @@ export default function HomePage() {
               className={styles.enterButton}
               onClick={() => setShowLanding(false)}
             >
-              Enter Site
+              Freedom
             </button>
           </motion.main>
         ) : (
@@ -60,7 +65,7 @@ export default function HomePage() {
             key="main"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.8 }}
           >
             <Navbar />
             <Hero />

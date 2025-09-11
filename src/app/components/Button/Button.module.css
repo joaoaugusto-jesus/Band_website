@@ -1,18 +1,19 @@
 .button
 {
     background: linear-gradient(3deg, rgb(45, 42, 40), rgb(20, 228, 9));
-    color: white;
+    color: rgb(239, 234, 234);
     padding: 0.3rem 1rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     margin: 2px 2px;
     cursor: pointer;
     box-shadow: 0 0 1px rgb(244, 238, 237);
     border-radius: 0.5rem;
     transition: background 0.9s ease;
     font-family: 'Alatsi', sans-serif;
+    
 }
 
 .button:hover
