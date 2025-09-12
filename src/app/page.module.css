@@ -37,13 +37,40 @@
 .landingImage:hover {
   transform: scale(1.15);
 }
+.hoverMessage{
+  position: absolute;
+  top: 8%;
+  font-family: 'Creepster', cursive;
+  font-size: 3rem;
+  color: #ccc;
+  
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.btnMessage {
+  position: absolute;
+  bottom: 20%;
+  font-family: 'Creepster', cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeInOut 2s infinite;
+}
 .enterButton {
   display: inline-block;
   padding: 1rem 2rem;
-  background: linear-gradient(90deg, #901414, #4e0707);
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
+  background: linear-gradient(90deg, #751010, #4e0707);
+  font-family: 'Creepster', cursive;
+  letter-spacing: 6px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: 2px solid transparent;
+  text-shadow: 0 0 2px #ccc;
   text-decoration: none;
   border-radius: 14px;
   box-shadow: 1px rgba(240, 238, 238, 0.6);

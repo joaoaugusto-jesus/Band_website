@@ -11,12 +11,9 @@ import Image from "next/image";
 export default function HomePage() {
   const [showLanding, setShowLanding] = useState(true);
   const [closing, setClosing] = useState(false);
+  const [showBtnMessage, setShowBtnMessage] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
-  const handleEnter = () => {
-    setClosing(true);
-    setTimeout(() => setShowLanding(false), 1000); // espera animação acabar
-  };
-  
   return (
     <div className={styles.page}>
        <Head>
@@ -46,14 +43,24 @@ export default function HomePage() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
           >
+            {setHovered && (
+              <div className={styles.hoverMessage}>
+                {hovered ? "Você não Acha" : ""}
+              </div>
+            )}
             <Image src="/assets/img/cartel-cortez-skeleton-hands (1).png"
               alt="Band Logo"
               width={600}
               height={700}
-              className={styles.landingImage}></Image>
+              className={styles.landingImage}
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}>
+             </Image>
               
-            
+            {showBtnMessage &&  (<div className={styles.btnMessage}>Click to enter</div>)}
             <button
+              onMouseEnter={() => setShowBtnMessage(true)}
+              onMouseLeave={() => setShowBtnMessage(false)}
               className={styles.enterButton}
               onClick={() => setShowLanding(false)}
             >
