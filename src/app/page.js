@@ -7,12 +7,14 @@ import Navbar from "./components/Navbar/page";
 import Hero from "./components/Hero";
 import styles from "./page.module.css";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
 export default function HomePage() {
   const [showLanding, setShowLanding] = useState(true);
   const [closing, setClosing] = useState(false);
   const [showBtnMessage, setShowBtnMessage] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const { t } = useTranslation("common");
 
   return (
     <div className={styles.page}>
@@ -57,14 +59,14 @@ export default function HomePage() {
               onMouseLeave={() => setHovered(false)}>
              </Image>
               
-            {showBtnMessage &&  (<div className={styles.btnMessage}>Click to enter</div>)}
+            {showBtnMessage &&  (<div className={styles.btnMessage}>{t ("enterMessage")}</div>)}
             <button
               onMouseEnter={() => setShowBtnMessage(true)}
               onMouseLeave={() => setShowBtnMessage(false)}
               className={styles.enterButton}
               onClick={() => setShowLanding(false)}
             >
-              Freedom
+             {t ("freedom")}
             </button>
           </motion.main>
         ) : (

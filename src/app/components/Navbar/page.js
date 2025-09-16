@@ -9,7 +9,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import { FaBars } from "react-icons/fa";
 import { IoIosClose } from "react-icons/io";
 import { useSession, signOut } from "next-auth/react";
-
+import { useRouter } from "next/navigation";
 
 
 export default function Navbar() {
@@ -18,9 +18,11 @@ export default function Navbar() {
     const itemCount = cart.reduce((acc, item) => acc + item.quantity, 0); // Count items in cart
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const { data: session } = useSession();
+    const router = useRouter();
 
-
-
+    const changeLanguage = (lng) => {
+    router.push(router.pathname, router.asPath, { locale: lng });
+    };
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
@@ -57,12 +59,19 @@ export default function Navbar() {
                         />
                   
                 </Link> 
+                <div className={styles.languageSwitcher}>
+                    <button onClick={() => changeLanguage('en')} className={styles.langButton}>EN</button>
+                    <span className={styles.langSeparator}>|</span>
+                    <button onClick={() => changeLanguage('es')} className={styles.langButton}>ES</button>
+                </div>
+                </div>
+                
                 {session && (
                     <div className={styles.userName}>
                     <span className={styles.userNameText}> {session.user?.email}</span> 
                 </div>
                ) }
-                </div>
+               
                 <div className={styles.navLinks}>                 
                     
                     <div className={styles.loginContainer}>
