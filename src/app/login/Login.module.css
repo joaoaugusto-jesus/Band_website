@@ -27,22 +27,30 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin: 0 auto;
-    width: 300px;
-    height: 330px;
+    width: 450px;
+    height: 400px;
     z-index: 2000;
     margin-top: 20px;
     margin-bottom: 14px;
    
 }
 
+.googleButton{
+    margin: 12px;
+    background-color: #4285F4; /* Google Blue */
+    
+    
+    
+}
+
 .formContainer{
     margin: 8px;
-    padding: 1px;
+    padding: 4px;
     border-radius: 8px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
     background-color: rgba(255, 255, 255, 0.8);
     width: auto;
-    height: 200px;
+    height: 240px;
 }
 
 .logged{
@@ -55,14 +63,21 @@
 
 .input
 {
-    margin: 10px;
+    margin: 12px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 200px;
+    width: 300px;
     height: 30px;
     font-size: 1.2rem;
     text-align: center;
+}
+
+.submitButton{
+    margin: 12px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+   
 }
 
 .error{
@@ -76,7 +91,7 @@
     border: none;
     color: blue;
     cursor: pointer;
-    
+    margin: 12px 0 0 12px;
    
   }
     .toggleButton:hover {
@@ -86,4 +101,15 @@
     .toggleButton:active{
          box-shadow: none;
            
+    }
+
+    @media (max-width: 500px) {
+        .loginForm {
+            width: 90%;
+            height: auto; /* Adjust height for smaller screens */
+        }
+    
+        .input {
+            width: 80%; /* Adjust input width for smaller screens */
+        }
     }

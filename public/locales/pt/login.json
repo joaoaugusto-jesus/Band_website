@@ -1,0 +1,17 @@
+{   
+    "Sign in with Google": "Criar sessão com o Google",
+    "login": "Entrar na conta",
+    "Sign Up": "Registar",
+    "Logging in...": "A iniciar sessão...",
+    "email": "Email",
+    "password": "Palavra-passe",
+    "forgot password?": "Perdeu a palavra-passe?",
+    "Don't have an account? Sign up": "Não tem uma conta? Registe-se",
+    "Already have an account? Login": "Já tem uma conta? Iniciar sessão",
+    "reset password": "Redefinir palavra-passe", 
+    "send reset link": "Enviar link de redefinição",
+    "back to login": "Devolta para o login",
+    "Redirecting...": "A redirecionar...",
+    "loading...": "A carregar...",
+    "Sign out": "Terminar sessão"
+}

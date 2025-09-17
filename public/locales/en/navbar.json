@@ -1,0 +1,12 @@
+{ 
+    "home": "Home",
+    "about": "About",
+    "music": "Music",
+    "tour": "Tour",
+    "contact": "Contact",
+    "cart": "Cart",
+    "login": "Login",
+    "logout": "Logout",
+    "store": "Store",
+    "booking": "Booking"
+}

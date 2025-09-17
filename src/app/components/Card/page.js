@@ -5,13 +5,14 @@ import styles from './Card.module.css'
 import Button from '../Button'
 import Image from 'next/image'
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function Card({ src, name, price, className, id, isShirt, alt }) {
   
   const [selectedSize, setSelectedSize] = useState({});
   const [quantities, setQuantities] = useState({});
   const { cart, addToCart } = useCartStore();
-
+  const { t, i18n } = useTranslation("card");  
 
   // Handle size selection
   const handleSizeChange = (id, size) => {
@@ -60,7 +61,7 @@ const calculateTotalPrice = (id) => {
                                         value={selectedSize[id] || ""}
                                         onChange={(e) => handleSizeChange(id, e.target.value)}
                                     >
-                                        <option value="">Select Size</option>
+                                        <option value="">{t("select_size")}</option>
                                         <option value="S">S</option>
                                         <option value="M">M</option>
                                         <option value="L">L</option>
@@ -92,7 +93,7 @@ const calculateTotalPrice = (id) => {
                                             });
                                         }}
                                     >
-                                        Add to Cart
+                                      {t("Add to Cart")}
                                     </Button>
             </div>
         </div>

@@ -13,7 +13,7 @@ import Image from "next/image";
 import { videos } from "../../Data/music-videos";
 import {  motion, useAnimation, useInView, whileHover } from "framer-motion";
 import { useEffect } from "react";
-
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
 
@@ -23,7 +23,7 @@ const controls = useAnimation();
 const headerRef = useRef(null);
 const isInView = useInView(headerRef, { once: false, margin: "-50px" });
 const whileHover = useInView(headerRef, { once: false, margin: "-50px" });
-
+const { t, i18n } = useTranslation("hero");
 
 useEffect(() => {
   if (isInView) {
@@ -58,10 +58,10 @@ useEffect(() => {
          
         className={styles.headerTitle}>
      
-          <h1 className={styles.title}>Your Sports Partner</h1>
-          <p className={styles.description}>The last rock album </p>
-          <p className={styles.description}>made by humans</p>
-          <a href="/store"><h2 className={styles.subtitle}>Buy now and get free Cartel shipping</h2></a>
+          <h1 className={styles.title}>{t("Your Sports Partner")}</h1>
+          <p className={styles.description}>{t("The last rock album")} </p>
+          <p className={styles.description}>{t("made by humans")}</p>
+          <a href="/store"><h2 className={styles.subtitle}>{t("Buy now and get free Cartel shipping")}</h2></a>
         
         </motion.div>
        <div className={styles.videoContainer}>
@@ -77,7 +77,7 @@ useEffect(() => {
               autoPlay
               muted >                              
             <source src={videos[0].src} type="video/mp4" />
-            Your browser does not support the video element.
+           {t(" Your browser does not support the video element.")}
           </video>
           </motion.div>
         </div>

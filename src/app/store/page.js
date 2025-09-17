@@ -9,10 +9,13 @@ import { albuns } from '../Data/albuns';
 import Button from '../components/Button';
 import Card from '../components/Card/page';
 import { TiTicket } from 'react-icons/ti';
+import { useTranslation } from 'react-i18next';
+
+
 
 export default function Store() {
     const [searchTerm, setSearchTerm] = useState("");
-  
+    const { t, i18n } = useTranslation("store");
 
     // Function to filter products based on search
     const filteredShirts = shirts.filter((shirt) =>
@@ -30,11 +33,11 @@ export default function Store() {
             <Navbar />
             <div className={styles.layout}>
                 <div className={styles.title}>
-                    <h1>Store</h1>
+                    <h1>{t("Store")}</h1>
                    
-                    <span>music </span>
-                    <span>merchandise</span>
-                    <span>Tickets</span>
+                    <span>{t("music")} </span>
+                    <span>{t("merchandise")}</span>
+                    <span>{t("Tickets")}</span>
                 </div>  
 
                 {/* Search Bar */}
@@ -46,7 +49,7 @@ export default function Store() {
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className={styles.searchInput}
                     />
-                    <Button className={styles.searchButton}>Search</Button>
+                    <Button className={styles.searchButton}>{t("Search")}</Button>
                 </div>
 
                 {/* Shirts Section */}
@@ -63,7 +66,7 @@ export default function Store() {
                             />
                         ))
                     ) : (
-                        <p>No shirts available</p>
+                        <p>{t("No shirts available")}</p>
                     )}
                 </div> 
 

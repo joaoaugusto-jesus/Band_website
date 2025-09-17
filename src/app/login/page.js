@@ -7,6 +7,8 @@ import Button from "../components/Button";
 import styles from "./Login.module.css";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 
 export default function Login() {
   const { data: session } = useSession();
@@ -15,6 +17,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const { t, i18n } = useTranslation("login");
 
   // Limpa inputs e erros
   const resetForm = () => {
@@ -70,7 +73,7 @@ export default function Login() {
         }
       }
     } catch (err) {
-      setError("An unexpected error occurred");
+      setError ("An unexpected error occurred");
     } finally {
       setLoading(false);
     }
@@ -95,18 +98,19 @@ export default function Login() {
         <div className={styles.loginContainer}>
           {session ? (
             <>
-              <p>Signed in as {session.user.email}</p>
-              <Button onClick={() => signOut()}>Sign out</Button>
+              <p>{t("Signed in as")} {session.user.email}</p>
+              <Button onClick={() => signOut()}>{t("Sign out")}</Button>
             </>
           ) : (
             <div className={styles.loginForm}>
               {/* Social login */}
-              <Button onClick={handleGoogleLogin} disabled={loading}>
-                {loading ? "Redirecting..." : "Sign in with Google"}
+              <Button onClick={handleGoogleLogin} disabled={loading}
+              className={styles.googleButton}>
+                {loading ? "Redirecting..." : t("Sign in with Google")}
               </Button>
               <div className={styles.formContainer}>
                 <h2 className={styles.logged}>
-                {authMode === "login" ? "Login" : "Sign Up"}
+                {authMode === "login" ? t("login") : t("Sign Up")}
               </h2>
 
               <input
@@ -128,20 +132,21 @@ export default function Login() {
             
               {error && <p className={styles.error}>{error}</p>}
               
-              <Button onClick={handleSubmit} disabled={loading}>
+              <Button onClick={handleSubmit} disabled={loading}
+              className={styles.submitButton}>
                 {loading
                   ? authMode === "login"
-                    ? "Logging in..."
-                    : "Signing up..."
+                    ? t("Logging in...")
+                    : t("Signing up...")
                   : authMode === "login"
-                  ? "Login"
-                  : "Sign Up"}
+                  ? t("login")
+                  : t("Sign Up")}
               </Button>
               </div>
               <Button className={styles.toggleButton} onClick={toggleAuthMode}>
                 {authMode === "login"
-                  ? "Don't have an account? Sign Up"
-                  : "Already have an account? Login"}
+                  ? t("Don't have an account? Sign up")
+                  : t("Already have an account? Login")}
               </Button>
             </div>
           )}

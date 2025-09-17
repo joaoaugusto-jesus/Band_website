@@ -1,0 +1,12 @@
+{ 
+    "home": "Início",
+    "about": "Sobre",
+    "music": "Música",
+    "tour": "Turnê",
+    "contact": "Contato",
+    "cart": "Carrinho",
+    "login": "Entrar",
+    "logout": "Sair",
+    "store": "Loja",
+    "booking": "Reservas"
+}

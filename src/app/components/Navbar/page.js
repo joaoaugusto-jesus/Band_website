@@ -9,7 +9,8 @@ import { TiShoppingCart } from "react-icons/ti";
 import { FaBars } from "react-icons/fa";
 import { IoIosClose } from "react-icons/io";
 import { useSession, signOut } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
+
 
 
 export default function Navbar() {
@@ -18,11 +19,12 @@ export default function Navbar() {
     const itemCount = cart.reduce((acc, item) => acc + item.quantity, 0); // Count items in cart
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const { data: session } = useSession();
-    const router = useRouter();
+    const { t, i18n } = useTranslation("navbar");
 
     const changeLanguage = (lng) => {
-    router.push(router.pathname, router.asPath, { locale: lng });
+    i18n.changeLanguage(lng);
     };
+
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
@@ -60,9 +62,13 @@ export default function Navbar() {
                   
                 </Link> 
                 <div className={styles.languageSwitcher}>
-                    <button onClick={() => changeLanguage('en')} className={styles.langButton}>EN</button>
+                    <button onClick={() => changeLanguage('en')} className={styles.langButton} 
+                    aria-label="Switch to English"
+                    title="Switch to English">EN</button>
                     <span className={styles.langSeparator}>|</span>
-                    <button onClick={() => changeLanguage('es')} className={styles.langButton}>ES</button>
+                    <button onClick={() => changeLanguage('pt')} className={styles.langButton}
+                     aria-label="Altera para Português"
+                     title="Altera para Português">PT</button>
                 </div>
                 </div>
                 
@@ -80,12 +86,18 @@ export default function Navbar() {
           <>
            
            
-                        <MdLogout onClick={() => signOut()} className={styles.login}/>
+                        <MdLogout onClick={() => signOut()} className={styles.login}
+                                title="Logout"
+                                aria-label="Logout" 
+                            />
          
                             </>
                             ) : (
                                 <Link href='/login'>
-                            <MdLogin className={styles.login}/></Link>
+                            <MdLogin className={styles.login}
+                                title="Login"
+                                aria-label="Logout" 
+                            /></Link>
                             )}
                      
                     </div>
@@ -93,6 +105,8 @@ export default function Navbar() {
                         
                         <Link href="/cart"> <TiShoppingCart
                             className={styles.cart}
+                            title="Cart"
+                            aria-label="Cart"
                         />
                         
                         </Link>  {/* Show cart count */}
@@ -108,6 +122,7 @@ export default function Navbar() {
                                 className={styles.dropdownToggle}
                                 aria-expanded={dropdownOpen}
                                 aria-controls="dropdown-menu"
+                                title={dropdownOpen ? "Close menu" : "Open menu"} 
                             >
                                 {dropdownOpen ? (
                                     <IoIosClose className={styles.closeBtn} />
@@ -120,26 +135,26 @@ export default function Navbar() {
                              <ul id="dropdown-menu" className={styles.dropdownMenu}>
                                
                                 <li className={styles.dropdownItem}>
-                                        <Link href="/login">Login</Link>
+                                        <Link href="/login">{t("login")}</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
-                                    <Link href="/store">Store</Link>
+                                    <Link href="/store">{t("store")}</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
-                                        <Link href="/about-us">About us</Link>
+                                        <Link href="/about-us">{t("about")}</Link>
                                 </li>
                                 
                                 <li className={styles.dropdownItem}>
-                                    <Link href="/cart">Cart</Link>
+                                    <Link href="/cart">{t("cart")}</Link>
                                 </li> 
                                 <li className={styles.dropdownItem}>  
-                                        <Link href="/media">Media</Link>
+                                        <Link href="/media">{t("media")}</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
-                                    <Link href="/contact-us">Contact</Link>
+                                    <Link href="/contact-us">{t("contact")}</Link>
                                 </li>
                                 <li className={styles.dropdownItem}>
-                                    <Link href="/booking">Booking</Link>
+                                    <Link href="/booking">{t ("booking")}</Link>
                                 </li>
                             </ul>
                         )}

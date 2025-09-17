@@ -7,7 +7,9 @@ import Navbar from "./components/Navbar/page";
 import Hero from "./components/Hero";
 import styles from "./page.module.css";
 import Image from "next/image";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
+ // inicializa o i18next antes de usar useTranslation
+
 
 export default function HomePage() {
   const [showLanding, setShowLanding] = useState(true);
