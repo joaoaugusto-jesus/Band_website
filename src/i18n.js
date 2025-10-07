@@ -13,7 +13,8 @@ import enlogin from "../public/locales/en/login.json";
 import ptlogin from "../public/locales/pt/login.json";
 import enStore from "../public/locales/en/store.json";
 import ptStore from "../public/locales/pt/store.json";
-
+import musiciansEN from "../public/locales/en/musicians.json";
+import musiciansPT from "../public/locales/pt/musicians.json";
 
 i18n
   .use(LanguageDetector)
@@ -26,7 +27,8 @@ i18n
         card: enCard,
         hero: enHero,
         login: enlogin,
-        store: enStore
+        store: enStore,
+        modal: musiciansEN
       },
       pt: {
         common: translationPTCommon,
@@ -34,12 +36,13 @@ i18n
         card: ptCard,
         hero: ptHero,
         login: ptlogin,
-        store: ptStore
+        store: ptStore,
+        modal: musiciansPT
 
       },
     },
     fallbackLng: "en",
-    ns: ["common", "navbar", "card", "hero", "login", "store"],
+    ns: ["common", "navbar", "card", "hero", "login", "store", "modal"],
     defaultNS: "common",
 
     interpolation: { escapeValue: false },

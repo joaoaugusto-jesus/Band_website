@@ -32,6 +32,8 @@ export default function Navbar() {
     };
 
     useEffect(() => {
+        //guard clause
+        if (!dropdownOpen) return;
         const handleOutsideClick = (e) => {
             if (!e.target.closest(`#menu-icon`) && dropdownOpen) {
                 setDropdownOpen(false);
@@ -40,6 +42,7 @@ export default function Navbar() {
         };
     
         document.addEventListener("click", handleOutsideClick);
+        // Cleanup event listener on component unmount or when dropdown closes
         return () => {
             document.removeEventListener("click", handleOutsideClick);
         };

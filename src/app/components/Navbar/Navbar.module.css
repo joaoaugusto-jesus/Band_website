@@ -23,6 +23,21 @@
   gap: 1rem; /* Space between logo and user email */
   
 }
+
+.langButton{
+  background: none;
+  border: none;
+  color: #b1afaf;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  
+  font-size: large;
+}
+.langButton:hover{
+  color: #fbda3a;
+  box-shadow: 0 4px #000000;
+}
   .logoWrapper {
     /* Center and resize the logo */
     display: flex;
@@ -39,6 +54,8 @@
     
     
   }
+
+
 
   .navLinks {
     display: flex;

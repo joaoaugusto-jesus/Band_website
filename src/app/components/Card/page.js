@@ -11,8 +11,8 @@ export default function Card({ src, name, price, className, id, isShirt, alt }) 
   
   const [selectedSize, setSelectedSize] = useState({});
   const [quantities, setQuantities] = useState({});
-  const { cart, addToCart } = useCartStore();
-  const { t, i18n } = useTranslation("card");  
+  const { addToCart } = useCartStore();
+  const { t } = useTranslation("card");  
 
   // Handle size selection
   const handleSizeChange = (id, size) => {
