@@ -9,12 +9,16 @@ import styles from "./AboutUs.module.css";
 import LayoutTb from "../components/LayoutTb/page";
 import { useState } from "react";
 import Modal from "../components/Modal/page"; // Import the Modal component
+import { useTranslation } from "react-i18next";
+
 
 export default function AboutUs() {
 
    
       const [isModalOpen, setIsModalOpen] = useState(false);
       const [selectedMusician, setSelectedMusician] = useState(null);
+      const { t } = useTranslation("about");
+
 
     // Handle opening the modal
     const handleOpenModal = (musician) => {
@@ -38,7 +42,7 @@ export default function AboutUs() {
              
               <div className={styles.container}>
             <div className={styles.title}>
-              <h2>Musicians</h2>
+              <h2>{t("Musicians")}</h2>
 
              </div> 
                 <ul className={styles.list}>

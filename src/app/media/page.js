@@ -5,6 +5,7 @@ import Footer from "../components/Footer/page";
 import Button from "../components/Button";
 import styles from "./Media.module.css";
 import PageIcon from "../components/Icons/page";
+import AudioPlayerWithEQ from "../components/AudioPlayer/AudioPlayerWithEQ.jsx";
 import { useState, useRef } from "react";
 import { tracks } from "../Data/music-tracks";
 import { videos } from "../Data/music-videos";
@@ -101,15 +102,18 @@ export default function Media() {
         )}
 
         {/* Audio Player */}
-        {selectedTrack && (
-          <div className={styles.player}>
-            <audio ref={audioRef} controls className={styles.audioPlayer}>
-              <source src={selectedTrack.url} type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-            <Button onClick={() => setSelectedTrack(null)}>Stop</Button>
-          </div>
-        )}
+       {selectedTrack && (
+        <div className={styles.player}>
+          <AudioPlayerWithEQ
+            src={selectedTrack.url}
+            title={selectedTrack.title}
+            artist={selectedTrack.artist}
+            cover={selectedTrack.cover}
+          />
+          <Button onClick={() => setSelectedTrack(null)}>Stop</Button>
+        </div>
+)}
+
 
         {/* Video Player */}
         {selectedVideo && (

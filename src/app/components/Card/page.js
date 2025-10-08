@@ -93,7 +93,7 @@ const calculateTotalPrice = (id) => {
                                             });
                                         }}
                                     >
-                                      {t("Add to Cart")}
+                                      {t("Add to cart")}
                                     </Button>
             </div>
         </div>
