@@ -1,46 +1,58 @@
 "use client";
 
+import { useState, useRef } from "react";
 import Navbar from "../components/Navbar/page";
 import Footer from "../components/Footer/page";
 import Button from "../components/Button";
-import styles from "./Media.module.css";
 import PageIcon from "../components/Icons/page";
 import AudioPlayerWithEQ from "../components/AudioPlayer/AudioPlayerWithEQ.jsx";
-import { useState, useRef } from "react";
+import styles from "./Media.module.css";
 import { tracks } from "../Data/music-tracks";
 import { videos } from "../Data/music-videos";
 
 export default function Media() {
   const [selectedTrack, setSelectedTrack] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
-  const [mediaType, setMediaType] = useState("music"); // State to track selected media type
-  
-  
-  const audioRef = useRef(null);
+  const [mediaType, setMediaType] = useState("music");
+
   const videoRef = useRef(null);
 
+  // Handle track selection
   const handleTrackClick = (track) => {
-    setSelectedTrack(track);
-    setSelectedVideo(null); // Stop video if playing
-    if (audioRef.current) {
-      audioRef.current.src = track.src;
-      audioRef.current.play();
+    // Stop video if playing
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
     }
+
+    setSelectedVideo(null);
+    setSelectedTrack(track);
   };
 
+  // Handle video selection
   const handleVideoClick = (video) => {
-    setSelectedVideo(video);
-    setSelectedTrack(null); // Stop audio if playing
+    // Stop audio if playing
+    setSelectedTrack(null);
+
     if (videoRef.current) {
       videoRef.current.src = video.src;
       videoRef.current.play();
     }
+
+    setSelectedVideo(video);
   };
 
+  // Handle media type change
   const handleMediaTypeChange = (event) => {
-    setMediaType(event.target.value); // Update media type based on dropdown selection
-    setSelectedTrack(null); // Reset selected track
-    setSelectedVideo(null); // Reset selected video
+    setMediaType(event.target.value);
+    setSelectedTrack(null);
+    setSelectedVideo(null);
+
+    // Stop any playing media
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
   };
 
   return (
@@ -63,14 +75,14 @@ export default function Media() {
           </select>
         </div>
 
-        {/* Music Tracks Section */}
+        {/* Music Tracks */}
         {mediaType === "music" && (
           <section className={styles.section}>
             <h2>Music Tracks</h2>
             <div className={styles.grid}>
-              {tracks.map((track, index) => (
+              {tracks.map((track, idx) => (
                 <div
-                  key={index}
+                  key={idx}
                   className={styles.card}
                   onClick={() => handleTrackClick(track)}
                 >
@@ -82,14 +94,14 @@ export default function Media() {
           </section>
         )}
 
-        {/* Videos Section */}
+        {/* Videos */}
         {mediaType === "videos" && (
           <section className={styles.section}>
             <h2>Videos</h2>
             <div className={styles.grid}>
-              {videos.map((video, index) => (
+              {videos.map((video, idx) => (
                 <div
-                  key={index}
+                  key={idx}
                   className={styles.card}
                   onClick={() => handleVideoClick(video)}
                 >
@@ -102,28 +114,37 @@ export default function Media() {
         )}
 
         {/* Audio Player */}
-       {selectedTrack && (
-        <div className={styles.player}>
-          <AudioPlayerWithEQ
-            src={selectedTrack.url}
-            title={selectedTrack.title}
-            artist={selectedTrack.artist}
-            cover={selectedTrack.cover}
-          />
-          <Button onClick={() => setSelectedTrack(null)}>Stop</Button>
-        </div>
-)}
-
+        {selectedTrack && (
+          <div className={styles.player}>
+            <AudioPlayerWithEQ
+              src={selectedTrack.src}
+              title={selectedTrack.title}
+              artist={selectedTrack.artist}
+              cover={selectedTrack.cover}
+            />
+            <Button onClick={() => setSelectedTrack(null)}>Stop</Button>
+          </div>
+        )}
 
         {/* Video Player */}
         {selectedVideo && (
           <div className={styles.player}>
             <video ref={videoRef} controls className={styles.videoPlayer}>
-              <source src={selectedVideo.url} type="video/mp4" />
+              <source src={selectedVideo.src} type="video/mp4" />
               Your browser does not support the video element.
             </video>
             <div className={styles.buttonContainer}>
-            <Button onClick={() => setSelectedVideo(null)}>Stop</Button>
+              <Button
+                onClick={() => {
+                  if (videoRef.current) {
+                    videoRef.current.pause();
+                    videoRef.current.currentTime = 0;
+                  }
+                  setSelectedVideo(null);
+                }}
+              >
+                Stop
+              </Button>
             </div>
           </div>
         )}
