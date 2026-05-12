@@ -10,12 +10,12 @@ Built using Next.js and React with a focus on scalable frontend structure, reusa
 
 ## Features
 
-- User authentication and login flows
-- Booking management pages
+- Authentication and login system
+- Booking workflow management
 - Store/e-commerce structure
-- Responsive design
-- Dynamic routing architecture
-- Modular React component structure
+- Database integration using Prisma ORM
+- Responsive frontend architecture
+- Dynamic routing with Next.js
 
 ## Tech Stack
 
