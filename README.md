@@ -1,27 +1,32 @@
-# Band Website
+# Band Platform
 
 Live Demo: https://bandswebsite.netlify.app/
 
 ## Overview
-A responsive website developed for a music band to showcase media, events, and band information.
 
-Built with a focus on user experience, responsive design, and modern frontend practices.
+Full-stack web application developed for a music band, including authentication flows, booking management, and online store architecture.
+
+Built using Next.js and React with a focus on scalable frontend structure, reusable components, and responsive user experience.
+
+## Features
+
+- User authentication and login flows
+- Booking management pages
+- Store/e-commerce structure
+- Responsive design
+- Dynamic routing architecture
+- Modular React component structure
 
 ## Tech Stack
+
 - Next.js
 - React
 - JavaScript
 - CSS
+- Netlify
 
-## Features
-- Responsive layout for desktop and mobile
-- Dynamic navigation system
-- Media and band presentation sections
-- Optimized frontend performance
-- Deployed using Netlify
+## Goals
 
-## Installation
-
-```bash
-npm install
-npm run dev
+- Improve full-stack architecture skills
+- Practice authentication flows
+- Build a real-world production-style application
