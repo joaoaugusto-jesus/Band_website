@@ -15,7 +15,7 @@
     height: 45vh;
     z-index: 2;
     position: relative;
-    font-family: 'Chau', cursive;
+    font-family: var(--font-roboto);
     color: #0b0b0b;
     text-align: center;
     font-size: 24px;
@@ -42,7 +42,7 @@
     max-width: 400px;
     z-index: 3;
     text-align: center;
-    font-family: 'Chau', cursive;
+    font-family: var(--font-roboto);
     background-color: rgba(30, 27, 27, 0.97);
 
     color: #ccc

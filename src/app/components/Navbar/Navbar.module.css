@@ -30,7 +30,7 @@
   color: #b1afaf;
   cursor: pointer;
   font-size: 2rem;
-  font-weight: 700;
+  
   
   font-size: large;
 }
@@ -63,7 +63,7 @@
     align-items: center;
     justify-items: center;
     text-align: center;
-    margin-right: 1rem;
+    margin-right: 2.5rem;
   }
 
 
@@ -124,6 +124,7 @@
     font-weight: 700;
     min-width: 180px;
     width: auto;
+    height: auto;
     z-index: 1;
     right: 0%;
     transform: translateX(-10px);
@@ -134,20 +135,29 @@
     list-style-type: none;
     margin: 0; /* Remove default margin */
     padding: 0;
+    
   }
 
-  .dropdownItem 
+  .dropdownItem {
+    
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .dropdownItem a
   {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s ease;
     gap: 0.5rem;
-    margin: 20px 20px 20px 20px;
-
+    margin: 10px 20px 20px 20px;
+    
+    transition: color 0.2s ease;
     
   }
- .dropdownItem :hover{
+ .dropdownItem:hover a{
       color: #fbda3a;
       box-shadow: 0 4px #000000;  
     }

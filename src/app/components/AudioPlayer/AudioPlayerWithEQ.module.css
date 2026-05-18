@@ -9,6 +9,7 @@
   gap: 1rem;
   width: 100%;
   max-width: 600px;
+  height: 200px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -33,7 +34,7 @@
 .trackInfo {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .trackTitle {
@@ -52,6 +53,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin: 0 16px 16px;
 }
 
 .playButton {

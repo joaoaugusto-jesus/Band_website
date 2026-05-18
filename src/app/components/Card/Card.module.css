@@ -76,7 +76,7 @@
     padding: 0 1em 0 0;
     margin: 0;
     width: 50%;
-    font-family: 'Roboto';
+    font-family: var(--font-roboto);
     font-size: 0.9rem;
     cursor: inherit;
     line-height: inherit;
@@ -102,7 +102,7 @@
  
   .price{
     font-size: 1.5rem;
-    font-family: 'Creepster', cursive;
+    font-family: var(--font-metalmania);
     letter-spacing: 3px;
     text-shadow: 2px 2px 5px #000000;
     color: chartreuse;

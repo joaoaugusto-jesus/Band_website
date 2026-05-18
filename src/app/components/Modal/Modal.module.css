@@ -36,7 +36,7 @@
   }
   
   .musicianName{
-    font-family: 'Creepster';
+    font-family: var(--font-creepster);
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -46,7 +46,7 @@
     text-shadow: 2px 2px 5px #323432;
   }
   .musicianDescription{
-    font-family: 'Creepster';
+    font-family: var(--font-roboto);
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 10px;

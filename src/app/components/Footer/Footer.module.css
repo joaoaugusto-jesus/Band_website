@@ -18,13 +18,12 @@
     position: relative;
     bottom: 0;
     width: 100%;
-    
     height: auto;
     background-color: #0a090adf;
     border-radius: 0.4rem;
     padding: 1rem;
     box-shadow: 0 0 1px 0 rgb(0, 0, 0);
-    font-family: 'Roboto', cursive;
+    font-family: var(--font-roboto);
     letter-spacing: 2;
     
 }
@@ -46,7 +45,7 @@
     padding: 0;
 }
 .footer h3 {
-    font-family: 'Roboto', cursive;
+    font-family: var(--font-roboto);
     font-size: 1rem;
     color: #fff;
     margin-top: 1rem;
@@ -62,6 +61,12 @@
     
 }
 
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Roboto', cursive;
+    font-size: 0.7rem;
+}
 
 
 @media screen and (max-width: 768px) {

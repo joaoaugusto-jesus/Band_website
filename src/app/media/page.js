@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef} from "react";
 import Navbar from "../components/Navbar/page";
 import Footer from "../components/Footer/page";
 import Button from "../components/Button";
@@ -14,6 +14,7 @@ export default function Media() {
   const [selectedTrack, setSelectedTrack] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [mediaType, setMediaType] = useState("music");
+  
 
   const videoRef = useRef(null);
 
