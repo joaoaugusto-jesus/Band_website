@@ -1,3 +1,4 @@
+"use client";
 import styles from './Agenda.module.css';
 import { gigs } from '../../Data/gigs';
 import { useTranslation } from 'react-i18next';
