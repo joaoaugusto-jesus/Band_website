@@ -20,10 +20,12 @@ export default function Navbar() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const { data: session } = useSession();
     const { t, i18n } = useTranslation("navbar");
-
+   
     const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     };
+
+    
 
 
     const toggleDropdown = () => {
@@ -52,7 +54,7 @@ export default function Navbar() {
         <header>
             <nav className={styles.navbar}>
             <div className={styles.leftSection}>
-            <Link className={styles.logoWrapper} href="/">
+            <Link href="/">
             
                         <Image 
                             src="/assets/img/Cartel Banner White.png"
@@ -73,7 +75,9 @@ export default function Navbar() {
                      aria-label="Altera para Português"
                      title="Altera para Português">PT</button>
                 </div>
+                <Link href="/home">Home</Link>
                 </div>
+            
                 
                 {session && (
                     <div className={styles.userName}>
