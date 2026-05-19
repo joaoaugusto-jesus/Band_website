@@ -56,10 +56,7 @@
 
    
   }
-
-  
-  
-
+ 
   .title{
     will-change: transform, opacity; /* Improves performance */
     animation: fadeIn linear 4s;
@@ -78,7 +75,7 @@
     width: 100%;
   }
   .subtitle{
-   
+    
     font-size: 2rem;
     letter-spacing: 4px;
     background-color: black;
@@ -89,10 +86,18 @@
     padding: 0.5rem;
     transition: background-color 0.3s, color 0.3s;
   }
+
+ .subtitleLink {
+  text-decoration: none;
+  color: inherit;
+}
+
   .subtitle:hover{
     background-color: #fff000;
     color: #44d41f;
     font-size: 2.5rem;
+    text-decoration: none;
+    color: inherit;
   }
 
   .videoContainer{  

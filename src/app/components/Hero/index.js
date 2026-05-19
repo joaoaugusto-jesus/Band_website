@@ -61,7 +61,11 @@ useEffect(() => {
           <h1 className={styles.title}>{t("Your Sports Partner")}</h1>
           <p className={styles.description}>{t("The last rock album")} </p>
           <p className={styles.description}>{t("made by humans")}</p>
-          <a href="/store"><h2 className={styles.subtitle}>{t("Buy now and get free Cartel shipping")}</h2></a>
+          <a href="/store" className={styles.subtitleLink}>
+          <h2 className={styles.subtitle}>
+            {t("Buy now and get free Cartel shipping")}
+          </h2>
+          </a>
         
         </motion.div>
        <div className={styles.videoContainer}>
