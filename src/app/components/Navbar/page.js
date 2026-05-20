@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { MdLogin, MdLogout } from "react-icons/md";
 import { useCartStore } from '../../store/cartStore';
 import { TiShoppingCart } from "react-icons/ti";
+import { FaHome } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { IoIosClose } from "react-icons/io";
 import { useSession, signOut } from "next-auth/react";
@@ -75,7 +76,9 @@ export default function Navbar() {
                      aria-label="Altera para Português"
                      title="Altera para Português">PT</button>
                 </div>
-                <Link href="/home">Home</Link>
+                <Link href="/home">
+                    <FaHome className={styles.homeIcon} title="Home" aria-label="Home" />
+                </Link>
                 </div>
             
                 

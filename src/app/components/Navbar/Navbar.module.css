@@ -56,7 +56,12 @@
   }
 
 
-
+.homeIcon{
+  color: #b1afaf;
+  width: 2.25rem;
+  height: auto;
+  cursor: pointer;
+}
   .navLinks {
     display: flex;
     justify-content: center;
