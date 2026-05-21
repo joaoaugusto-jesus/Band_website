@@ -17,11 +17,11 @@ export default function Merchandise() {
     if (isInView) {
       controls.start({
         opacity: 1,
-        x: 0,
+        y: 0,
         transition: { duration: 0.8, ease: "easeInOut" },
       });
     } else {
-      controls.start({ opacity: 0, x: 100 });
+      controls.start({ opacity: 0, y: 40 });
     }
   }, [isInView, controls]);
 
@@ -30,7 +30,7 @@ export default function Merchandise() {
       <motion.div
           ref={headerRef}
           animate={controls}
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, y: 40 }}
           className={styles.header}
          >
          <h1

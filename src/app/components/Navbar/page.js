@@ -79,14 +79,15 @@ export default function Navbar() {
                 <Link href="/home">
                     <FaHome className={styles.homeIcon} title="Home" aria-label="Home" />
                 </Link>
-                </div>
-            
-                
-                {session && (
+                  {session && (
                     <div className={styles.userName}>
                     <span className={styles.userNameText}> {session.user?.email}</span> 
                 </div>
                ) }
+                </div>
+            
+                
+              
                
                 <div className={styles.navLinks}>                 
                     

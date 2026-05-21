@@ -1,10 +1,10 @@
 
-
 .navbar {
   
   background-color: rgb(15, 15, 15);
   box-shadow: 0 4px 12px rgba(0, 0, 0);
-  width: 100%; /* Make it span the full width */
+  position: fixed;
+  inset: 0 0 auto 0;
   height: auto; /* Adjust height as needed */
   margin: 0;
   display: flex;
@@ -15,6 +15,7 @@
   z-index: 1000; /* Ensure it stays on top of other elements */
   flex-direction: row; /* Ensure items are aligned horizontally */
   padding: 0.5rem;
+
 }
 
 .leftSection {
@@ -69,6 +70,7 @@
     justify-items: center;
     text-align: center;
     margin-right: 2.5rem;
+    
   }
 
 
@@ -87,6 +89,8 @@
   }
   .userNameText{
     color: #b1afaf;
+    font-size: 0.9rem;
+    font-weight: 700;
   }
   
   .login{
@@ -95,6 +99,7 @@
     width: 2.25rem;
     height: auto;
     cursor: pointer;
+   
    
   }
 
@@ -197,10 +202,18 @@
     width: 17px;
   }
   
-
+  @media (max-width: 900px)
+{
+.navbar{
+  max-width: 100%;
+}
+}
 
 @media (max-width: 768px)
 {
+.navbar{
+  max-width: 100%;
+}
 
   .itemCount{
     
@@ -218,6 +231,9 @@
   .logoWrapper {
     width: 5rem; /* Adjust as needed */
     height: 4rem; /* Adjust as needed */
+  }
+ .homeIcon{
+    width: 1rem
   }
 }
 

@@ -1,13 +1,8 @@
-
 .containerFooter {
-   
-    display: flex; /* Flex layout */
-    flex-direction: row; /* Align items horizontally */
-    width: 100%; /* Full width */
-    height: auto; /* Dynamic height */
-    margin: 0; /* Remove extra margins */
-    padding: 1rem; /* Add padding for spacing */
-       
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
 }
 
 
@@ -21,11 +16,11 @@
     height: auto;
     background-color: #0a090adf;
     border-radius: 0.4rem;
-    padding: 1rem;
+    
     box-shadow: 0 0 1px 0 rgb(0, 0, 0);
     font-family: var(--font-roboto);
-    letter-spacing: 2;
-    
+    letter-spacing: 2px;
+    margin-top: 1rem;
 }
 
 
@@ -55,7 +50,7 @@
 }
 .footer p
 {
-    margin-right: 2rem;
+   
     font-family: 'Roboto', cursive;
     font-size: 0.7rem;
     

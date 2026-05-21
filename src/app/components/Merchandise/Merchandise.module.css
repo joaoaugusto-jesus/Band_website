@@ -1,4 +1,7 @@
-
+.header {
+  width: 100%;
+  overflow-x: hidden;
+}
 
 .container {
   justify-content: center;
@@ -23,7 +26,7 @@
   text-shadow: 2px 2px 5px #000000;
   
   font-family: var(--font-Creepster);
-  letter-spacing: 7;
+  letter-spacing: 7px;
   margin-top: 2rem;
  
   
