@@ -15,7 +15,7 @@ export default function LandingPage() {
   return (
     <div className={styles.page}>
       <Image
-        src="/assets/img/cartel-cortez-skeleton-hands (1).png"
+        src="/assets/img/Cartel logo.jpeg"
         alt="Band Logo"
         width={500}
         height={400}

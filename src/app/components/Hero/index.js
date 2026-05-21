@@ -44,7 +44,17 @@ useEffect(() => {
       
        
         
-      <section className={styles.sectionHeader}>
+      <section className={styles.sectionHeader}
+      >
+        <Image
+          src="/assets/img/cartel-band-photo-bg-black.png"
+          alt="Background Image"
+          objectFit="cover"
+          quality={100}
+          className={styles.bgImg}
+          width={300}
+          height={300}
+        />
       
         
  
@@ -58,7 +68,7 @@ useEffect(() => {
          
         className={styles.headerTitle}>
      
-          <h1 className={styles.title}>{t("Your Sports Partner")}</h1>
+          <p className={styles.title}>{t("Your Sports Partner")}</p>
           <p className={styles.description}>{t("The last rock album")} </p>
           <p className={styles.description}>{t("made by humans")}</p>
           <a href="/store" className={styles.subtitleLink}>

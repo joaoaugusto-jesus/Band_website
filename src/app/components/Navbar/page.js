@@ -58,10 +58,10 @@ export default function Navbar() {
             <Link href="/">
             
                         <Image 
-                            src="/assets/img/Cartel Banner White.png"
+                            src="/assets/img/Cartel-Cortez-logo-horizontal.png"
                             alt="The Name of a Band" 
-                            width={100}
-                            height={60}
+                            width={200}
+                            height={50}
                             className={styles.image}
                             style={{borderRadius: "14%"}}
                         />

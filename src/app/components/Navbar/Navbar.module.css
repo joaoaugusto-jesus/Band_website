@@ -2,7 +2,7 @@
 .navbar {
   
   background-color: rgb(15, 15, 15);
-  box-shadow: 0 4px 12px rgba(0, 0, 0);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0);
   position: fixed;
   inset: 0 0 auto 0;
   height: auto; /* Adjust height as needed */
@@ -31,14 +31,14 @@
   color: #b1afaf;
   cursor: pointer;
   font-size: 2rem;
-  
-  
   font-size: large;
 }
+
 .langButton:hover{
   color: #fbda3a;
   box-shadow: 0 4px #000000;
 }
+
   .logoWrapper {
     /* Center and resize the logo */
     display: flex;
@@ -59,7 +59,7 @@
 
 .homeIcon{
   color: #b1afaf;
-  width: 2.25rem;
+  width: 26px;
   height: auto;
   cursor: pointer;
 }
@@ -69,8 +69,6 @@
     align-items: center;
     justify-items: center;
     text-align: center;
-    margin-right: 2.5rem;
-    
   }
 
 
@@ -103,11 +101,20 @@
    
   }
 
+  .navbar ul {
+    display: flex;
+    gap: 1rem; /* Space between links */
+   
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+
   .burguerBtn {
     color: #b1afaf;
     width: auto;
     height: 2.15rem;
     cursor: pointer;
+    margin: 0;
     
 }
 
