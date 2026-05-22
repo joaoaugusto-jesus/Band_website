@@ -11,7 +11,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Center the container properly */
-    padding: 20px;
+    
     width: 100%;
     height: auto; /* Adjust height as needed */
     text-align: center;
@@ -50,7 +50,7 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
     background-color: rgba(255, 255, 255, 0.8);
     width: auto;
-    height: 240px;
+    height: 260px;
 }
 
 .logged{
@@ -105,7 +105,7 @@
 
     @media (max-width: 500px) {
         .loginForm {
-            width: 90%;
+            width: 70%;
             height: auto; /* Adjust height for smaller screens */
         }
     

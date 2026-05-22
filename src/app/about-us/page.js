@@ -6,7 +6,6 @@ import Footer from "../components/Footer/page";
 import LayoutBg from "../components/LayoutBg/page";
 import PageIcon from "../components/Icons/page";
 import styles from "./AboutUs.module.css";
-import LayoutTb from "../components/LayoutTb/page";
 import { useState } from "react";
 import Modal from "../components/Modal/page"; // Import the Modal component
 import { useTranslation } from "react-i18next";

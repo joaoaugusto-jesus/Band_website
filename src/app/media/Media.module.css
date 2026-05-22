@@ -119,7 +119,8 @@
     }
 
     .mediaContainer {
-    
+      margin: 2rem 0;
       height: auto;
+      width: 82%;
     }
   }
