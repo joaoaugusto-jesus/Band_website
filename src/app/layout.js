@@ -1,6 +1,8 @@
 
 import { Roboto, Metal_Mania, Creepster } from "next/font/google";
 import Providers from "./providers";
+import I18nProvider from "./i18-provider";
+
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -28,8 +30,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       
       <body className={`${roboto.variable} ${metalMania.variable}`}>
-    
-        <Providers>{children}</Providers>
+     <Providers>
+          <I18nProvider>{children}</I18nProvider>
+        </Providers>
       </body>
       
     </html>

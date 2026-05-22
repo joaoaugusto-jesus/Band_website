@@ -3,7 +3,7 @@ import styles from './gallery.module.css';
 
 const images = [
  
-  { src: '/assets/img/cortez na disneyland.jpg', alt: 'Band Image 1' },
+  { src: '/assets/img/disneyland.jpeg', alt: 'Band Image 1' },
   { src: '/assets/img/tiagão e beto.jpg', alt: 'Band Image 2' },
   { src: '/assets/img/cartel-band-moshpit.jpg', alt: 'Band Image 3' },
   { src: '/assets/img/CVartel moshpit.jpeg', alt: 'Band Image 5' },
