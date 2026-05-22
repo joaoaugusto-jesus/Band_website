@@ -64,7 +64,7 @@ useEffect(() => {
       <motion.div
          ref={headerRef}
          animate={controls}
-         initial={{ opacity: 0, x: 100 }}
+         initial={{ opacity: 0, x:  100 }}
          
         className={styles.headerTitle}>
      
@@ -83,7 +83,7 @@ useEffect(() => {
            initial={{ opacity: 0, x: 100 }}
            animate={{ opacity: 1, x: 0 }}
            transition={{ duration: 0.8, ease: "easeInOut" }}
-           whileHover={{ scale: 1.20 }}
+           whileHover={window.innerWidth > 768 ? { scale: 1.05 } : {}}
            className={styles.videoBg}>
           <video 
               className={styles.videoTeaser}  

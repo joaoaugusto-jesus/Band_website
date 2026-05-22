@@ -223,46 +223,43 @@
 }
 
   .itemCount{
-    
-    right: 22%;
-   
-  
-    
+    right: 22%; 
   }
   .subscribeContainer
   {
        padding: 1rem;
   }
  
-
   .logoWrapper {
     width: 5rem; /* Adjust as needed */
     height: 4rem; /* Adjust as needed */
   }
  .homeIcon{
-    width: 1rem
+    width: 1.40rem
   }
 }
 
 @media (max-width: 500px)
 {
- 
- 
+  .leftSection{
+    width: 80%;
+  }
+  .logoLink{
+    width: 23%;
+  }
+  .image{
+    width: 130%;
+    height: auto;    
+  }
+
   .itemCount{
-    
     right: 22%;
-   
-  
-    
   }
  
-  .login{
-    
+ .login{
     display: none;
   }
 
-
- 
 }
 
 @media (max-width: 400px)
@@ -274,11 +271,7 @@
  
   
   .itemCount{
-    
     right: 22%;
-   
-  
-    
   }
 
   .cart{
@@ -287,7 +280,3 @@
 
 }
 
-@media (max-width: 350px)
-{
-  
-}

@@ -55,7 +55,8 @@ export default function Navbar() {
         <header>
             <nav className={styles.navbar}>
             <div className={styles.leftSection}>
-            <Link href="/">
+            <Link href="/"
+            className={styles.logoLink}>
             
                         <Image 
                             src="/assets/img/Cartel-Cortez-logo-horizontal.png"

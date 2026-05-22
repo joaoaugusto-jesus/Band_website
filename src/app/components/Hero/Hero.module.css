@@ -2,8 +2,12 @@
     margin-top: 8rem;
     width: 100%;
     height: auto;
-    z-index: 0; /* Lower z-index for background */
-}
+    z-index: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+} /* Lower z-index for background */
+
+    
 
 .sectionHeader {
    
@@ -26,20 +30,16 @@
     margin-right: auto;
 }
 
-.sectionContent{  
+.sectionContent {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  text-align: center;
   align-items: center;
-  max-width: 100%;
-  height: auto;
-  padding: 2rem;
-  gap: 4rem;
-  margin-top: 4rem;
-  
+  width: 100%;
+  max-width: 1400px;
+  margin: 4rem auto 0 auto;
+  gap: 2rem
 }
-
 
 
 .headerTitle {
@@ -57,10 +57,16 @@
     letter-spacing: 2;
     text-shadow: 0 0 4px #3e3e3e;
     color: #f5f5f5;
-    margin-left: 0;
-
    
   }
+
+.headerTitle,
+.videoContainer {
+   flex: 0 1 500px;
+   max-width: 420px;
+   width: 100%;
+   gap: 2rem;
+}
  
   .title{
     will-change: transform, opacity; /* Improves performance */
@@ -72,7 +78,7 @@
   }
 
   .description {
-    font-size: 3rem;
+    font-size: 2rem;
    
     letter-spacing: 2px;
     background-color: #f5f5f5;
@@ -80,7 +86,7 @@
   }
   .subtitle{
     transition: transform 0.3s ease;
-    font-size: 2rem;
+    font-size: 1rem;
     letter-spacing: 4px;
     background-color: black;
     opacity: 0.9;
@@ -177,30 +183,25 @@
   }
    .headerTitle{
     width: 100%;
+    height: auto;
     font-size: 1rem;
     padding: 0;
     margin: 0;
-    width: 100%;
-    
    }
    .title{
     font-size: 2rem;
     padding: 0;
     margin: 0;
     width: 100%;
+    margin-top: 3rem;
    }
-   .description{
-    font-size: 2rem;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-   }
+   
  .subtitle{
-    width: 100%;
-    font-size: 1.5rem;
+    width: 94%;
+    font-size: 2rem;
    }
    .videoContainer{
-    width: 100%;
+    width: fit-content;
     padding: 1rem;
    }
    .videoTeaser {
@@ -217,7 +218,7 @@
     .sectionHeader h1{
         font-size: 1rem;
       }
-   .setionHeader p{
+   .sectionHeader p{
     font-size: 0.5rem;
    }
    
