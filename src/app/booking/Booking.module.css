@@ -101,7 +101,7 @@
     }
     .dateInput
     {
-        width: 100%;
+        width: 80%;
     }
     .content
     {
@@ -122,5 +122,9 @@
     .iconRemove
     {
         margin: 0;
+    }
+    .button
+    {
+        margin: 1rem 0;
     }
 }

@@ -123,7 +123,9 @@ export default function Media() {
               artist={selectedTrack.artist}
               cover={selectedTrack.cover}
             />
-            <Button onClick={() => setSelectedTrack(null)}>Stop</Button>
+            <Button
+             className={styles.stopButton}   
+             onClick={() => setSelectedTrack(null)}>Stop</Button>
           </div>
         )}
 
@@ -134,19 +136,7 @@ export default function Media() {
               <source src={selectedVideo.src} type="video/mp4" />
               Your browser does not support the video element.
             </video>
-            <div className={styles.buttonContainer}>
-              <Button
-                onClick={() => {
-                  if (videoRef.current) {
-                    videoRef.current.pause();
-                    videoRef.current.currentTime = 0;
-                  }
-                  setSelectedVideo(null);
-                }}
-              >
-                Stop
-              </Button>
-            </div>
+           
           </div>
         )}
       </div>

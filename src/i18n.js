@@ -7,17 +7,21 @@ import enNavbar from "../public/locales/en/navbar.json";
 import ptNavbar from "../public/locales/pt/navbar.json";
 import enHero from "../public/locales/en/hero.json";
 import ptHero from "../public/locales/pt/hero.json";
+import enAbout from "../public/locales/en/about.json";
+import ptAbout from "../public/locales/pt/about.json";
 
 const resources = {
   en: {
     common: enCommon,
     navbar: enNavbar,
     hero: enHero,
+    about: enAbout,
   },
   pt: {
     common: ptCommon,
     navbar: ptNavbar,
     hero: ptHero,
+    about: ptAbout,
   },
 };
 
@@ -28,7 +32,7 @@ if (!i18n.isInitialized) {
     lng: "en",
     fallbackLng: "en",
 
-    ns: ["common", "navbar", "hero"],
+    ns: ["common", "navbar", "hero", "about"],
     defaultNS: "common",
 
     interpolation: { escapeValue: false },

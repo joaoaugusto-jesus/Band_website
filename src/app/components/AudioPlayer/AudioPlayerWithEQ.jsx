@@ -1,182 +1,141 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaPlay, FaPause } from "react-icons/fa";
 import styles from "./AudioPlayerWithEQ.module.css";
 
 export default function AudioPlayerWithEQ({ src, title, artist, cover }) {
   const audioRef = useRef(null);
-  const audioCtxRef = useRef(null);
-  const sourceRef = useRef(null);
-  const analyserRef = useRef(null);
-  const dataRef = useRef(null);
-  const rafRef = useRef(null);
+  const seekRef = useRef(null);
 
-  const seekBarRef = useRef(null);
   const dragging = useRef(false);
-  const x = useMotionValue(0);
+  const dragX = useRef(0);
 
   const [isPlaying, setIsPlaying] = useState(false);
-  const [bars, setBars] = useState(new Array(16).fill(0));
-  const [duration, setDuration] = useState(0);
+  const [progress, setProgress] = useState(0);
 
-  // ✅ initialize audio + context
-useEffect(() => {
-  const audio = audioRef.current;
-  if (!audio) return;
-
-  // prevent duplicate AudioContext creation
-  if (!audioCtxRef.current) {
-    audioCtxRef.current = new (window.AudioContext || window.webkitAudioContext)();
-  }
-  const ctx = audioCtxRef.current;
-
-  // ✅ Only create MediaElementSource once
-  if (!sourceRef.current) {
-    const analyser = ctx.createAnalyser();
-    analyser.fftSize = 64;
-    analyserRef.current = analyser;
-    dataRef.current = new Uint8Array(analyser.frequencyBinCount);
-
-    sourceRef.current = ctx.createMediaElementSource(audio);
-    sourceRef.current.connect(analyser);
-    analyser.connect(ctx.destination);
-  }
-
-  // visualizer animation
-  const animate = () => {
-    if (analyserRef.current && dataRef.current) {
-      analyserRef.current.getByteFrequencyData(dataRef.current);
-      setBars(Array.from(dataRef.current.slice(0, 16)));
-    }
-
-    // update seek bar
-    const track = seekBarRef.current;
-    if (!dragging.current && track && audio.duration) {
-      const w = track.offsetWidth || 1;
-      const px = (audio.currentTime / audio.duration) * w;
-      x.set(px);
-    }
-
-    rafRef.current = requestAnimationFrame(animate);
-  };
-  rafRef.current = requestAnimationFrame(animate);
-
-  return () => cancelAnimationFrame(rafRef.current);
-}, [src]);
-
-
-  // ✅ handle metadata (duration)
+  /* ---------------- SYNC AUDIO TIME ---------------- */
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const loaded = () => setDuration(audio.duration || 0);
-    audio.addEventListener("loadedmetadata", loaded);
-    return () => audio.removeEventListener("loadedmetadata", loaded);
-  }, [src]);
+    const update = () => {
+      if (!dragging.current) {
+        setProgress(audio.currentTime / audio.duration || 0);
+      }
+    };
 
-  // ✅ toggle play
+    audio.addEventListener("timeupdate", update);
+    return () => audio.removeEventListener("timeupdate", update);
+  }, []);
+
+  /* ---------------- PLAY / PAUSE ---------------- */
   const togglePlay = async () => {
     const audio = audioRef.current;
-    const ctx = audioCtxRef.current;
-    if (!audio || !ctx) return;
+    if (!audio) return;
 
-    try {
-      if (ctx.state === "suspended") await ctx.resume();
-      audio.muted = false;
-      audio.volume = 1;
-
-      if (isPlaying) {
-        audio.pause();
-        setIsPlaying(false);
-      } else {
-        await audio.play();
-        setIsPlaying(true);
-      }
-    } catch (err) {
-      console.error("Playback failed:", err);
+    if (isPlaying) {
+      audio.pause();
+      setIsPlaying(false);
+    } else {
+      await audio.play();
+      setIsPlaying(true);
     }
   };
 
-  // ✅ seek logic
-  const onDragStart = () => (dragging.current = true);
-  const onDragEnd = (_, info) => {
+  /* ---------------- SEEK CORE ---------------- */
+  const seekTo = (clientX) => {
     const audio = audioRef.current;
-    const track = seekBarRef.current;
-    dragging.current = false;
-    if (!audio || !track || !audio.duration) return;
-
-    const w = track.offsetWidth || 1;
-    const newTime = (Math.max(0, Math.min(info.point.x, w)) / w) * audio.duration;
-    if (isFinite(newTime)) audio.currentTime = newTime;
-  };
-  const onTrackClick = (e) => {
-    const audio = audioRef.current;
-    const track = seekBarRef.current;
-    if (!audio || !track || !audio.duration) return;
+    const track = seekRef.current;
+    if (!audio || !track) return;
 
     const rect = track.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const w = rect.width || 1;
-    const newTime = (clickX / w) * audio.duration;
-    audio.currentTime = newTime;
-    x.set(clickX);
+    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+
+    const percent = x / rect.width;
+
+    audio.currentTime = percent * audio.duration;
+    setProgress(percent);
+  };
+
+  /* ---------------- CLICK SEEK ---------------- */
+  const onClick = (e) => {
+    seekTo(e.clientX);
+  };
+
+  /* ---------------- DRAG START ---------------- */
+  const onDragStart = () => {
+    dragging.current = true;
+  };
+
+  /* ---------------- DRAG MOVE (LIVE UPDATE) ---------------- */
+  const onDrag = (_, info) => {
+    const track = seekRef.current;
+    if (!track) return;
+
+    const rect = track.getBoundingClientRect();
+    const x = info.point.x - rect.left;
+
+    const percent = Math.max(0, Math.min(1, x / rect.width));
+
+    dragX.current = percent;
+    setProgress(percent);
+
+    const audio = audioRef.current;
+    if (audio) {
+      audio.currentTime = percent * audio.duration;
+    }
+  };
+
+  /* ---------------- DRAG END ---------------- */
+  const onDragEnd = () => {
+    dragging.current = false;
   };
 
   return (
     <div className={styles.playerContainer}>
       <audio ref={audioRef} src={src} preload="metadata" />
 
-      <div className={styles.coverWrapper}>
+      <div className={styles.infoSection}>
         <img
           src={cover || "/assets/img/cartel-cortez-skeleton-hands.png"}
-          alt={title}
+          alt={title || "Cover"}
           className={styles.coverImage}
         />
-      </div>
 
-      <div className={styles.infoSection}>
-        <div className={styles.trackInfo}>
-          <h3>{title || "Unknown Track"}</h3>
-          <p>{artist || "Unknown Artist"}</p>
+        <h3>{title}</h3>
+        <p>{artist}</p>
+
+        {/* SEEK BAR */}
+        <div
+          ref={seekRef}
+          className={styles.seekBarTrack}
+          onClick={onClick}
+        >
+          {/* progress fill */}
+          <div
+            className={styles.seekProgress}
+            style={{ width: `${progress * 100}%` }}
+          />
+
+          {/* thumb */}
+          <motion.div
+            className={styles.seekBarThumb}
+            style={{ left: `${progress * 100}%` }}
+            drag="x"
+            dragConstraints={seekRef}
+            dragElastic={0}
+            onDragStart={onDragStart}
+            onDrag={onDrag}
+            onDragEnd={onDragEnd}
+          />
         </div>
 
+        {/* PLAY BUTTON */}
         <button onClick={togglePlay} className={styles.playButton}>
           {isPlaying ? <FaPause /> : <FaPlay />}
         </button>
-
-        <div className={styles.equalizer}>
-          {bars.map((v, i) => (
-            <motion.div
-              key={i}
-              className={styles.bar}
-              animate={{ height: isPlaying ? Math.max(v / 2, 5) : 5 }}
-              transition={{ duration: 0.15 }}
-            />
-          ))}
-        </div>
-
-        {/* Seek bar */}
-        <div className={styles.seekBarWrapper}>
-          <motion.div
-            ref={seekBarRef}
-            className={styles.seekBarTrack}
-            onClick={onTrackClick}
-          >
-            <motion.div className={styles.seekProgress} style={{ width: x }} />
-            <motion.div
-              className={styles.seekBarThumb}
-              drag="x"
-              dragConstraints={seekBarRef}
-              dragElastic={0}
-              style={{ x }}
-              onDragStart={onDragStart}
-              onDragEnd={onDragEnd}
-            />
-          </motion.div>
-        </div>
       </div>
     </div>
   );

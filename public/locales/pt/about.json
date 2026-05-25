@@ -1,3 +1,20 @@
-{   
-    "Musicians": "Músicos"
+{
+  "musicians": {
+    "1": {
+      "name": "Beto",
+      "description": "Alberto Ferreira é um guitarrista talentoso com mais de 100 anos de experiência."
+    },
+    "2": {
+      "name": "Pêpe",
+      "description": "Fernando Jesus é um baterista habilidoso com um ritmo frenético."
+    },
+    "3": {
+      "name": "Cortez",
+      "description": "Tiago Cortez é guitarrista, vocalista e compositor conhecido pelo seu estilo punk e groove."
+    },
+    "4": {
+      "name": "Joni",
+      "description": "João Jesus é um baixista, vocalista e compositor versátil."
+    }
+  }
 }

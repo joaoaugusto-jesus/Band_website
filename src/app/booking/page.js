@@ -115,9 +115,10 @@ const GigBookingComponent = () => {
                     </label>
                         <div className={styles.buttonContainer}>
                             <Button 
+                                className={styles.button}
                                 onClick={handleBookingRequest} 
                                 disabled={loading}
-                                style={{ marginTop: "1rem", width:"30%", padding:"0.5rem" }}
+                                style={{ marginTop: "1rem", width:"60%", padding:"0.5rem" }}
                                 >
                                 {loading ? "Submitting..." : "Submit Request"}
                             </Button> 
