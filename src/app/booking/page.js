@@ -7,6 +7,7 @@ import PageIcon from "../components/Icons/page";
 import Footer from "../components/Footer/page";
 import Button from "../components/Button";
 import { CiCircleRemove } from "react-icons/ci";
+import { useTranslation } from "react-i18next";
 
 const GigBookingComponent = () => {
     const [selectedDate, setSelectedDate] = useState("");
@@ -14,6 +15,7 @@ const GigBookingComponent = () => {
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(false);
     const { data: session } = useSession(); // Get the user session
+    const { t } = useTranslation("booking"); // Use the booking namespace for translations
 
     const userId = session?.user?.id; // Derive userId from session
 
@@ -99,12 +101,12 @@ const GigBookingComponent = () => {
             <form className={styles.formContainer}>
                
             <div className={styles.header}>
-                <h1>Request a Band for Your Venue</h1>
+                <h1>{t("requestBand")}</h1>
                 {message && <p>{message}</p>}
 
                 <div className={styles.request}>
                     <label>
-                        Select Date:
+                        {t("selectDate")}:
                         <input
                             className={styles.dateInput}
                             type="date"
@@ -120,7 +122,7 @@ const GigBookingComponent = () => {
                                 disabled={loading}
                                 style={{ marginTop: "1rem", width:"60%", padding:"0.5rem" }}
                                 >
-                                {loading ? "Submitting..." : "Submit Request"}
+                                {loading ? t("submitting") : t("submitRequest")}
                             </Button> 
                         </div>
                    </div>
@@ -129,13 +131,13 @@ const GigBookingComponent = () => {
             <div className={styles.content}>
 
                     <div className={styles.bookings}>
-                        <h2>Your Booking Requests</h2>
-                        {loading ? <p>Loading...</p> : (
+                        <h2>{t("yourBookingRequests")}</h2>
+                        {loading ? <p>{t("loading")}</p> : (
                             <ul>
                                 {bookings.map((booking) => (
                                     <li key={booking.id} className={styles.bookingRquested}>
-                                        <p className={styles.dateRequest}><strong>Date:</strong> {new Date(booking.date).toLocaleDateString()}</p>
-                                        <p className={styles.statusRequest}><strong>Status:</strong> {booking.status}</p>
+                                        <p className={styles.dateRequest}><strong>{t("date")}:</strong> {new Date(booking.date).toLocaleDateString()}</p>
+                                        <p className={styles.statusRequest}><strong>{t("status")}:</strong> {booking.status}</p>
                                         <div className={styles.buttonContainer}
                                          style={{ width:"30%", padding:"0.5rem" }}
                                         onClick={() => handleDeleteBooking(booking.id)}

@@ -51,11 +51,12 @@
   
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
   }
   
   .card {
+    width: fit-content;
     background: #fff;
     border-radius: 8px;
     overflow: hidden;

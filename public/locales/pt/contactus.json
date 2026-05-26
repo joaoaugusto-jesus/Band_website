@@ -1,0 +1,11 @@
+{
+    "name": "Nome",
+    "email": "Email",
+    "phone": "Número de telefone",
+    "message": "Deixe uma mensagem",
+    "enterMessage": "Digite sua mensagem aqui...",
+    "submit": "Enviar",
+    "submitting": "Enviando...",
+    "sentSuccessfully": "Enviado com sucesso!",
+    "failedToSend": "Falha ao enviar. Por favor, tente novamente mais tarde."
+}

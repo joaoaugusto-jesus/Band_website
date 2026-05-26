@@ -131,9 +131,9 @@ export default function Login() {
               />
             
               {error && <p className={styles.error}>{error}</p>}
-              
-              <Button onClick={handleSubmit} disabled={loading}
-              className={styles.submitButton}>
+               <div> 
+                <Button onClick={handleSubmit} disabled={loading}
+                className={styles.submitButton}>
                 {loading
                   ? authMode === "login"
                     ? t("Logging in...")
@@ -141,13 +141,19 @@ export default function Login() {
                   : authMode === "login"
                   ? t("login")
                   : t("Sign Up")}
-              </Button>
+                 </Button>
+               </div>
+              
               </div>
-              <Button className={styles.toggleButton} onClick={toggleAuthMode}>
+              <div
+              className={styles.buttonContainer}
+              >
+                <Button className={styles.toggleButton} onClick={toggleAuthMode}>
                 {authMode === "login"
-                  ? t("Don't have an account? Sign up")
-                  : t("Already have an account? Login")}
-              </Button>
+                  ? t("Sign up")
+                  : t("Login")}
+              </Button></div>
+              
             </div>
           )}
         </div>

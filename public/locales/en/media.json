@@ -1,0 +1,7 @@
+{
+  "mediaGallery": "Media Gallery",
+    "selectMediaType": "Select Media Type: ",
+    "music": "Music",
+    "videos": "Videos",     
+    "videoNotSupported": "Your browser does not support the video element."
+}

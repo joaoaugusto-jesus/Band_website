@@ -9,12 +9,13 @@ import AudioPlayerWithEQ from "../components/AudioPlayer/AudioPlayerWithEQ.jsx";
 import styles from "./Media.module.css";
 import { tracks } from "../Data/music-tracks";
 import { videos } from "../Data/music-videos";
+import { useTranslation } from "react-i18next";
 
 export default function Media() {
   const [selectedTrack, setSelectedTrack] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [mediaType, setMediaType] = useState("music");
-  
+  const { t } = useTranslation("media");
 
   const videoRef = useRef(null);
 
@@ -60,26 +61,26 @@ export default function Media() {
     <>
       <Navbar />
       <div className={styles.mediaContainer}>
-        <h1 className={styles.title}>Media Gallery</h1>
+        <h1 className={styles.title}>{t("mediaGallery")}</h1>
 
         {/* Dropdown Selector */}
         <div className={styles.dropdownContainer}>
-          <label htmlFor="mediaType">Select Media Type: </label>
+          <label htmlFor="mediaType">{t("selectMediaType")}</label>
           <select
             id="mediaType"
             value={mediaType}
             onChange={handleMediaTypeChange}
             className={styles.dropdown}
           >
-            <option value="music">Music</option>
-            <option value="videos">Videos</option>
+            <option value="music">{t("music")}</option>
+            <option value="videos">{t("videos")}</option>
           </select>
         </div>
 
         {/* Music Tracks */}
         {mediaType === "music" && (
           <section className={styles.section}>
-            <h2>Music Tracks</h2>
+            <h2>{t("music")}</h2>
             <div className={styles.grid}>
               {tracks.map((track, idx) => (
                 <div
@@ -98,7 +99,7 @@ export default function Media() {
         {/* Videos */}
         {mediaType === "videos" && (
           <section className={styles.section}>
-            <h2>Videos</h2>
+            <h2>{t("videos")}</h2>
             <div className={styles.grid}>
               {videos.map((video, idx) => (
                 <div
@@ -134,7 +135,7 @@ export default function Media() {
           <div className={styles.player}>
             <video ref={videoRef} controls className={styles.videoPlayer}>
               <source src={selectedVideo.src} type="video/mp4" />
-              Your browser does not support the video element.
+             {t("videoNotSupported")}
             </video>
            
           </div>

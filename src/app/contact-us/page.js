@@ -7,10 +7,11 @@ import Navbar from "../components/Navbar/page";
 import Footer from "../components/Footer/page";
 import Button from "../components/Button"; 
 import PageIcon from "../components/Icons/page";
+import { useTranslation } from "react-i18next";
 
 export default function ContactUs() {
-    
-  
+  const { t } = useTranslation("contactus");
+
   const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -65,7 +66,7 @@ export default function ContactUs() {
       <div className={styles.contactUsContainer}>
               <form onSubmit={handleSubmit} className={styles.contactUsform}>
                  
-                      <label htmlFor="name" className={styles.formlabel}>Name</label>
+                      <label htmlFor="name" className={styles.formlabel}>{t("name")}</label>
                       <input 
                       type="text" 
                       name="name"
@@ -75,7 +76,7 @@ export default function ContactUs() {
                       className={styles.formNameInput} 
                       required placeholder="Your name" />
                   
-                      <label htmlFor="email" className={styles.formlabel}>Email</label>
+                      <label htmlFor="email" className={styles.formlabel}>{t("email")}</label>
                       <input 
                         type="email" 
                         name="email"
@@ -84,7 +85,7 @@ export default function ContactUs() {
                         className={styles.formEmailInput}
                         maxLength={40} 
                         required placeholder="email@example.com" />
-                      <label htmlFor="phone" className={styles.formlabel}>Phone number</label>
+                      <label htmlFor="phone" className={styles.formlabel}>{t("phone")}</label>
                       <input 
                         type="tel" 
                         name="phone"
@@ -93,18 +94,18 @@ export default function ContactUs() {
                         className={styles.formPhoneInput}
                         maxLength={40} 
                         required placeholder="+351 999 999 999" />
-                      <label htmlFor="message" className={styles.formlabel}>Leave a message</label>
+                      <label htmlFor="message" className={styles.formlabel}>{t("message")}</label>
                       <textarea 
                         name="message"
                         value={formData.message} 
                         onChange={handleChange}
                         className={styles.formMessageInput} 
-                        required rows="3" placeholder="Enter Message"></textarea>
+                        required rows="3" placeholder={t("enterMessage")}></textarea>
                 
-                  <Button className={styles.Button} type="submit">Submit</Button> 
-                  {submissionResult && submissionResult.pending && <p className={styles.success}>Submiting</p> }
-                  {submissionResult && submissionResult.success && <p className={styles.success}>Sent successfully!</p> }
-                  {submissionResult && !submissionResult.success && <p className={styles.error}>Failed to send!</p>}
+                  <Button className={styles.Button} type="submit">{t("submit")}</Button> 
+                  {submissionResult && submissionResult.pending && <p className={styles.success}>{t("submitting")}</p> }
+                  {submissionResult && submissionResult.success && <p className={styles.success}>{t("sentSuccessfully")}</p> }
+                  {submissionResult && !submissionResult.success && <p className={styles.error}>{t("failedToSend")}</p>}
               </form>
         </div>
      </div>

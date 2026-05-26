@@ -86,12 +86,9 @@
     margin-bottom: 6px;
 }
 
-.toggleButton {
-    background: none;
-    border: none;
-    color: blue;
-    cursor: pointer;
-    margin: 12px 0 0 12px;
+.buttonContainer {
+    
+    margin-top: 26px;
    
   }
     .toggleButton:hover {
